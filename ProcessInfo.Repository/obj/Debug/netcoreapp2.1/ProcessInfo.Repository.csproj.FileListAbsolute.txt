@@ -1,0 +1,12 @@
+F:\Angular6\GitHub\ll\ProcessInfo\ProcessInfo.Repository\bin\Debug\netcoreapp2.1\ProcessInfo.Repository.deps.json
+F:\Angular6\GitHub\ll\ProcessInfo\ProcessInfo.Repository\bin\Debug\netcoreapp2.1\ProcessInfo.Repository.dll
+F:\Angular6\GitHub\ll\ProcessInfo\ProcessInfo.Repository\bin\Debug\netcoreapp2.1\ProcessInfo.Repository.pdb
+F:\Angular6\GitHub\ll\ProcessInfo\ProcessInfo.Repository\bin\Debug\netcoreapp2.1\ProcessInfo.DB.dll
+F:\Angular6\GitHub\ll\ProcessInfo\ProcessInfo.Repository\bin\Debug\netcoreapp2.1\ProcessInfo.DB.pdb
+F:\Angular6\GitHub\ll\ProcessInfo\ProcessInfo.Repository\obj\Debug\netcoreapp2.1\ProcessInfo.Repository.csprojAssemblyReference.cache
+F:\Angular6\GitHub\ll\ProcessInfo\ProcessInfo.Repository\obj\Debug\netcoreapp2.1\ProcessInfo.Repository.csproj.CoreCompileInputs.cache
+F:\Angular6\GitHub\ll\ProcessInfo\ProcessInfo.Repository\obj\Debug\netcoreapp2.1\ProcessInfo.Repository.AssemblyInfoInputs.cache
+F:\Angular6\GitHub\ll\ProcessInfo\ProcessInfo.Repository\obj\Debug\netcoreapp2.1\ProcessInfo.Repository.AssemblyInfo.cs
+F:\Angular6\GitHub\ll\ProcessInfo\ProcessInfo.Repository\obj\Debug\netcoreapp2.1\ProcessInfo.Repository.csproj.CopyComplete
+F:\Angular6\GitHub\ll\ProcessInfo\ProcessInfo.Repository\obj\Debug\netcoreapp2.1\ProcessInfo.Repository.dll
+F:\Angular6\GitHub\ll\ProcessInfo\ProcessInfo.Repository\obj\Debug\netcoreapp2.1\ProcessInfo.Repository.pdb

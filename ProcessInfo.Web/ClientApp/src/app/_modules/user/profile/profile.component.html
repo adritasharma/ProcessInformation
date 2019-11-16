@@ -1,0 +1,38 @@
+<div class="row">
+  <div class="col-md-3">
+    <ul class="nav nav-tabs upper flex-column">
+      <li class="pointer">
+        <a data-toggle="tab" aria-expanded="true" class="nav-link tablinks active" (click)="currentTab = 'profile';"
+          style="border-radius: inherit;">My
+          Profile</a>
+      </li>
+      <li class="pointer">
+        <a data-toggle="tab" aria-expanded="true" class="nav-link tablinks" (click)="currentTab = 'password';"
+          style="border-radius: inherit;">Change
+          Password</a>
+      </li>
+    </ul>
+  </div>
+  <div class="col-md-9">
+    <div class="card" *ngIf="currentTab == 'profile'">
+      <div class="card-body">
+        <div class="col-md-3 mx-auto">
+          <div class="circle">
+            <span>{{userData.fullName | initials}}</span>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            User Form
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="card" *ngIf="currentTab == 'password'">
+      <div class="card-body">
+        Password Form
+      </div>
+    </div>
+  </div>
+</div>

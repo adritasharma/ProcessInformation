@@ -1,0 +1,29 @@
+<nav class="navbar navbar-expand navbar-dark bg-dark static-top themeBgColor">
+  <a class="navbar-brand" [routerLink]="['']">Process Information </a>
+  <!-- <search-box [loginType]="loginType"></search-box> -->
+  <div class="collapse navbar-collapse">
+    <ul class="navbar-nav ml-auto">
+      <ng-template #loginContent>
+        <li class="nav-item">
+          <a [routerLink]="['/login']" class="nav-link" style="padding-right:85px;">
+            Login
+          </a>
+        </li>
+      </ng-template>
+
+      <li class="nav-item dropdown" ngbDropdown *ngIf="userFirstName; else loginContent">
+        <a href="javascript:void(0)" class="nav-link" ngbDropdownToggle style="padding-right:85px;">
+          <i class="fa fa-user"></i> {{userFirstName}} <b class="caret"></b>
+        </a>
+        <div class="dropdown-menu-right" ngbDropdownMenu>
+          <a class="dropdown-item"  [routerLink]="['/user/profile']">
+            <i class="fa fa-fw fa-user"></i> Profile
+          </a>
+          <a class="dropdown-item pointer" href="javascript:void(0)" (click)="logOut()">
+            <i class="fa fa-fw fa-power-off"></i> Log Out
+          </a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>

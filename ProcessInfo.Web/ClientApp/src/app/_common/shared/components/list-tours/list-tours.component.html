@@ -1,0 +1,12 @@
+<div class="row">
+  <div *ngFor="let tour of  Tours | async" class="col-md-4">
+    <div class="card">
+      <div class="card-header">
+        <h4>{{tour.tourName}}</h4>
+      </div>
+      <div class="card-body">
+        {{tour.price}}
+      </div>
+    </div>
+  </div>
+</div>
