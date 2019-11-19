@@ -23,9 +23,9 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css",
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "src/theme.css"
+              "src/theme.css",
+              "src/styles.css"
             ],
             "scripts": [],
             "es5BrowserSupport": true

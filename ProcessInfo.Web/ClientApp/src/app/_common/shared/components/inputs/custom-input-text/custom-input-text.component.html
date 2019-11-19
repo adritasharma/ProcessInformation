@@ -1,0 +1,15 @@
+<div class="form-group">
+  <div>
+    <label class="control-label">
+     {{label}} <span class="required-star" *ngIf="required"> *</span> :
+      <ng-container *ngIf="modelRef.invalid && modelRef.touched">
+        <span class="help-block error-block" *ngIf="model!=null && invalidMsg == undefined"> &nbsp; Invalid</span>
+        <span class="help-block error-block" *ngIf="model!=null && invalidMsg != undefined"> &nbsp; {{invalidMsg}}</span>
+        <span class="help-block error-block" *ngIf="model==null">&nbsp; Required</span>
+      </ng-container>
+    </label>
+    <span class="help-block warning-block" *ngIf="model!=null && lengthErrorMessage != undefined"> &nbsp; {{lengthErrorMessage}}</span>
+    <input type="text" class="form-control" [id]="fieldId" [name]="fieldId" [placeholder]="label" [(ngModel)]="model" (ngModelChange)="change($event)"
+      [required]="required" [pattern]="pattern" #modelRef="ngModel" (keypress)="(maxLength == undefined || $event.target.value.length < maxLength) ? true : false" ChildFieldValidation [disabled]="isDisabled">
+  </div>
+</div>

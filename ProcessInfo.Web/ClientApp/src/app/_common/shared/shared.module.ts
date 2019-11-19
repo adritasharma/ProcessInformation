@@ -5,6 +5,8 @@ import { CoreModule } from '../core/core.module';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { ListToursComponent } from './components/list-tours/list-tours.component';
 import { InitialsPipe } from './pipes/initials.pipe';
+import { AdminPageHeaderComponent } from './components/admin-page-header/admin-page-header.component';
+import { CustomInputTextComponent } from './components/inputs/custom-input-text/custom-input-text.component';
 
 @NgModule({
   imports: [
@@ -15,13 +17,17 @@ import { InitialsPipe } from './pipes/initials.pipe';
     NavbarComponent,
     NotFoundComponent,
     ListToursComponent,
-    InitialsPipe
+    InitialsPipe,
+    AdminPageHeaderComponent,
+    CustomInputTextComponent
   ],
   exports: [
     NavbarComponent,
     NotFoundComponent,
     ListToursComponent,
-    InitialsPipe
+    InitialsPipe,
+    AdminPageHeaderComponent,
+    CustomInputTextComponent
   ]
 })
 export class SharedModule { }
