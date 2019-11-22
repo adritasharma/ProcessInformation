@@ -2,7 +2,7 @@ import { Component, OnInit, SimpleChanges, Input, AfterViewInit, Output, EventEm
 import { NgModel } from '@angular/forms';
 
 @Component({
-  selector: 'custom-input-text',
+  selector: 'input-text',
   templateUrl: './custom-input-text.component.html',
   styleUrls: ['./custom-input-text.component.css']
 })
@@ -17,7 +17,7 @@ export class CustomInputTextComponent implements OnInit, AfterViewInit {
   @Input() isCapital: boolean;
   @Input() pattern: any
   @Input() invalidMsg: string
-  @Input() isDisabled: boolean;
+  @Input() disabled: boolean;
   @Input() patternType: string // using patternType will override pattern and invalidMsg
   @Input() maxLength: number
   @Input() isFocus: boolean

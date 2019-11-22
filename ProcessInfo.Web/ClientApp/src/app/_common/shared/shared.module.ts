@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { CoreModule } from '../core/core.module';
 import { NotFoundComponent } from './components/not-found/not-found.component';
-import { ListToursComponent } from './components/list-tours/list-tours.component';
 import { InitialsPipe } from './pipes/initials.pipe';
 import { AdminPageHeaderComponent } from './components/admin-page-header/admin-page-header.component';
 import { CustomInputTextComponent } from './components/inputs/custom-input-text/custom-input-text.component';
@@ -16,7 +15,6 @@ import { CustomInputTextComponent } from './components/inputs/custom-input-text/
   declarations: [
     NavbarComponent,
     NotFoundComponent,
-    ListToursComponent,
     InitialsPipe,
     AdminPageHeaderComponent,
     CustomInputTextComponent
@@ -24,7 +22,6 @@ import { CustomInputTextComponent } from './components/inputs/custom-input-text/
   exports: [
     NavbarComponent,
     NotFoundComponent,
-    ListToursComponent,
     InitialsPipe,
     AdminPageHeaderComponent,
     CustomInputTextComponent

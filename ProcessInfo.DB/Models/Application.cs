@@ -8,8 +8,8 @@ namespace ProcessInfo.DB.Models
     {
         public string ApplicationId { get; set; }
         public string ApplicationName { get; set; }
-        public int ProjectId { get; set; }
-        public int WorkObjectId { get; set; }
+        public string ProjectName { get; set; }
+        public string WorkObjectName { get; set; }
         public string TeamMembers { get; set; }
         public string Status { get; set; }
         public string ApplicationType { get; set; }

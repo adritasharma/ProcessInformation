@@ -1,16 +1,18 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { UserComponent } from './user.component';
-import { UserToursComponent } from './tours/user-tours/user-tours.component';
 import { ProfileComponent } from './profile/profile.component';
+import { SaveApplicationComponent } from './pages/application/save-application/save-application.component';
 
 
 export const userRoutes: Routes = [
     {
         path: '', component: UserComponent,
         children: [
-            { path: '', component: UserToursComponent },
-            { path: 'profile', component: ProfileComponent }
+            // { path: '', component: ProfileComponent },
+            { path: 'profile', component: ProfileComponent },
+            { path: 'application/save', component: SaveApplicationComponent },
+            { path: 'application/save', component: ProfileComponent }
         ]
     }
 ];

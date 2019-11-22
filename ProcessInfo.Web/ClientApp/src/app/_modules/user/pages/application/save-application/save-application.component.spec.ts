@@ -3,21 +3,21 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
-import { UserToursComponent } from './user-tours.component';
+import { SaveApplicationComponent } from './save-application.component';
 
-describe('UserToursComponent', () => {
-  let component: UserToursComponent;
-  let fixture: ComponentFixture<UserToursComponent>;
+describe('SaveApplicationComponent', () => {
+  let component: SaveApplicationComponent;
+  let fixture: ComponentFixture<SaveApplicationComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ UserToursComponent ]
+      declarations: [ SaveApplicationComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(UserToursComponent);
+    fixture = TestBed.createComponent(SaveApplicationComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
