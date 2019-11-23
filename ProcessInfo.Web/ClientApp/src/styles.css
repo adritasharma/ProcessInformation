@@ -34,19 +34,19 @@
     max-width: 100% !important;
 }
 .theme-background {
-    background-color: #a7001a !important;
+    background-color: #060062 !important;
 }
 .theme-background> .nav-link {
     color: #fff;
 }
 .theme-color {
-    color: #a7001a;
+    color: #060062 !important;
 }
 .btn-default {
     color: #fff !important;
-    background-color: #a7001a !important;
+    background-color: #060062 !important;
 }
 
-i::after {
+i::before {
     padding-right: 5px !important;
 }

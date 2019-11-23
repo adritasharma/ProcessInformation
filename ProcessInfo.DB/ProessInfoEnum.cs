@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ProcessInfo.DB
 {
-    public enum Environment
+    public enum HostEnvironment
     {
         [Description("DEV")]
         DEV = 0,

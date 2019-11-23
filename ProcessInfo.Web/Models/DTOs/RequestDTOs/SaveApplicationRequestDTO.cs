@@ -1,19 +1,20 @@
-﻿using System;
+﻿using ProcessInfo.DB;
+using System;
 using System.Collections.Generic;
-using System.Text;
+using System.Linq;
+using System.Threading.Tasks;
 
-namespace ProcessInfo.DB.Models
+namespace ProcessInfo.Web.Models.DTOs.RequestDTOs
 {
-    public class Application
+    public class SaveApplicationRequestDTO
     {
-        public int ApplicationId { get; set; }
         public string ApplicationName { get; set; }
         public string ProjectName { get; set; }
         public int WorkObjectName { get; set; }
         public string TeamMembers { get; set; }
         public string Status { get; set; }
         public string ApplicationType { get; set; }
-        public int EnvironmentId { get; set; }
+        public HostEnvironment EnvironmentId { get; set; }
         public string ServerPath { get; set; }
         public string AppPool { get; set; }
         public string IISInstance { get; set; }
@@ -21,6 +22,5 @@ namespace ProcessInfo.DB.Models
         public string SiteUrl { get; set; }
         public string ConfigFiles { get; set; }
         public string Database { get; set; }
-        public int AddedByUserId { get; set; }
     }
 }

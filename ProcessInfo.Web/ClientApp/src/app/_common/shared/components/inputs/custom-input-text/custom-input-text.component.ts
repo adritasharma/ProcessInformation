@@ -20,7 +20,8 @@ export class CustomInputTextComponent implements OnInit, AfterViewInit {
   @Input() disabled: boolean;
   @Input() patternType: string // using patternType will override pattern and invalidMsg
   @Input() maxLength: number
-  @Input() isFocus: boolean
+  @Input() focus: boolean
+  @Input() isTextArea: boolean
   lengthErrorMessage: string;
 
   @Output() modelChange = new EventEmitter();
@@ -80,11 +81,7 @@ export class CustomInputTextComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
-    console.log(this.isFocus)
-    if (this.isFocus == true) {
-      console.log('f')
-      document.getElementById(this.fieldId).focus();
-    }
+   
   }
 
   change(newValue) {
@@ -140,6 +137,11 @@ export class CustomInputTextComponent implements OnInit, AfterViewInit {
   }
 
   ngOnChanges(changes: SimpleChanges) {
+    this.fieldId = this.label.replace(/\s/g,'');
+    if (this.focus == true && this.fieldId) {
+      console.log('f',this.fieldId)
+      // document.getElementById(this.fieldId).focus();
+    }
     if (changes['model']) {
       if (this.model != undefined && this.model != '') {
         this.model = this.model[0].toUpperCase() + this.model.slice(1)

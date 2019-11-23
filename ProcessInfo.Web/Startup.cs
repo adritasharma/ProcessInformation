@@ -3,9 +3,15 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SpaServices.AngularCli;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-
+using ProcessInfo.DB.Models;
+using ProcessInfo.Repository.Implementations;
+using ProcessInfo.Repository.Interfaces;
+using ProcessInfo.Service.Implementations;
+using ProcessInfo.Service.Interfaces;
+using AutoMapper;
 namespace ProcessInfo.Web
 {
     public class Startup
@@ -27,6 +33,22 @@ namespace ProcessInfo.Web
             {
                 configuration.RootPath = "ClientApp/dist";
             });
+
+          //  services.AddDbContext<IndigoContext>(options => options.UseSqlServer(Configuration.GetConnectionString("IndigoContext")).EnableSensitiveDataLogging());
+            services.AddScoped(typeof(IUnitOfWork), typeof(UnitOfWork));
+
+            services.AddScoped(typeof(IApplicationRepository), typeof(ApplicationRepository));
+            services.AddScoped(typeof(IUserRepository), typeof(UserRepository));
+
+            services.AddScoped(typeof(IApplicationService), typeof(ApplicationService));
+            services.AddScoped(typeof(IUserRepository), typeof(UserRepository));
+
+            services.AddDbContext<ProcessInfoDbContext>(options =>
+                        options.UseMySql(Configuration.GetConnectionString("processinfo")));
+            services.AddAutoMapper(typeof(Startup));
+
+            //  services.AddScoped(typeof(IGenericRepository), typeof(GenericRepository));
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

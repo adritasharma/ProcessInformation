@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Application } from 'src/app/_common/shared/models/application.model';
+import { Application, IApplication } from 'src/app/_common/shared/models/application.model';
+import { ApplicationService } from '../application.service';
 
 @Component({
   selector: 'app-save-application',
@@ -8,11 +9,17 @@ import { Application } from 'src/app/_common/shared/models/application.model';
 })
 export class SaveApplicationComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _applicationService: ApplicationService) { }
 
   applicationData = new Application()
 
   ngOnInit() {
+  }
+
+  saveData(data:IApplication){
+    this._applicationService.saveApplication(data).subscribe(resp => {
+      console.log(resp)
+    })
   }
 
 }
