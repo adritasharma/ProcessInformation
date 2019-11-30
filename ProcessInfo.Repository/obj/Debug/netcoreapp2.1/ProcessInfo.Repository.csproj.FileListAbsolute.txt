@@ -10,3 +10,5 @@ F:\Angular6\GitHub\ll\ProcessInfo\ProcessInfo.Repository\obj\Debug\netcoreapp2.1
 F:\Angular6\GitHub\ll\ProcessInfo\ProcessInfo.Repository\obj\Debug\netcoreapp2.1\ProcessInfo.Repository.csproj.CopyComplete
 F:\Angular6\GitHub\ll\ProcessInfo\ProcessInfo.Repository\obj\Debug\netcoreapp2.1\ProcessInfo.Repository.dll
 F:\Angular6\GitHub\ll\ProcessInfo\ProcessInfo.Repository\obj\Debug\netcoreapp2.1\ProcessInfo.Repository.pdb
+F:\Angular6\GitHub\ll\ProcessInfo\ProcessInfo.Repository\bin\Debug\netcoreapp2.1\ProcessInfo.Utility.dll
+F:\Angular6\GitHub\ll\ProcessInfo\ProcessInfo.Repository\bin\Debug\netcoreapp2.1\ProcessInfo.Utility.pdb

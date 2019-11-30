@@ -1005,6 +1005,16 @@
         "runtime": {
           "bin/placeholder/ProcessInfo.DB.dll": {}
         }
+      },
+      "ProcessInfo.Utility/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.1",
+        "compile": {
+          "bin/placeholder/ProcessInfo.Utility.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ProcessInfo.Utility.dll": {}
+        }
       }
     }
   },
@@ -3734,6 +3744,11 @@
       "type": "project",
       "path": "../ProcessInfo.DB/ProcessInfo.DB.csproj",
       "msbuildProject": "../ProcessInfo.DB/ProcessInfo.DB.csproj"
+    },
+    "ProcessInfo.Utility/1.0.0": {
+      "type": "project",
+      "path": "../ProcessInfo.Utility/ProcessInfo.Utility.csproj",
+      "msbuildProject": "../ProcessInfo.Utility/ProcessInfo.Utility.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -3741,7 +3756,8 @@
       "AutoMapper >= 9.0.0",
       "AutoMapper.Extensions.Microsoft.DependencyInjection >= 7.0.0",
       "Microsoft.NETCore.App >= 2.1.0",
-      "ProcessInfo.DB >= 1.0.0"
+      "ProcessInfo.DB >= 1.0.0",
+      "ProcessInfo.Utility >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -3776,6 +3792,9 @@
           "projectReferences": {
             "F:\\Angular6\\GitHub\\ll\\ProcessInfo\\ProcessInfo.DB\\ProcessInfo.DB.csproj": {
               "projectPath": "F:\\Angular6\\GitHub\\ll\\ProcessInfo\\ProcessInfo.DB\\ProcessInfo.DB.csproj"
+            },
+            "F:\\Angular6\\GitHub\\ll\\ProcessInfo\\ProcessInfo.Utility\\ProcessInfo.Utility.csproj": {
+              "projectPath": "F:\\Angular6\\GitHub\\ll\\ProcessInfo\\ProcessInfo.Utility\\ProcessInfo.Utility.csproj"
             }
           }
         }

@@ -5,6 +5,8 @@ using System.Linq.Expressions;
 using Microsoft.EntityFrameworkCore;
 using ProcessInfo.Repository.Interfaces;
 using ProcessInfo.DB.Models;
+using Microsoft.EntityFrameworkCore.Query;
+using ProcessInfo.Utility;
 
 namespace ProcessInfo.Repository.Implementations
 {
@@ -50,12 +52,65 @@ namespace ProcessInfo.Repository.Implementations
         {
             _context.Entry(entity).State = EntityState.Modified;
         }
+
         public bool Any(Expression<Func<T, bool>> predicate = null)
         {
             if (predicate == null)
                 return DbSet.Any();
             else
                 return DbSet.Any(predicate);
+        }
+
+        public int Count(Expression<Func<T, bool>> predicate = null)
+        {
+            if (predicate == null)
+                return DbSet.Count();
+            else
+                return DbSet.Count(predicate);
+        }
+
+
+        public virtual List<T> FindWithInclude(
+         Expression<Func<T, bool>> filter = null,
+        string orderBy = null,
+        FCSortDirection? sortDirection = null,
+         Func<IQueryable<T>, IIncludableQueryable<T, object>> include = null,
+                                         int? start = null, int? length = null, bool disableTracking = true)
+        {
+            IQueryable<T> query = DbSet;
+
+            if (disableTracking)
+                query = query.AsNoTracking();
+
+            if (filter != null)
+                query = query.Where(filter);
+
+            if (include != null)
+                query = include(query);
+
+            if (orderBy != null)
+            {
+                if (sortDirection == FCSortDirection.Descending)
+                {
+                    query = query.OrderByDescending(x => x.GetProperty(orderBy));
+                }
+                else
+                {
+                    query = query.OrderBy(x => x.GetProperty(orderBy));
+                }
+            }
+
+            if (start.HasValue)
+            {
+                var skipValue = start.Value;
+                query = query.Skip(skipValue);
+            }
+            if (length.HasValue)
+            {
+                var takeValue = length.Value;
+                query = query.Take(takeValue);
+            }
+            return query.ToList();
         }
     }
 }

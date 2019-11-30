@@ -11,6 +11,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ProcessInfo.DB\ProcessInfo.DB.csproj" />
+    <ProjectReference Include="..\ProcessInfo.Utility\ProcessInfo.Utility.csproj" />
   </ItemGroup>
 
 </Project>

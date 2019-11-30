@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
+using DataTables.AspNet.Core;
+using DataTables.AspNet.AspNetCore;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using ProcessInfo.DB.Models;
 using ProcessInfo.Service.Interfaces;
+using ProcessInfo.Web.AutoMapperProfiles.RequestDTOs;
 using ProcessInfo.Web.Models.DTOs.RequestDTOs;
 
 namespace ProcessInfo.Web.Controllers
@@ -34,6 +37,25 @@ namespace ProcessInfo.Web.Controllers
                 return Ok(res.IsSuccess);
             else
                 return BadRequest(res.Errors);
+        }
+
+        [DisableRequestSizeLimit]
+        [HttpGet]
+        public IActionResult Get(IDataTablesRequest request)
+        {
+            if (request == null)
+            {
+                var res =  _service.GetAll();
+                return Ok(res);
+            }
+            else
+            {
+                var dtOptions = _mapper.Map<DataTablesRequestDTO>(request);
+
+                var res =  _service.GetFilteredApplications(dtOptions.SearchText, dtOptions.FilterType, dtOptions.SortColumn, dtOptions.SortType, dtOptions.Start, dtOptions.Length);
+
+                return Ok(DataTablesResponse.Create(request, res.TotalDataCount, res.FilteredDataCount, res.Data));
+            }
         }
 
     }

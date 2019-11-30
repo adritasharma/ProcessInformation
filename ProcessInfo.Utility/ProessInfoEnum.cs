@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text;
 
-namespace ProcessInfo.DB
+namespace ProcessInfo.Utility
 {
     public enum HostEnvironment
     {
@@ -17,5 +17,11 @@ namespace ProcessInfo.DB
         DR = 2,
         [Description("PROD")]
         PROD = 2,
+    }
+
+    public enum FCSortDirection
+    {
+        Ascending = 0,
+        Descending = 1
     }
 }

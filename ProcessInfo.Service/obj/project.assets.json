@@ -442,6 +442,15 @@
           }
         }
       },
+      "morelinq/3.2.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/MoreLinq.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/MoreLinq.dll": {}
+        }
+      },
       "MySqlConnector/0.47.1": {
         "type": "package",
         "compile": {
@@ -1012,13 +1021,24 @@
         "dependencies": {
           "AutoMapper": "9.0.0",
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "7.0.0",
-          "ProcessInfo.DB": "1.0.0"
+          "ProcessInfo.DB": "1.0.0",
+          "ProcessInfo.Utility": "1.0.0"
         },
         "compile": {
           "bin/placeholder/ProcessInfo.Repository.dll": {}
         },
         "runtime": {
           "bin/placeholder/ProcessInfo.Repository.dll": {}
+        }
+      },
+      "ProcessInfo.Utility/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.1",
+        "compile": {
+          "bin/placeholder/ProcessInfo.Utility.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ProcessInfo.Utility.dll": {}
         }
       }
     }
@@ -1706,6 +1726,27 @@
         "runtimes/win/lib/netstandard2.0/Microsoft.Win32.Registry.dll",
         "useSharedDesignerContext.txt",
         "version.txt"
+      ]
+    },
+    "morelinq/3.2.0": {
+      "sha512": "YMz+A8PbY+5BqnWR+IJaJ47Uj54/PrpPOQBqjmqdybpGxhfeXFJrGeRNW0RED/vScftrVdnZNM5gxs8CmLBjmQ==",
+      "type": "package",
+      "path": "morelinq/3.2.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "COPYING.txt",
+        "lib/net451/MoreLinq.dll",
+        "lib/net451/MoreLinq.pdb",
+        "lib/net451/MoreLinq.xml",
+        "lib/netstandard1.0/MoreLinq.dll",
+        "lib/netstandard1.0/MoreLinq.pdb",
+        "lib/netstandard1.0/MoreLinq.xml",
+        "lib/netstandard2.0/MoreLinq.dll",
+        "lib/netstandard2.0/MoreLinq.pdb",
+        "lib/netstandard2.0/MoreLinq.xml",
+        "morelinq.3.2.0.nupkg.sha512",
+        "morelinq.nuspec"
       ]
     },
     "MySqlConnector/0.47.1": {
@@ -3754,6 +3795,11 @@
       "type": "project",
       "path": "../ProcessInfo.Repository/ProcessInfo.Repository.csproj",
       "msbuildProject": "../ProcessInfo.Repository/ProcessInfo.Repository.csproj"
+    },
+    "ProcessInfo.Utility/1.0.0": {
+      "type": "project",
+      "path": "../ProcessInfo.Utility/ProcessInfo.Utility.csproj",
+      "msbuildProject": "../ProcessInfo.Utility/ProcessInfo.Utility.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -3761,7 +3807,9 @@
       "AutoMapper >= 9.0.0",
       "AutoMapper.Extensions.Microsoft.DependencyInjection >= 7.0.0",
       "Microsoft.NETCore.App >= 2.1.0",
-      "ProcessInfo.Repository >= 1.0.0"
+      "ProcessInfo.Repository >= 1.0.0",
+      "ProcessInfo.Utility >= 1.0.0",
+      "morelinq >= 3.2.0"
     ]
   },
   "packageFolders": {
@@ -3796,6 +3844,9 @@
           "projectReferences": {
             "F:\\Angular6\\GitHub\\ll\\ProcessInfo\\ProcessInfo.Repository\\ProcessInfo.Repository.csproj": {
               "projectPath": "F:\\Angular6\\GitHub\\ll\\ProcessInfo\\ProcessInfo.Repository\\ProcessInfo.Repository.csproj"
+            },
+            "F:\\Angular6\\GitHub\\ll\\ProcessInfo\\ProcessInfo.Utility\\ProcessInfo.Utility.csproj": {
+              "projectPath": "F:\\Angular6\\GitHub\\ll\\ProcessInfo\\ProcessInfo.Utility\\ProcessInfo.Utility.csproj"
             }
           }
         }
@@ -3822,6 +3873,10 @@
             "target": "Package",
             "version": "[2.1.0, )",
             "autoReferenced": true
+          },
+          "morelinq": {
+            "target": "Package",
+            "version": "[3.2.0, )"
           }
         },
         "imports": [

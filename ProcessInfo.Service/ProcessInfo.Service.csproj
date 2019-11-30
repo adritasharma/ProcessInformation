@@ -7,10 +7,12 @@
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="9.0.0" />
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="7.0.0" />
+    <PackageReference Include="morelinq" Version="3.2.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\ProcessInfo.Repository\ProcessInfo.Repository.csproj" />
+    <ProjectReference Include="..\ProcessInfo.Utility\ProcessInfo.Utility.csproj" />
   </ItemGroup>
 
 </Project>
