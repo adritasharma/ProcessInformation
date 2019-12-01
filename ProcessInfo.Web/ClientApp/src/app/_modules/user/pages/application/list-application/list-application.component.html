@@ -1,0 +1,88 @@
+<div class="row">
+  <div class=" tab-row mx-4">
+    <ul class="nav nav-tabs upper">
+      <li class="pointer">
+        <a data-toggle="tab" aria-expanded="true" class="nav-link tablinks active" (click)="status = 'Active';reload()">Active</a>
+      </li>
+      <li class="pointer">
+        <a data-toggle="tab" aria-expanded="true" class="nav-link tablinks" (click)="status = 'inactive';reload()">InActive</a>
+      </li>
+    </ul>
+  </div>
+  <div class="col-md-12">
+    <div class="table-responsive">
+      <table datatable [dtOptions]="dtOptions" class="table table-hover table-striped">
+        <thead>
+          <tr>
+            <th style="text-align:center">Action</th>
+            <th>Name</th>
+            <th>Address</th>
+            <!-- <th>Industry</th> -->
+            <th>Website</th>
+            <th>SPOC Details</th>
+            <th>Manager Details</th>
+            <th>Agreement Start Date</th>
+            <th>Agreement End Date</th>
+            <th>Monthly Quota</th>
+            <th>Users</th>
+          </tr>
+        </thead>
+        <tbody *ngIf="allApplications?.length != 0">
+          <tr *ngFor="let item of allApplications ;let i=index">
+            <td class="tdOption">
+              <div ngbDropdown class="d-inline-block">
+                <i class="fa fa-ellipsis-v listOption" id="actionDropdown" ngbDropdownToggle></i>
+                <div ngbDropdownMenu aria-labelledby="actionDropdown" class="actionDropdown">
+
+                  <a class="dropdown-item normalOption" [routerLink]="['/admin/manager/vendors/Profile',item.vendorId]">
+                    <i class="fa fa-eye ddActionIcon"></i> View
+                  </a>
+                  <a class="dropdown-item normalOption" [routerLink]="['/admin/manager/vendors/Profile',item.vendorId]">
+                    <i class="fa fa-pencil ddActionIcon"></i>Edit
+                  </a>
+                  <a class="dropdown-item normalOption pointer" (click)="changeStatus(item.vendorId,item.vendorName,item.vendorStatus)">
+                    <span *ngIf="item.vendorStatus == 'Active'"><i class="fa fa-square-o ddActionIcon"></i>Deactivate</span>
+                    <span *ngIf="item.vendorStatus == 'InActive'"><i class="fa fa-check-square-o ddActionIcon"></i>Activate</span>
+                  </a>
+                  <a (click)="deleteItem(item)" class="dropdown-item deleteOption" data-toggle="tooltip">
+                    <i class="fa fa-trash-o ddActionIcon"></i>Delete
+                  </a>
+                </div>
+              </div>
+            </td>
+            <td>
+              <a [routerLink]="['/admin/manager/vendors/Profile',item.vendorId]">{{item.vendorName}}</a>
+            </td>
+            <td>{{item.fullAddress}}</td>
+            <!-- <td> {{item.industry}}</td> -->
+            <td>{{item.website}}</td>
+            <td>
+              {{item.spocName}} <br>
+              <i class="fa fa-envelope themeColor" aria-hidden="true" *ngIf="item.spocEmail"></i> {{item.spocEmail}}
+              <br>
+              <i class="fa fa-phone themeColor" aria-hidden="true" *ngIf="item.spocPhoneNumber"></i>
+              {{item.spocPhoneNumber}}
+            </td>
+            <td>
+              {{item.managerName}} <br>
+              <i class="fa fa-envelope themeColor" aria-hidden="true" *ngIf="item.managerEmail"></i>
+              {{item.managerEmail}} <br>
+              <i class="fa fa-phone themeColor" aria-hidden="true" *ngIf="item.managerPhoneNumber"></i>
+              {{item.managerPhoneNumber}}
+            </td>
+            <td>{{item.agreementStartDate | date: 'dd/MM/yyyy'}}</td>
+            <td>{{item.agreementEndDate | date: 'dd/MM/yyyy'}}</td>
+            <td>{{item.monthlyQuota}}</td>
+            <td (click)="displayUsers(item.vendorId);modalService.open(modalContent)" style="cursor:pointer;text-align:center"><a
+                href="javascript:void(0)">{{item.logInUsers?.length}} </a></td>
+          </tr>
+        </tbody>
+        <tbody *ngIf="allApplications?.length == 0">
+          <tr>
+            <td colspan="10" class="no-data-available">No data!</td>
+          </tr>
+        <tbody>
+      </table>
+    </div>
+  </div>
+</div>

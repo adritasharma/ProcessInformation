@@ -8,6 +8,7 @@ import { SharedModule } from 'src/app/_common/shared/shared.module';
 import { ProfileComponent } from './profile/profile.component';
 import { SaveApplicationComponent } from './pages/application/save-application/save-application.component';
 import { UserSidebarComponent } from './user-sidebar/user-sidebar.component';
+import { ListApplicationComponent } from './pages/application/list-application/list-application.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { UserSidebarComponent } from './user-sidebar/user-sidebar.component';
     UserComponent,
     UserSidebarComponent,
     ProfileComponent,
-    SaveApplicationComponent
+    SaveApplicationComponent,
+    ListApplicationComponent
   ]
 })
 export class UserModule { }

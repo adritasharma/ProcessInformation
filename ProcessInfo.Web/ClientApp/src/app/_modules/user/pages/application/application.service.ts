@@ -4,6 +4,7 @@ import { Observable, of } from 'rxjs';
 import { HttpService } from 'Backup/New folder/_common/core/services/http.service';
 import { IApplication } from 'src/app/_common/shared/models/application.model';
 import { environment } from 'src/environments/environment';
+import { UtilityService } from 'src/app/_common/shared/services/utility.service';
 
 
 @Injectable({
@@ -12,12 +13,17 @@ import { environment } from 'src/environments/environment';
 export class ApplicationService extends HttpService {
 
 
-  constructor(public _http: HttpClient) {
+  constructor(public _http: HttpClient, private utility: UtilityService) {
     super(_http);
   }
 
-  saveApplication(loginData: IApplication): Observable<any> {
-     return this.post(`${environment.apiUrl}application`,loginData)
+  saveApplication(payload: IApplication): Observable<any> {
+    return this.post(`${environment.apiUrl}application`, payload)
+  }
+
+  getAllApplications(dataTablesParameters: any): Observable<any> {
+   // return this.get(`${environment.apiUrl}application`)
+    return this.get(`${environment.apiUrl}application?${this.utility.convertToParam(dataTablesParameters)}`)
   }
 
 

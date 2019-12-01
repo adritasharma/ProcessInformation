@@ -88,17 +88,17 @@ namespace ProcessInfo.Repository.Implementations
             if (include != null)
                 query = include(query);
 
-            if (orderBy != null)
-            {
-                if (sortDirection == FCSortDirection.Descending)
-                {
-                    query = query.OrderByDescending(x => x.GetProperty(orderBy));
-                }
-                else
-                {
-                    query = query.OrderBy(x => x.GetProperty(orderBy));
-                }
-            }
+            //if (orderBy != null)
+            //{
+            //    if (sortDirection == FCSortDirection.Descending)
+            //    {
+            //        query = query.OrderByDescending(x => x.GetProperty(orderBy));
+            //    }
+            //    else
+            //    {
+            //        query = query.OrderBy(x => x.GetProperty(orderBy));
+            //    }
+            //}
 
             if (start.HasValue)
             {
