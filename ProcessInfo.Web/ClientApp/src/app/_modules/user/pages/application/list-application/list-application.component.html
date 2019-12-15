@@ -15,16 +15,10 @@
         <thead>
           <tr>
             <th style="text-align:center">Action</th>
-            <th>Name</th>
-            <th>Address</th>
-            <!-- <th>Industry</th> -->
-            <th>Website</th>
-            <th>SPOC Details</th>
-            <th>Manager Details</th>
-            <th>Agreement Start Date</th>
-            <th>Agreement End Date</th>
-            <th>Monthly Quota</th>
-            <th>Users</th>
+            <th>Application Name</th>
+            <th>ApplicationType</th>
+            <th>Project Name</th>
+            <th>Team Members</th>
           </tr>
         </thead>
         <tbody *ngIf="allApplications?.length != 0">
@@ -51,35 +45,16 @@
               </div>
             </td>
             <td>
-              <a [routerLink]="['/admin/manager/vendors/Profile',item.vendorId]">{{item.vendorName}}</a>
+              <a [routerLink]="['/user/application/view',item.applicationId]">{{item.applicationName}}</a>
             </td>
-            <td>{{item.fullAddress}}</td>
-            <!-- <td> {{item.industry}}</td> -->
-            <td>{{item.website}}</td>
-            <td>
-              {{item.spocName}} <br>
-              <i class="fa fa-envelope themeColor" aria-hidden="true" *ngIf="item.spocEmail"></i> {{item.spocEmail}}
-              <br>
-              <i class="fa fa-phone themeColor" aria-hidden="true" *ngIf="item.spocPhoneNumber"></i>
-              {{item.spocPhoneNumber}}
-            </td>
-            <td>
-              {{item.managerName}} <br>
-              <i class="fa fa-envelope themeColor" aria-hidden="true" *ngIf="item.managerEmail"></i>
-              {{item.managerEmail}} <br>
-              <i class="fa fa-phone themeColor" aria-hidden="true" *ngIf="item.managerPhoneNumber"></i>
-              {{item.managerPhoneNumber}}
-            </td>
-            <td>{{item.agreementStartDate | date: 'dd/MM/yyyy'}}</td>
-            <td>{{item.agreementEndDate | date: 'dd/MM/yyyy'}}</td>
-            <td>{{item.monthlyQuota}}</td>
-            <td (click)="displayUsers(item.vendorId);modalService.open(modalContent)" style="cursor:pointer;text-align:center"><a
-                href="javascript:void(0)">{{item.logInUsers?.length}} </a></td>
+            <td>{{item.applicationType}}</td>
+            <td>{{item.projectName}}</td>
+            <td>{{item.teamMembers}}</td>
           </tr>
         </tbody>
         <tbody *ngIf="allApplications?.length == 0">
           <tr>
-            <td colspan="10" class="no-data-available">No data!</td>
+            <td colspan="4" class="no-data-available">No data!</td>
           </tr>
         <tbody>
       </table>

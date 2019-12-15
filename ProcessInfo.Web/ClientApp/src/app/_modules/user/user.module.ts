@@ -9,6 +9,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { SaveApplicationComponent } from './pages/application/save-application/save-application.component';
 import { UserSidebarComponent } from './user-sidebar/user-sidebar.component';
 import { ListApplicationComponent } from './pages/application/list-application/list-application.component';
+import { ViewApplicationComponent } from './pages/application/view-application/view-application.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { ListApplicationComponent } from './pages/application/list-application/l
     UserSidebarComponent,
     ProfileComponent,
     SaveApplicationComponent,
-    ListApplicationComponent
+    ListApplicationComponent,
+    ViewApplicationComponent
   ]
 })
 export class UserModule { }

@@ -48,7 +48,7 @@ export class ListApplicationComponent implements OnInit {
           });
         });
       },
-      columns: [{ data: 'applicationId' }, { data: 'applicationName', width: '3%' }]
+      // columns: [{ data: 'applicationName'}]
     };
   }
 
