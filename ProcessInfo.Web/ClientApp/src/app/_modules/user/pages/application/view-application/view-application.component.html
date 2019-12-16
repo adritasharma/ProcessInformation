@@ -1,3 +1,12 @@
-<p>
-  view-application works!
-</p>
+<admin-page-header [options]="componentHeaderData"></admin-page-header>
+
+<div class="row" *ngIf="applicationDetails">
+  <div class="col-md-6">
+    <p><span class="bold">Application Name: </span>{{applicationDetails.applicationName}}</p>
+    <p><span class="bold">Application Type: </span>{{applicationDetails.aapplicationType}}</p>
+  </div>
+  <div class="col-md-6">
+      <p><span class="bold">Project Name : </span>{{applicationDetails.projectName}}</p>
+      <p><span class="bold">Team Members: </span>{{applicationDetails.teamMembers}}</p>
+  </div>
+</div>

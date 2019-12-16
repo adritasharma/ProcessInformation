@@ -1,27 +1,15 @@
-<!-- <div class="head componentHead" *ngIf="options">
-  <h5 class="themeColor">{{options.Title}}</h5>
-
-
-</div> -->
-
-<div class="row theme-color">
+<div class="row theme-color page-header">
   <div class="col-md-7">
     <h5>{{options.Title}}</h5>
   </div>
-  <div class="col-md-5">
-    <a (click)="stopLoader()" *ngIf="options?.IsListPage" routerLink="{{options.ButtonRouterLink}}" class="float-right"
+  <div class="col-md-5" (click)="stopLoader()" >
+    <a *ngIf="options?.BackRouterLink" routerLink="{{options.BackRouterLink}}" class="float-right"
       style="font-size:15px;position: relative;
         line-height: 2.3;">
       <i style="position: absolute;font-size: 2.3em;" class="fa fa-angle-left fa-3x themeColor"></i>
       <span style="margin-right: 8px; margin-left: 20px;">Back To Index</span>
     </a>
-    <ng-container *ngIf="!options.IsListPage">
-      <a *ngIf="!options.AddButtonCustomEvent" (click)="stopLoader()" class="btn btn-sm btn-default float-right"
-        routerLink="{{options.ButtonRouterLink}}">
-        <i class="fa fa-plus" style="padding-right: 6px"> </i>Add</a>
-      <a *ngIf="options.AddButtonCustomEvent" (click)="stopLoader();addButtonClicked()"
-        class="btn btn-sm btn-default float-right">
-        <i class="fa fa-plus" style="padding-right: 6px"> </i>Add</a>
-    </ng-container>
+    <a *ngIf="options.AddRouterLink"  routerLink="{{options.AddRouterLink}}" class="btn btn-sm btn-default float-right">
+      <i class="fa fa-plus" style="padding-right: 6px"> </i>Add</a>
   </div>
 </div>

@@ -125,6 +125,30 @@ namespace ProcessInfo.Service.Implementations
                 FilteredDataCount = _applicationRepository.Count(deleg)
             };
         }
-       
+
+        public Application GetByApplicationId(int id)
+        {
+            return _applicationRepository.GetById(id);
+        }
+
+        public ServiceResultModel<bool> DeleteApplicationById(int id)
+        {
+            var res = new ServiceResultModel<bool> { IsSuccess = false, Errors = new List<string>() };
+
+            var data = _applicationRepository.GetById(id);
+            if (res == null)
+            {
+                res.Data = false;
+                res.Errors.Add("The Application doesn't exists");
+                return res;
+            }
+
+            _applicationRepository.Delete(data);
+            UnitOfWork.Commit();
+
+            res.Data = true;
+            return res;
+        }
+
     }
 }

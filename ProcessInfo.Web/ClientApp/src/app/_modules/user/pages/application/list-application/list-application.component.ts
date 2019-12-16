@@ -18,17 +18,14 @@ export class ListApplicationComponent implements OnInit {
   @ViewChild(DataTableDirective)
   dtElement: DataTableDirective;
   dtInstance: Promise<DataTables.Api>;
-  componentHeaderData: any
   status: string = "Active"
   allApplications: Application[] = []
 
+  componentHeaderData = {
+    Title: "Applications",
+    AddRouterLink: ['/user/application/save']
+  }
   ngOnInit() {
-    this.componentHeaderData = {
-      Title: "Applications",
-      AddRouterLink: ['/admin/manager/vendors/Add'],
-      IsListPage: true
-    }
-
     const that = this;
     this.dtOptions = {
       pagingType: 'full_numbers',
@@ -37,7 +34,7 @@ export class ListApplicationComponent implements OnInit {
       processing: false,
       ajax: (dataTablesParameters: any, callback) => {
        // dataTablesParameters.FilterType = this.status;
-        console.log("j")
+
         that._applicationService.getAllApplications(dataTablesParameters).subscribe((resp: DataTableResponse) => {
           console.log("Result - ", resp);
           this.allApplications = resp.data

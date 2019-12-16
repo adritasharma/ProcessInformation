@@ -1,3 +1,7 @@
+.bold{
+    font-weight: bold;
+}
+
 .circle {
     background-color: #ccc;
     border-radius: 50%;

@@ -1,14 +1,5 @@
+<admin-page-header [options]="componentHeaderData"></admin-page-header>
 <div class="row">
-  <div class=" tab-row mx-4">
-    <ul class="nav nav-tabs upper">
-      <li class="pointer">
-        <a data-toggle="tab" aria-expanded="true" class="nav-link tablinks active" (click)="status = 'Active';reload()">Active</a>
-      </li>
-      <li class="pointer">
-        <a data-toggle="tab" aria-expanded="true" class="nav-link tablinks" (click)="status = 'inactive';reload()">InActive</a>
-      </li>
-    </ul>
-  </div>
   <div class="col-md-12">
     <div class="table-responsive">
       <table datatable [dtOptions]="dtOptions" class="table table-hover table-striped">

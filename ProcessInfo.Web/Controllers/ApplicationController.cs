@@ -58,5 +58,19 @@ namespace ProcessInfo.Web.Controllers
             }
         }
 
+        [HttpGet]
+        [Route("{id}")]
+        public IActionResult Get(int id)
+        {
+            var res = _service.GetById(id);
+            return Ok(res);
+        }
+
+        [HttpDelete]
+        public IActionResult Delete(int id)
+        {
+           return Ok(_service.Delete(id));
+        }
+
     }
 }
