@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ProcessInfo.DB.Models;
 
 namespace ProcessInfo.DB.Migrations
 {
     [DbContext(typeof(ProcessInfoDbContext))]
-    partial class ProcessInfoDbContextModelSnapshot : ModelSnapshot
+    [Migration("20191216154338_id datatype")]
+    partial class iddatatype
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
