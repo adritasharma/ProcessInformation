@@ -9,6 +9,8 @@ export class ApplicationEnvironmentComponent implements OnInit {
 
   constructor() { }
 
+  envData:any = {}
+
   ngOnInit() {
   }
 
