@@ -10,3 +10,15 @@ F:\Angular6\GitHub\ll\ProcessInfo\ProcessInfo.Repository\obj\Debug\netcoreapp2.1
 F:\Angular6\GitHub\ll\ProcessInfo\ProcessInfo.Repository\obj\Debug\netcoreapp2.1\ProcessInfo.Repository.csproj.CopyComplete
 F:\Angular6\GitHub\ll\ProcessInfo\ProcessInfo.Repository\obj\Debug\netcoreapp2.1\ProcessInfo.Repository.dll
 F:\Angular6\GitHub\ll\ProcessInfo\ProcessInfo.Repository\obj\Debug\netcoreapp2.1\ProcessInfo.Repository.pdb
+C:\Adrita\Workspace\GitHub\Projects\ProcessInformation\ProcessInfo.Repository\bin\Debug\netcoreapp2.1\ProcessInfo.Repository.deps.json
+C:\Adrita\Workspace\GitHub\Projects\ProcessInformation\ProcessInfo.Repository\bin\Debug\netcoreapp2.1\ProcessInfo.Repository.dll
+C:\Adrita\Workspace\GitHub\Projects\ProcessInformation\ProcessInfo.Repository\bin\Debug\netcoreapp2.1\ProcessInfo.Repository.pdb
+C:\Adrita\Workspace\GitHub\Projects\ProcessInformation\ProcessInfo.Repository\bin\Debug\netcoreapp2.1\ProcessInfo.DB.dll
+C:\Adrita\Workspace\GitHub\Projects\ProcessInformation\ProcessInfo.Repository\bin\Debug\netcoreapp2.1\ProcessInfo.DB.pdb
+C:\Adrita\Workspace\GitHub\Projects\ProcessInformation\ProcessInfo.Repository\obj\Debug\netcoreapp2.1\ProcessInfo.Repository.csprojAssemblyReference.cache
+C:\Adrita\Workspace\GitHub\Projects\ProcessInformation\ProcessInfo.Repository\obj\Debug\netcoreapp2.1\ProcessInfo.Repository.csproj.CoreCompileInputs.cache
+C:\Adrita\Workspace\GitHub\Projects\ProcessInformation\ProcessInfo.Repository\obj\Debug\netcoreapp2.1\ProcessInfo.Repository.AssemblyInfoInputs.cache
+C:\Adrita\Workspace\GitHub\Projects\ProcessInformation\ProcessInfo.Repository\obj\Debug\netcoreapp2.1\ProcessInfo.Repository.AssemblyInfo.cs
+C:\Adrita\Workspace\GitHub\Projects\ProcessInformation\ProcessInfo.Repository\obj\Debug\netcoreapp2.1\ProcessInfo.Repository.csproj.CopyComplete
+C:\Adrita\Workspace\GitHub\Projects\ProcessInformation\ProcessInfo.Repository\obj\Debug\netcoreapp2.1\ProcessInfo.Repository.dll
+C:\Adrita\Workspace\GitHub\Projects\ProcessInformation\ProcessInfo.Repository\obj\Debug\netcoreapp2.1\ProcessInfo.Repository.pdb

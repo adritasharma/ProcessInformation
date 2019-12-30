@@ -12,3 +12,17 @@ F:\Angular6\GitHub\ll\ProcessInfo\ProcessInfo.Service\obj\Debug\netcoreapp2.1\Pr
 F:\Angular6\GitHub\ll\ProcessInfo\ProcessInfo.Service\obj\Debug\netcoreapp2.1\ProcessInfo.Service.csproj.CopyComplete
 F:\Angular6\GitHub\ll\ProcessInfo\ProcessInfo.Service\obj\Debug\netcoreapp2.1\ProcessInfo.Service.dll
 F:\Angular6\GitHub\ll\ProcessInfo\ProcessInfo.Service\obj\Debug\netcoreapp2.1\ProcessInfo.Service.pdb
+C:\Adrita\Workspace\GitHub\Projects\ProcessInformation\ProcessInfo.Service\bin\Debug\netcoreapp2.1\ProcessInfo.Service.deps.json
+C:\Adrita\Workspace\GitHub\Projects\ProcessInformation\ProcessInfo.Service\bin\Debug\netcoreapp2.1\ProcessInfo.Service.dll
+C:\Adrita\Workspace\GitHub\Projects\ProcessInformation\ProcessInfo.Service\bin\Debug\netcoreapp2.1\ProcessInfo.Service.pdb
+C:\Adrita\Workspace\GitHub\Projects\ProcessInformation\ProcessInfo.Service\bin\Debug\netcoreapp2.1\ProcessInfo.DB.dll
+C:\Adrita\Workspace\GitHub\Projects\ProcessInformation\ProcessInfo.Service\bin\Debug\netcoreapp2.1\ProcessInfo.Repository.dll
+C:\Adrita\Workspace\GitHub\Projects\ProcessInformation\ProcessInfo.Service\bin\Debug\netcoreapp2.1\ProcessInfo.Repository.pdb
+C:\Adrita\Workspace\GitHub\Projects\ProcessInformation\ProcessInfo.Service\bin\Debug\netcoreapp2.1\ProcessInfo.DB.pdb
+C:\Adrita\Workspace\GitHub\Projects\ProcessInformation\ProcessInfo.Service\obj\Debug\netcoreapp2.1\ProcessInfo.Service.csprojAssemblyReference.cache
+C:\Adrita\Workspace\GitHub\Projects\ProcessInformation\ProcessInfo.Service\obj\Debug\netcoreapp2.1\ProcessInfo.Service.csproj.CoreCompileInputs.cache
+C:\Adrita\Workspace\GitHub\Projects\ProcessInformation\ProcessInfo.Service\obj\Debug\netcoreapp2.1\ProcessInfo.Service.AssemblyInfoInputs.cache
+C:\Adrita\Workspace\GitHub\Projects\ProcessInformation\ProcessInfo.Service\obj\Debug\netcoreapp2.1\ProcessInfo.Service.AssemblyInfo.cs
+C:\Adrita\Workspace\GitHub\Projects\ProcessInformation\ProcessInfo.Service\obj\Debug\netcoreapp2.1\ProcessInfo.Service.csproj.CopyComplete
+C:\Adrita\Workspace\GitHub\Projects\ProcessInformation\ProcessInfo.Service\obj\Debug\netcoreapp2.1\ProcessInfo.Service.dll
+C:\Adrita\Workspace\GitHub\Projects\ProcessInformation\ProcessInfo.Service\obj\Debug\netcoreapp2.1\ProcessInfo.Service.pdb
