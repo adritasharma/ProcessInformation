@@ -3,7 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { UserComponent } from './user.component';
 import { ProfileComponent } from './profile/profile.component';
 import { SaveApplicationComponent } from './pages/application/save-application/save-application.component';
-
+import { ListApplicationComponent } from './pages/application/list-application/list-application.component';
+import { ViewApplicationComponent } from './pages/application/view-application/view-application.component';
 
 export const userRoutes: Routes = [
     {
@@ -11,8 +12,11 @@ export const userRoutes: Routes = [
         children: [
             // { path: '', component: ProfileComponent },
             { path: 'profile', component: ProfileComponent },
+
             { path: 'application/save', component: SaveApplicationComponent },
-            { path: 'application/save', component: ProfileComponent }
+            { path: 'application/list', component: ListApplicationComponent },
+            { path: 'application/view/:id', component: ViewApplicationComponent }
+
         ]
     }
 ];

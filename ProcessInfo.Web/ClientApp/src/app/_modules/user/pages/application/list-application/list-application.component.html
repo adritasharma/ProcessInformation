@@ -1,0 +1,56 @@
+<admin-page-header [options]="componentHeaderData"></admin-page-header>
+<div class="row">
+  <div class="col-md-12">
+    <div class="table-responsive">
+      <table datatable [dtOptions]="dtOptions" class="table table-hover table-striped">
+        <thead>
+          <tr>
+            <th style="text-align:center">Action</th>
+            <th>Application Name</th>
+            <th>ApplicationType</th>
+            <th>Project Name</th>
+            <th>Team Members</th>
+          </tr>
+        </thead>
+        <tbody *ngIf="allApplications?.length != 0">
+          <tr *ngFor="let item of allApplications ;let i=index">
+            <td class="tdOption">
+              <list-actions [modulePath]="'/user/application'" [itemId]="item.applicationId" [canDelete]="true" [canEdit]="true"
+                (isDeleteClicked)="deleteItem(item.applicationId)"></list-actions>
+              <!-- <div ngbDropdown class="d-inline-block">
+                <i class="fa fa-ellipsis-v listOption" id="actionDropdown" ngbDropdownToggle></i>
+                <div ngbDropdownMenu aria-labelledby="actionDropdown" class="actionDropdown">
+
+                  <a class="dropdown-item normalOption" [routerLink]="['/admin/manager/vendors/Profile',item.vendorId]">
+                    <i class="fa fa-eye ddActionIcon"></i> View
+                  </a>
+                  <a class="dropdown-item normalOption" [routerLink]="['/admin/manager/vendors/Profile',item.vendorId]">
+                    <i class="fa fa-pencil ddActionIcon"></i>Edit
+                  </a>
+                  <a class="dropdown-item normalOption pointer" (click)="changeStatus(item.vendorId,item.vendorName,item.vendorStatus)">
+                    <span *ngIf="item.vendorStatus == 'Active'"><i class="fa fa-square-o ddActionIcon"></i>Deactivate</span>
+                    <span *ngIf="item.vendorStatus == 'InActive'"><i class="fa fa-check-square-o ddActionIcon"></i>Activate</span>
+                  </a>
+                  <a (click)="deleteItem(item)" class="dropdown-item deleteOption" data-toggle="tooltip">
+                    <i class="fa fa-trash-o ddActionIcon"></i>Delete
+                  </a>
+                </div>
+              </div> -->
+            </td>
+            <td>
+              <a [routerLink]="['/user/application/view',item.applicationId]">{{item.applicationName}}</a>
+            </td>
+            <td>{{item.applicationType}}</td>
+            <td>{{item.projectName}}</td>
+            <td>{{item.teamMembers}}</td>
+          </tr>
+        </tbody>
+        <tbody *ngIf="allApplications?.length == 0">
+          <tr>
+            <td colspan="4" class="no-data-available">No data!</td>
+          </tr>
+        <tbody>
+      </table>
+    </div>
+  </div>
+</div>

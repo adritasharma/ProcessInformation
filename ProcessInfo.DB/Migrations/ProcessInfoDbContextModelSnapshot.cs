@@ -24,31 +24,15 @@ namespace ProcessInfo.DB.Migrations
 
                     b.Property<int>("AddedByUserId");
 
-                    b.Property<string>("AppPool");
-
                     b.Property<string>("ApplicationName");
 
                     b.Property<string>("ApplicationType");
 
-                    b.Property<string>("ConfigFiles");
-
-                    b.Property<string>("Database");
-
-                    b.Property<int>("EnvironmentId");
-
-                    b.Property<string>("IISInstance");
-
                     b.Property<string>("ProjectName");
-
-                    b.Property<string>("ServerPath");
-
-                    b.Property<string>("SiteUrl");
 
                     b.Property<string>("Status");
 
                     b.Property<string>("TeamMembers");
-
-                    b.Property<string>("VersionControlPath");
 
                     b.Property<int>("WorkObjectName");
 

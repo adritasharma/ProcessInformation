@@ -12,6 +12,7 @@ F:\Angular6\GitHub\ll\ProcessInfo\ProcessInfo.Service\obj\Debug\netcoreapp2.1\Pr
 F:\Angular6\GitHub\ll\ProcessInfo\ProcessInfo.Service\obj\Debug\netcoreapp2.1\ProcessInfo.Service.csproj.CopyComplete
 F:\Angular6\GitHub\ll\ProcessInfo\ProcessInfo.Service\obj\Debug\netcoreapp2.1\ProcessInfo.Service.dll
 F:\Angular6\GitHub\ll\ProcessInfo\ProcessInfo.Service\obj\Debug\netcoreapp2.1\ProcessInfo.Service.pdb
+<<<<<<< HEAD
 C:\Adrita\Workspace\GitHub\Projects\ProcessInformation\ProcessInfo.Service\bin\Debug\netcoreapp2.1\ProcessInfo.Service.deps.json
 C:\Adrita\Workspace\GitHub\Projects\ProcessInformation\ProcessInfo.Service\bin\Debug\netcoreapp2.1\ProcessInfo.Service.dll
 C:\Adrita\Workspace\GitHub\Projects\ProcessInformation\ProcessInfo.Service\bin\Debug\netcoreapp2.1\ProcessInfo.Service.pdb
@@ -26,3 +27,7 @@ C:\Adrita\Workspace\GitHub\Projects\ProcessInformation\ProcessInfo.Service\obj\D
 C:\Adrita\Workspace\GitHub\Projects\ProcessInformation\ProcessInfo.Service\obj\Debug\netcoreapp2.1\ProcessInfo.Service.csproj.CopyComplete
 C:\Adrita\Workspace\GitHub\Projects\ProcessInformation\ProcessInfo.Service\obj\Debug\netcoreapp2.1\ProcessInfo.Service.dll
 C:\Adrita\Workspace\GitHub\Projects\ProcessInformation\ProcessInfo.Service\obj\Debug\netcoreapp2.1\ProcessInfo.Service.pdb
+=======
+F:\Angular6\GitHub\ll\ProcessInfo\ProcessInfo.Service\bin\Debug\netcoreapp2.1\ProcessInfo.Utility.dll
+F:\Angular6\GitHub\ll\ProcessInfo\ProcessInfo.Service\bin\Debug\netcoreapp2.1\ProcessInfo.Utility.pdb
+>>>>>>> 90ba68ec3fa16a8621a979b34fe7d851fdc09f4d

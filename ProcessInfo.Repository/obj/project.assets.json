@@ -1005,6 +1005,16 @@
         "runtime": {
           "bin/placeholder/ProcessInfo.DB.dll": {}
         }
+      },
+      "ProcessInfo.Utility/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.1",
+        "compile": {
+          "bin/placeholder/ProcessInfo.Utility.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ProcessInfo.Utility.dll": {}
+        }
       }
     }
   },
@@ -1892,6 +1902,7 @@
       "path": "pomelo.jsonobject/2.0.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "lib/netstandard2.0/Pomelo.JsonObject.dll",
         "pomelo.jsonobject.2.0.0.nupkg.sha512",
         "pomelo.jsonobject.nuspec"
@@ -1903,6 +1914,7 @@
       "path": "remotion.linq/2.2.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "lib/net35/Remotion.Linq.XML",
         "lib/net35/Remotion.Linq.dll",
         "lib/net40/Remotion.Linq.XML",
@@ -3742,6 +3754,11 @@
       "type": "project",
       "path": "../ProcessInfo.DB/ProcessInfo.DB.csproj",
       "msbuildProject": "../ProcessInfo.DB/ProcessInfo.DB.csproj"
+    },
+    "ProcessInfo.Utility/1.0.0": {
+      "type": "project",
+      "path": "../ProcessInfo.Utility/ProcessInfo.Utility.csproj",
+      "msbuildProject": "../ProcessInfo.Utility/ProcessInfo.Utility.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -3749,7 +3766,8 @@
       "AutoMapper >= 9.0.0",
       "AutoMapper.Extensions.Microsoft.DependencyInjection >= 7.0.0",
       "Microsoft.NETCore.App >= 2.1.0",
-      "ProcessInfo.DB >= 1.0.0"
+      "ProcessInfo.DB >= 1.0.0",
+      "ProcessInfo.Utility >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -3784,6 +3802,9 @@
           "projectReferences": {
             "C:\\Adrita\\Workspace\\GitHub\\Projects\\ProcessInformation\\ProcessInfo.DB\\ProcessInfo.DB.csproj": {
               "projectPath": "C:\\Adrita\\Workspace\\GitHub\\Projects\\ProcessInformation\\ProcessInfo.DB\\ProcessInfo.DB.csproj"
+            },
+            "C:\\Adrita\\Workspace\\GitHub\\Projects\\ProcessInformation\\ProcessInfo.Utility\\ProcessInfo.Utility.csproj": {
+              "projectPath": "C:\\Adrita\\Workspace\\GitHub\\Projects\\ProcessInformation\\ProcessInfo.Utility\\ProcessInfo.Utility.csproj"
             }
           }
         }
@@ -3819,5 +3840,13 @@
         "warn": true
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\Adrita\\Workspace\\GitHub\\Projects\\ProcessInformation\\ProcessInfo.Repository\\obj\\ProcessInfo.Repository.csproj.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }

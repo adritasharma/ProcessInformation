@@ -20,8 +20,4 @@ export class AdminPageHeaderComponent implements OnInit {
     this.loaderService.display(false);
   }
  
-  addButtonClicked() {
-    this.AddButtonClicked.emit()
-  }
-
 }

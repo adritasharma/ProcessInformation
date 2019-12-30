@@ -8,6 +8,9 @@ import { SharedModule } from 'src/app/_common/shared/shared.module';
 import { ProfileComponent } from './profile/profile.component';
 import { SaveApplicationComponent } from './pages/application/save-application/save-application.component';
 import { UserSidebarComponent } from './user-sidebar/user-sidebar.component';
+import { ListApplicationComponent } from './pages/application/list-application/list-application.component';
+import { ViewApplicationComponent } from './pages/application/view-application/view-application.component';
+import { ApplicationEnvironmentComponent } from './pages/application/application-environment/application-environment.component';
 
 
 @NgModule({
@@ -21,7 +24,10 @@ import { UserSidebarComponent } from './user-sidebar/user-sidebar.component';
     UserComponent,
     UserSidebarComponent,
     ProfileComponent,
-    SaveApplicationComponent
+    SaveApplicationComponent,
+    ListApplicationComponent,
+    ViewApplicationComponent,
+    ApplicationEnvironmentComponent
   ]
 })
 export class UserModule { }

@@ -10,7 +10,8 @@
         "dependencies": {
           "AutoMapper": "9.0.0",
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "7.0.0",
-          "ProcessInfo.DB": "1.0.0"
+          "ProcessInfo.DB": "1.0.0",
+          "ProcessInfo.Utility": "1.0.0"
         },
         "runtime": {
           "ProcessInfo.Repository.dll": {}
@@ -585,6 +586,11 @@
         "runtime": {
           "ProcessInfo.DB.dll": {}
         }
+      },
+      "ProcessInfo.Utility/1.0.0": {
+        "runtime": {
+          "ProcessInfo.Utility.dll": {}
+        }
       }
     }
   },
@@ -1015,6 +1021,11 @@
       "hashPath": "system.threading.tasks.4.3.0.nupkg.sha512"
     },
     "ProcessInfo.DB/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ProcessInfo.Utility/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

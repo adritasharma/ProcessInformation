@@ -1,0 +1,21 @@
+<hr>
+<h5 class="theme-color">Environments</h5>
+<form #form="ngForm" (ngSubmit)="saveData(form.value)">
+  <div class="row">
+    <div class="col-md-6">
+      <input-text [(model)]="envData.environmentId" label="Environment" [required]="true" [focus]="true"></input-text>
+      <input-text [(model)]="envData.serverPath" label="Server Path" [required]="true"></input-text>
+      <input-text [(model)]="envData.appPool" label="App Pool" [isTextArea]="true"></input-text>
+      <input-text [(model)]="envData.iisInstance" label="IIS Instance"></input-text>
+      <input-text [(model)]="envData.versionControlPath" label="Version Control Path"></input-text>
+    </div>
+    <div class="col-md-6">
+      <input-text [(model)]="envData.siteUrl" label="Site Url"></input-text>
+      <input-text [(model)]="envData.configFiles" label="Config Files"></input-text>
+      <input-text [(model)]="envData.database" label="Database"></input-text>
+    </div>
+    <div class="col-md-2">
+      <input type="submit" class="btn btn-primary" value="Add" [disabled]="!form.valid" />
+    </div>
+  </div>
+</form>

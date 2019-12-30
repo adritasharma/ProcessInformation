@@ -12,13 +12,21 @@ import { HttpService } from 'src/app/_common/core/services/http.service';
 export class ApplicationService extends HttpService {
 
 
-  constructor(public _http: HttpClient) {
+  constructor(public _http: HttpClient, private utility: UtilityService) {
     super(_http);
   }
 
-  saveApplication(loginData: IApplication): Observable<any> {
-     return this.post(`${environment.apiUrl}application`,loginData)
+  saveApplication(payload: IApplication): Observable<any> {
+    return this.post(`${environment.apiUrl}application`, payload)
   }
 
+  getAllApplications(dataTablesParameters: any): Observable<any> {
+    return this.get(`${environment.apiUrl}application?${this.utility.convertToParam(dataTablesParameters)}`)
+  }
+
+  getApplicationById(id: any): Observable<Application> {
+     return this.get(`${environment.apiUrl}application/${id}`)
+   }
+ 
 
 }

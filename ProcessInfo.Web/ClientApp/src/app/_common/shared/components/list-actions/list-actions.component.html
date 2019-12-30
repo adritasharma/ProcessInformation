@@ -1,0 +1,16 @@
+<div ngbDropdown class="d-inline-block">
+  <i class="fa fa-ellipsis-v listOption" id="actionDropdown" ngbDropdownToggle></i>
+  <div ngbDropdownMenu aria-labelledby="actionDropdown" class="actionDropdown">
+
+    <a class="dropdown-item normalOption" routerLink="{{viewLink}}">
+      <i class="fa fa-eye ddActionIcon"></i> View
+    </a>
+    <a class="dropdown-item normalOption" routerLink="{{editLink}}" *ngIf="canEdit">
+      <i class="fa fa-pencil ddActionIcon"></i> Edit
+    </a>
+    <a (click)="emitDelete()" class="dropdown-item deleteOption" data-toggle="tooltip">
+
+      <i class="fa fa-trash-o ddActionIcon"></i> Delete
+    </a>
+  </div>
+</div>

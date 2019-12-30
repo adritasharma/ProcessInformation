@@ -13,6 +13,11 @@ export class SaveApplicationComponent implements OnInit {
 
   applicationData = new Application()
 
+  componentHeaderData = {
+    Title: "Applications",
+    BackRouterLink: ['/user/application/list']
+  }
+
   ngOnInit() {
   }
 

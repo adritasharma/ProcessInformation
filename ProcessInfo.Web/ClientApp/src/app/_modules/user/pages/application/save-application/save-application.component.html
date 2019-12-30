@@ -1,3 +1,4 @@
+<admin-page-header [options]="componentHeaderData"></admin-page-header>
 <div class="row">
   <div class="col-md-10 mx-auto">
     <form #form="ngForm" (ngSubmit)="saveData(form.value)">
@@ -5,17 +6,10 @@
         <div class="col-md-6">
           <input-text [(model)]="applicationData.applicationName" [label]="'Application Name'" [required]="true" [focus]="true"></input-text>
           <input-text [(model)]="applicationData.projectName" [label]="'Project Name'" [required]="true"></input-text>
-          <input-text [(model)]="applicationData.teamMembers" [label]="'Team Members'" [isTextArea]="true"></input-text>
-          <input-text [(model)]="applicationData.applicationType" [label]="'Application Type'" [required]="true"></input-text>
-          <input-text [(model)]="applicationData.serverPath" [label]="'Server Path'"></input-text>
-          <input-text [(model)]="applicationData.AppPool" [label]="'AppPool'"></input-text>
         </div>
         <div class="col-md-6">
-          <input-text [(model)]="applicationData.iisInstance" [label]="'IIS Instance'"></input-text>
-          <input-text [(model)]="applicationData.versionControlPath" [label]="'Version Control Path'"></input-text>
-          <input-text [(model)]="applicationData.siteUrl" [label]="'Site Url'"></input-text>
-          <input-text [(model)]="applicationData.configFiles" [label]="'Config Files'"></input-text>
-          <input-text [(model)]="applicationData.database" [label]="'Database'"></input-text>
+            <input-text [(model)]="applicationData.teamMembers" [label]="'Team Members'" [isTextArea]="true"></input-text>
+            <input-text [(model)]="applicationData.applicationType" [label]="'Application Type'" [required]="true"></input-text>
         </div>
         <div class="col-md-2">
           <input type="submit" class="btn btn-primary" value="Submit" [disabled]="!form.valid"/>
@@ -24,3 +18,4 @@
     </form>
   </div>
 </div>
+<application-environment></application-environment>

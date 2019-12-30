@@ -1,0 +1,9 @@
+F:\Angular6\GitHub\ll\ProcessInfo\ProcessInfo.Utility\bin\Debug\netcoreapp2.1\ProcessInfo.Utility.deps.json
+F:\Angular6\GitHub\ll\ProcessInfo\ProcessInfo.Utility\bin\Debug\netcoreapp2.1\ProcessInfo.Utility.dll
+F:\Angular6\GitHub\ll\ProcessInfo\ProcessInfo.Utility\bin\Debug\netcoreapp2.1\ProcessInfo.Utility.pdb
+F:\Angular6\GitHub\ll\ProcessInfo\ProcessInfo.Utility\obj\Debug\netcoreapp2.1\ProcessInfo.Utility.csprojAssemblyReference.cache
+F:\Angular6\GitHub\ll\ProcessInfo\ProcessInfo.Utility\obj\Debug\netcoreapp2.1\ProcessInfo.Utility.csproj.CoreCompileInputs.cache
+F:\Angular6\GitHub\ll\ProcessInfo\ProcessInfo.Utility\obj\Debug\netcoreapp2.1\ProcessInfo.Utility.AssemblyInfoInputs.cache
+F:\Angular6\GitHub\ll\ProcessInfo\ProcessInfo.Utility\obj\Debug\netcoreapp2.1\ProcessInfo.Utility.AssemblyInfo.cs
+F:\Angular6\GitHub\ll\ProcessInfo\ProcessInfo.Utility\obj\Debug\netcoreapp2.1\ProcessInfo.Utility.dll
+F:\Angular6\GitHub\ll\ProcessInfo\ProcessInfo.Utility\obj\Debug\netcoreapp2.1\ProcessInfo.Utility.pdb

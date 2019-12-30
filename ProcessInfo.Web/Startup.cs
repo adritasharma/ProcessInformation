@@ -12,6 +12,12 @@ using ProcessInfo.Repository.Interfaces;
 using ProcessInfo.Service.Implementations;
 using ProcessInfo.Service.Interfaces;
 using AutoMapper;
+using DataTables.AspNet.Core;
+using DataTables.AspNet.AspNetCore;
+using System.Collections.Generic;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
+using System.Linq;
+
 namespace ProcessInfo.Web
 {
     public class Startup
@@ -46,6 +52,15 @@ namespace ProcessInfo.Web
             services.AddDbContext<ProcessInfoDbContext>(options =>
                         options.UseMySql(Configuration.GetConnectionString("processinfo")));
             services.AddAutoMapper(typeof(Startup));
+
+            var datatableOptions = new Options()
+                                    .EnableRequestAdditionalParameters()
+                                    .EnableResponseAdditionalParameters();
+
+            var dataTableBinder = new ModelBinder();
+            dataTableBinder.ParseAdditionalParameters = Parser;
+            services.RegisterDataTables(datatableOptions, dataTableBinder);
+
 
             //  services.AddScoped(typeof(IGenericRepository), typeof(GenericRepository));
 
@@ -87,6 +102,22 @@ namespace ProcessInfo.Web
                     spa.UseAngularCliServer(npmScript: "start");
                 }
             });
+        }
+
+        private static IDictionary<string, object> Parser(ModelBindingContext arg)
+        {
+            var res = new Dictionary<string, object>();
+            var httpMethod = arg.HttpContext.Request.Method;
+
+            var keys = (httpMethod.ToLower() == "post") ? arg.HttpContext.Request.Form.Keys : arg.HttpContext.Request.Query.Keys;
+            var modelKeys = keys.Where(m => !m.StartsWith("columns") && !m.StartsWith("order") && !m.StartsWith("search") && m != "draw" && m != "start" && m != "length" && m != "_");
+            foreach (string key in modelKeys)
+            {
+                var value = arg.ValueProvider.GetValue(key).FirstValue;
+                if (value.Length > 0)
+                    res.Add(key, value);
+            }
+            return res;
         }
     }
 }
