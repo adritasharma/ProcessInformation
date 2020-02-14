@@ -7,3 +7,12 @@ F:\Angular6\GitHub\ll\ProcessInfo\ProcessInfo.Utility\obj\Debug\netcoreapp2.1\Pr
 F:\Angular6\GitHub\ll\ProcessInfo\ProcessInfo.Utility\obj\Debug\netcoreapp2.1\ProcessInfo.Utility.AssemblyInfo.cs
 F:\Angular6\GitHub\ll\ProcessInfo\ProcessInfo.Utility\obj\Debug\netcoreapp2.1\ProcessInfo.Utility.dll
 F:\Angular6\GitHub\ll\ProcessInfo\ProcessInfo.Utility\obj\Debug\netcoreapp2.1\ProcessInfo.Utility.pdb
+C:\Adrita\Workspace\GitHub\Projects\ProcessInformation\ProcessInfo.Utility\bin\Debug\netcoreapp2.1\ProcessInfo.Utility.deps.json
+C:\Adrita\Workspace\GitHub\Projects\ProcessInformation\ProcessInfo.Utility\bin\Debug\netcoreapp2.1\ProcessInfo.Utility.dll
+C:\Adrita\Workspace\GitHub\Projects\ProcessInformation\ProcessInfo.Utility\bin\Debug\netcoreapp2.1\ProcessInfo.Utility.pdb
+C:\Adrita\Workspace\GitHub\Projects\ProcessInformation\ProcessInfo.Utility\obj\Debug\netcoreapp2.1\ProcessInfo.Utility.csprojAssemblyReference.cache
+C:\Adrita\Workspace\GitHub\Projects\ProcessInformation\ProcessInfo.Utility\obj\Debug\netcoreapp2.1\ProcessInfo.Utility.csproj.CoreCompileInputs.cache
+C:\Adrita\Workspace\GitHub\Projects\ProcessInformation\ProcessInfo.Utility\obj\Debug\netcoreapp2.1\ProcessInfo.Utility.AssemblyInfoInputs.cache
+C:\Adrita\Workspace\GitHub\Projects\ProcessInformation\ProcessInfo.Utility\obj\Debug\netcoreapp2.1\ProcessInfo.Utility.AssemblyInfo.cs
+C:\Adrita\Workspace\GitHub\Projects\ProcessInformation\ProcessInfo.Utility\obj\Debug\netcoreapp2.1\ProcessInfo.Utility.dll
+C:\Adrita\Workspace\GitHub\Projects\ProcessInformation\ProcessInfo.Utility\obj\Debug\netcoreapp2.1\ProcessInfo.Utility.pdb
