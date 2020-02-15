@@ -45,9 +45,11 @@ namespace ProcessInfo.Web
 
             services.AddScoped(typeof(IApplicationRepository), typeof(ApplicationRepository));
             services.AddScoped(typeof(IUserRepository), typeof(UserRepository));
+            services.AddScoped(typeof(IApplicationEnvironmentRepository), typeof(ApplicationEnvironmentRepository));
 
             services.AddScoped(typeof(IApplicationService), typeof(ApplicationService));
-            services.AddScoped(typeof(IUserRepository), typeof(UserRepository));
+           // services.AddScoped(typeof(IUserService), typeof(UserService));
+            services.AddScoped(typeof(IApplicationEnvironmentService), typeof(ApplicationEnvironmentService));
 
             services.AddDbContext<ProcessInfoDbContext>(options =>
                         options.UseMySql(Configuration.GetConnectionString("processinfo")));

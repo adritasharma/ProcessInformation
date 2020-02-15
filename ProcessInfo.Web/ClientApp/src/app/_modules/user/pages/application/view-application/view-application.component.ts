@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ApplicationService } from '../application.service';
 import { Application } from 'src/app/_common/shared/models/application.model';
+import { ModalService } from 'src/app/_common/shared/services/modal.service';
 
 @Component({
   selector: 'app-view-application',
@@ -10,11 +11,12 @@ import { Application } from 'src/app/_common/shared/models/application.model';
 })
 export class ViewApplicationComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute, private _applicationService: ApplicationService) { }
+  constructor(private route: ActivatedRoute, private _applicationService: ApplicationService, public modalService: ModalService) { }
 
   paramId: any = null
 
   applicationDetails: Application
+  editApplicationData: Application
 
   componentHeaderData = {
     Title: "Applications",
@@ -30,6 +32,10 @@ export class ViewApplicationComponent implements OnInit {
         console.log(res)
       })
     }
+  }
+
+  editApplication() {
+    this.editApplicationData = { ...this.applicationDetails }
   }
 
 }

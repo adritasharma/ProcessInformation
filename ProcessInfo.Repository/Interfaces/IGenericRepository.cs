@@ -33,5 +33,6 @@ namespace ProcessInfo.Repository.Interfaces
           Func<IQueryable<T>, IIncludableQueryable<T, object>> include = null,
                                           int? start = null, int? length = null, bool disableTracking = true);
 
+        T FirstOrDefaultWithInclude(Expression<Func<T, bool>> predicate = null, Func<IQueryable<T>, IIncludableQueryable<T, object>> include = null);
     }
 }

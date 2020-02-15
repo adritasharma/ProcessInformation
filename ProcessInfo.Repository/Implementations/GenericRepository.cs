@@ -112,5 +112,17 @@ namespace ProcessInfo.Repository.Implementations
             }
             return query.ToList();
         }
+
+        public T FirstOrDefaultWithInclude(Expression<Func<T, bool>> predicate = null, Func<IQueryable<T>, IIncludableQueryable<T, object>> include = null)
+        {
+            IQueryable<T> query = DbSet;
+            if (include != null)
+                query = include(query);
+
+            if (predicate == null)
+                return query.FirstOrDefault();
+            else
+                return query.FirstOrDefault(predicate);
+        }
     }
 }

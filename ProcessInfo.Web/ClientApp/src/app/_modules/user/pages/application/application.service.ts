@@ -17,17 +17,23 @@ export class ApplicationService extends HttpService {
     super(_http);
   }
 
+  applicationUrl = `${environment.apiUrl}application`;
+  applicationEnvironmentUrl = `${environment.apiUrl}applicationEnvironment`;
+
   saveApplication(payload: IApplication): Observable<any> {
-    return this.post(`${environment.apiUrl}application`, payload)
+    return this.post(`${this.applicationUrl}`, payload)
   }
 
   getAllApplications(dataTablesParameters: any): Observable<any> {
-    return this.get(`${environment.apiUrl}application?${this.utility.convertToParam(dataTablesParameters)}`)
+    return this.get(`${this.applicationUrl}?${this.utility.convertToParam(dataTablesParameters)}`)
   }
 
   getApplicationById(id: any): Observable<Application> {
-     return this.get(`${environment.apiUrl}application/${id}`)
+     return this.get(`${this.applicationUrl}/${id}`)
    }
  
+   saveApplicationEnvironment(payload: any): Observable<any> {
+    return this.post(`${this.applicationEnvironmentUrl}`, payload)
+  }
 
 }

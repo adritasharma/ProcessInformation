@@ -1,4 +1,5 @@
-﻿using ProcessInfo.DB;
+﻿using Microsoft.EntityFrameworkCore;
+using ProcessInfo.DB;
 using ProcessInfo.DB.Models;
 using ProcessInfo.Repository.Interfaces;
 using ProcessInfo.Service.Interfaces;
@@ -128,7 +129,7 @@ namespace ProcessInfo.Service.Implementations
 
         public Application GetByApplicationId(int id)
         {
-            return _applicationRepository.GetById(id);
+            return _applicationRepository.FirstOrDefaultWithInclude(x => x.ApplicationId == id, y => y.Include(cc => cc.ApplicationEnvironments));
         }
 
         public ServiceResultModel<bool> DeleteApplicationById(int id)

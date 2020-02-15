@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace ProcessInfo.Web.AutoMapperProfiles.RequestDTOs
 {
-    public class SaveApplicationRequestDTOProfile: Profile
+    public class SaveApplicationEnvironmentRequestDTOProfile: Profile
     {
-        public SaveApplicationRequestDTOProfile()
+        public SaveApplicationEnvironmentRequestDTOProfile()
         {
-            CreateMap<SaveApplicationRequestDTO, Application>();
+            CreateMap<SaveApplicationEnvironmentRequestDTO, ApplicationEnvironment>();
         }
     }
 }

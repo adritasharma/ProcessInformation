@@ -14,5 +14,6 @@ namespace ProcessInfo.DB.Models
         public string Status { get; set; }
         public string ApplicationType { get; set; }
         public int AddedByUserId { get; set; }
+        public virtual ICollection<ApplicationEnvironment> ApplicationEnvironments { get; set; }
     }
 }

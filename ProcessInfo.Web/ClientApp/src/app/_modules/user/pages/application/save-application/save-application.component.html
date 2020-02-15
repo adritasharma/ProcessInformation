@@ -1,6 +1,6 @@
-<admin-page-header [options]="componentHeaderData"></admin-page-header>
+<admin-page-header [options]="componentHeaderData" *ngIf="!applicationId"></admin-page-header>
 <div class="row">
-  <div class="col-md-10 mx-auto">
+  <div class="col-md-11 mx-auto">
     <form #form="ngForm" (ngSubmit)="saveData(form.value)">
       <div class="row">
         <div class="col-md-6">
@@ -18,4 +18,3 @@
     </form>
   </div>
 </div>
-<application-environment></application-environment>

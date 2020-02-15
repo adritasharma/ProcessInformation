@@ -72,5 +72,18 @@ namespace ProcessInfo.Web.Controllers
            return Ok(_service.Delete(id));
         }
 
+        [HttpPut]
+        public async Task<IActionResult> Put(SaveApplicationEnvironmentRequestDTO applicationDTO)
+        {
+            Application application = _mapper.Map<Application>(applicationDTO);
+
+            var res = _service.Edit(application);
+
+            if (res.IsSuccess)
+                return Ok();
+            else
+                return BadRequest(res.Errors);
+        }
+
     }
 }

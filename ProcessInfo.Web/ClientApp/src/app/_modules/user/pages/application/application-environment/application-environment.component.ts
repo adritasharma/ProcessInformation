@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { ApplicationService } from '../application.service';
 
 @Component({
   selector: 'application-environment',
@@ -7,11 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ApplicationEnvironmentComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _applicationService: ApplicationService) { }
 
-  envData:any = {}
+  @Input() applicationId: any
+
+  envData: any = {}
 
   ngOnInit() {
+  }
+
+  saveData(data: any) {
+    data.applicationId = this.applicationId;
+    this._applicationService.saveApplicationEnvironment(data).subscribe(resp => {
+      console.log(resp)
+    })
   }
 
 }

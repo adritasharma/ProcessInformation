@@ -42,10 +42,10 @@ namespace ProcessInfo.Service.Implementations
 
         public T GetById(int id)
         {
-            if (id == null)
-            {
-                throw new ArgumentNullException(nameof(id));
-            }
+            //if (id == null)
+            //{
+            //    throw new ArgumentNullException(nameof(id));
+            //}
             return Repository.GetById(id);
 
         }

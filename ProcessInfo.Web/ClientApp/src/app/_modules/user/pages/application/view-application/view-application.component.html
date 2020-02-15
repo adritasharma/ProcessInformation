@@ -1,24 +1,66 @@
 <admin-page-header [options]="componentHeaderData"></admin-page-header>
 
 <div class="row" *ngIf="applicationDetails">
-  <div class="col-md-6">
-    <p><span class="bold">Application Name: </span>{{applicationDetails.applicationName}}</p>
-    <p><span class="bold">Application Type: </span>{{applicationDetails.aapplicationType}}</p>
-  </div>
-  <div class="col-md-6">
-    <p><span class="bold">Project Name : </span>{{applicationDetails.projectName}}</p>
-    <p><span class="bold">Team Members: </span>{{applicationDetails.teamMembers}}</p>
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header">
+        Application Details
+        <span class="float-right">
+          <span class="card-header-action"  (click)="editApplication();modalService.open(saveApplicationModal, { size: 'lg' })"><i class="fa fa-pencil"></i> Edit</span>
+          <span class="card-header-action"><i class="fa fa-trash"></i> Delete</span>
+        </span>
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-6">
+            <p><span class="bold">Application Name: </span>{{applicationDetails.applicationName}}</p>
+            <p><span class="bold">Application Type: </span>{{applicationDetails.aapplicationType}}</p>
+          </div>
+          <div class="col-md-6">
+            <p><span class="bold">Project Name : </span>{{applicationDetails.projectName}}</p>
+            <p><span class="bold">Team Members: </span>{{applicationDetails.teamMembers}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 <div class="card">
   <div class="card-header">
     Environment
+    <span class="float-right">
+      <span class="card-header-action" (click)="modalService.open(saveEnvironmentModal, { size: 'lg' })"><i class="fa fa-plus"></i> Add</span>
+    </span>
   </div>
   <div class="card-body">
     <div class="row">
-      <div class="col-md-12">
-        <button class="btn btn-primary">Add Environment</button>
-      </div>
+
     </div>
   </div>
 </div>
+
+<ng-template #saveEnvironmentModal let-modal>
+  <div class="modal-header">
+    <h5 class="themeColor modal-title" id="modal-basic-title">Environment Details</h5>
+    <button type="button" class="close" aria-label="Close" id="closeModal" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+      <application-environment [applicationId]="paramId"></application-environment>
+  </div>
+
+</ng-template>
+
+<ng-template #saveApplicationModal let-modal>
+  <div class="modal-header">
+    <h5 class="themeColor modal-title" id="modal-basic-title">Edit Application</h5>
+    <button type="button" class="close" aria-label="Close" id="closeModal" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+      <save-application [editApplicationData]="editApplicationData"></save-application>
+  </div>
+
+</ng-template>

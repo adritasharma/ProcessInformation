@@ -41,6 +41,50 @@ namespace ProcessInfo.DB.Migrations
                     b.ToTable("Application");
                 });
 
+            modelBuilder.Entity("ProcessInfo.DB.Models.ApplicationEnvironment", b =>
+                {
+                    b.Property<int>("ApplicationEnvironmentId")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("AppPool");
+
+                    b.Property<int>("ApplicationId");
+
+                    b.Property<string>("ConfigFiles");
+
+                    b.Property<string>("Database");
+
+                    b.Property<Guid>("EnvironmentId");
+
+                    b.Property<string>("IISInstance");
+
+                    b.Property<string>("ServerPath");
+
+                    b.Property<string>("SiteUrl");
+
+                    b.Property<string>("VersionControlPath");
+
+                    b.HasKey("ApplicationEnvironmentId");
+
+                    b.HasIndex("ApplicationId");
+
+                    b.ToTable("ApplicationEnvironment");
+                });
+
+            modelBuilder.Entity("ProcessInfo.DB.Models.Environment", b =>
+                {
+                    b.Property<Guid>("EnvironmentId")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("EnvironmentDescription");
+
+                    b.Property<string>("EnvironmentName");
+
+                    b.HasKey("EnvironmentId");
+
+                    b.ToTable("Environment");
+                });
+
             modelBuilder.Entity("ProcessInfo.DB.Models.Role", b =>
                 {
                     b.Property<int>("RoleId")
@@ -73,6 +117,14 @@ namespace ProcessInfo.DB.Migrations
                     b.HasIndex("RoleId");
 
                     b.ToTable("User");
+                });
+
+            modelBuilder.Entity("ProcessInfo.DB.Models.ApplicationEnvironment", b =>
+                {
+                    b.HasOne("ProcessInfo.DB.Models.Application", "Application")
+                        .WithMany("ApplicationEnvironments")
+                        .HasForeignKey("ApplicationId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("ProcessInfo.DB.Models.User", b =>

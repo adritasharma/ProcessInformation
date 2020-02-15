@@ -7,7 +7,7 @@ namespace ProcessInfo.DB.Models
     public class ApplicationEnvironment
     {
         public int ApplicationEnvironmentId { get; set; }
-        public int EnvironmentId { get; set; }
+        public Guid EnvironmentId { get; set; }
         public string ServerPath { get; set; }
         public string AppPool { get; set; }
         public string IISInstance { get; set; }

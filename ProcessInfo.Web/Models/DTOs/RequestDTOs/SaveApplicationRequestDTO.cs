@@ -14,13 +14,5 @@ namespace ProcessInfo.Web.Models.DTOs.RequestDTOs
         public string TeamMembers { get; set; }
         public string Status { get; set; }
         public string ApplicationType { get; set; }
-        public HostEnvironment EnvironmentId { get; set; }
-        public string ServerPath { get; set; }
-        public string AppPool { get; set; }
-        public string IISInstance { get; set; }
-        public string VersionControlPath { get; set; }
-        public string SiteUrl { get; set; }
-        public string ConfigFiles { get; set; }
-        public string Database { get; set; }
     }
 }
