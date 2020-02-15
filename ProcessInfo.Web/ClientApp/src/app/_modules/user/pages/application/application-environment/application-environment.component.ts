@@ -17,9 +17,9 @@ export class ApplicationEnvironmentComponent implements OnInit {
   ngOnInit() {
   }
 
-  saveData(data: any) {
-    data.applicationId = this.applicationId;
-    this._applicationService.saveApplicationEnvironment(data).subscribe(resp => {
+  saveData() {
+    this.envData.applicationId = this.applicationId;
+    this._applicationService.saveApplicationEnvironment(this.envData).subscribe(resp => {
       console.log(resp)
     })
   }

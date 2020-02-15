@@ -1,4 +1,4 @@
-<form #form="ngForm" (ngSubmit)="saveData(form.value)">
+<form #form="ngForm" (ngSubmit)="saveData()">
   <div class="row">
     <div class="col-md-6">
       <input-text [(model)]="envData.environmentId" label="Environment" [required]="true" [focus]="true"></input-text>

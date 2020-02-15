@@ -16,10 +16,15 @@
     font-size: 42px;
     color: #381653;
 }
-.card-header-action{
-    margin-left:15px;
+
+.card-header-action {
+    margin-left: 15px;
     cursor: pointer;
-    color:#007bff;
+    color: #007bff;
+}
+
+.dropdown-toggle::after {
+    display: none;
 }
 
 .loader {

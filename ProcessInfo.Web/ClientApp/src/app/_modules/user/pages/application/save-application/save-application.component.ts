@@ -26,8 +26,8 @@ export class SaveApplicationComponent implements OnInit {
     }
   }
 
-  saveData(data:IApplication){
-    this._applicationService.saveApplication(data).subscribe(resp => {
+  saveData(){
+    this._applicationService.saveApplication(this.applicationData).subscribe(resp => {
       console.log(resp)
     })
   }

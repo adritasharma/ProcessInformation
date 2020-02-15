@@ -1,5 +1,3 @@
-import { ITour } from './tour.model';
-
 export interface IUser {
     userId: number;
     firstName: string;

@@ -23,7 +23,7 @@ export class LoginService extends HttpService {
       token: "gsfsfbjsfsj",
       firstName: "Adrita",
       lastName: "Sharma",
-      userType: 0
+      userType: loginData.userName == 'admin' ? 1 : 0
     })
   }
 

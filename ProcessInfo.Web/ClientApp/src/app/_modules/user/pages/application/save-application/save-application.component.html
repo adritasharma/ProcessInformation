@@ -1,7 +1,7 @@
 <admin-page-header [options]="componentHeaderData" *ngIf="!applicationId"></admin-page-header>
 <div class="row">
   <div class="col-md-11 mx-auto">
-    <form #form="ngForm" (ngSubmit)="saveData(form.value)">
+    <form #form="ngForm" (ngSubmit)="saveData()">
       <div class="row">
         <div class="col-md-6">
           <input-text [(model)]="applicationData.applicationName" [label]="'Application Name'" [required]="true" [focus]="true"></input-text>
