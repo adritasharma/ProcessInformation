@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { ApplicationService } from '../application.service';
 
 @Component({
@@ -13,6 +13,9 @@ export class ApplicationEnvironmentComponent implements OnInit {
   @Input() applicationId: any
   @Input() allEnvironments: any
 
+  @Output() OnSave = new EventEmitter();
+
+
   envData: any = {}
 
   ngOnInit() {
@@ -22,7 +25,7 @@ export class ApplicationEnvironmentComponent implements OnInit {
   saveData() {
     this.envData.applicationId = this.applicationId;
     this._applicationService.saveApplicationEnvironment(this.envData).subscribe(resp => {
-      console.log(resp)
+      this.OnSave.emit();
     })
   }
 

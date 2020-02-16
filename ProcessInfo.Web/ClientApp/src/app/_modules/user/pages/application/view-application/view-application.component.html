@@ -1,6 +1,5 @@
 <admin-page-header [options]="componentHeaderData"></admin-page-header>
-
-<div class="row" *ngIf="applicationDetails">
+<div class="row" >
   <div class="col-md-12">
     <div class="card">
       <div class="card-header">
@@ -37,7 +36,29 @@
   </div>
   <div class="card-body">
     <div class="row">
-
+      <div class="col-md-12">
+        <ngb-accordion #acc="ngbAccordion">
+          <ng-container *ngFor="let env of applicationDetails.applicationEnvironments; let i=index">
+            <ngb-panel id="toggle-{{i}}" title="{{env.environmentName}}">
+              <ng-template ngbPanelContent>
+                <div class="row">
+                  <div class="col-md-6">
+                    <p><span class="bold">Server Path: </span>{{env.serverPath}}</p>
+                    <p><span class="bold">App Pool: </span>{{env.appPool}}</p>
+                    <p><span class="bold">Config Files: </span>{{env.configFiles}}</p>
+                    <p><span class="bold">Version Control Path: </span>{{env.versionControlPath}}</p>
+                  </div>
+                  <div class="col-md-6">
+                    <p><span class="bold">IIS Instance : </span>{{env.iisInstance}}</p>
+                    <p><span class="bold">Site Url: </span>{{env.siteUrl}}</p>
+                    <p><span class="bold">Database: </span>{{env.database}}</p>
+                  </div>
+                </div>
+              </ng-template>
+            </ngb-panel>
+          </ng-container>
+        </ngb-accordion>
+      </div>
     </div>
   </div>
 </div>
@@ -50,7 +71,7 @@
     </button>
   </div>
   <div class="modal-body">
-    <application-environment [applicationId]="paramId" [allEnvironments]="allEnvironments"></application-environment>
+    <application-environment [applicationId]="paramId" [allEnvironments]="allEnvironments" (OnSave)="getApplicationDetails();modal.dismiss('Cross click')"></application-environment>
   </div>
 
 </ng-template>

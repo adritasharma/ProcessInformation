@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
@@ -7,8 +8,9 @@ namespace ProcessInfo.DB.Models
 {
     public class ApplicationEnvironment
     {
-        public int ApplicationEnvironmentId { get; set; }
-        public Guid EnvironmentId { get; set; }
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public Guid ApplicationEnvironmentId { get; set; }
         public string ServerPath { get; set; }
         public string AppPool { get; set; }
         public string IISInstance { get; set; }
@@ -16,9 +18,14 @@ namespace ProcessInfo.DB.Models
         public string SiteUrl { get; set; }
         public string ConfigFiles { get; set; }
         public string Database { get; set; }
-        public int ApplicationId { get; set; }
+        public Guid ApplicationId { get; set; }
 
         [ForeignKey("ApplicationId")]
         public Application Application { get; set; }
+       public Guid EnvironmentId { get; set; }
+
+        [ForeignKey("EnvironmentId")]
+        public Environment Environment { get; set; }
+
     }
 }

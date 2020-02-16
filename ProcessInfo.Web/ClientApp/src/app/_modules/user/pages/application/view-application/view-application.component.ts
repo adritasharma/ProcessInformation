@@ -17,7 +17,7 @@ export class ViewApplicationComponent implements OnInit {
 
   paramId: any = null
 
-  applicationDetails: Application
+  applicationDetails: Application = new Application
   editApplicationData: Application
 
   allEnvironments: AppEnvironment[] = [];
@@ -32,14 +32,18 @@ export class ViewApplicationComponent implements OnInit {
     this.paramId = this.route.snapshot.params["id"];
 
     if (this.paramId) {
-      this._applicationService.getApplicationById(this.paramId).subscribe(res => {
-        this.applicationDetails = res
-        console.log(res)
-      })
+      this.getApplicationDetails();
     }
 
     this.getEnvironments()
 
+  }
+
+  getApplicationDetails(){
+    this._applicationService.getApplicationById(this.paramId).subscribe(res => {
+      this.applicationDetails = res
+      console.log(res)
+    })
   }
 
   editApplication() {

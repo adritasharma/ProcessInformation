@@ -45,7 +45,7 @@ namespace ProcessInfo.Service.Implementations
             return res;
         }
 
-        public ServiceResultModel<bool> Delete(int id)
+        public ServiceResultModel<bool> Delete(Guid id)
         {
             throw new NotImplementedException();
         }
@@ -91,7 +91,7 @@ namespace ProcessInfo.Service.Implementations
 
         }
 
-        private bool IsEnvironmentAvailable(Guid environmentId, int applicationId)
+        private bool IsEnvironmentAvailable(Guid environmentId, Guid applicationId)
         {
             if (_applicationEnvironmentRepository.Any(x => x.EnvironmentId == environmentId && x.ApplicationId == applicationId))
             {
@@ -131,12 +131,12 @@ namespace ProcessInfo.Service.Implementations
             };
         }
 
-        public ApplicationEnvironment GetByApplicationEnvironmentId(int id)
+        public ApplicationEnvironment GetByApplicationEnvironmentId(Guid id)
         {
             return _applicationEnvironmentRepository.GetById(id);
         }
 
-        public ServiceResultModel<bool> DeleteApplicationEnvironmentById(int id)
+        public ServiceResultModel<bool> DeleteApplicationEnvironmentById(Guid id)
         {
             var res = new ServiceResultModel<bool> { IsSuccess = false, Errors = new List<string>() };
 
@@ -155,5 +155,9 @@ namespace ProcessInfo.Service.Implementations
             return res;
         }
 
+        public ApplicationEnvironment GetById(Guid id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

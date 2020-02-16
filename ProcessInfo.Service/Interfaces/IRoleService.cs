@@ -10,8 +10,8 @@ namespace ProcessInfo.Service.Interfaces
     {
         ServiceResultModel<Role> Add(Role fileType);
         ServiceResultModel<Role> Edit(Role fileType);
-        Role GetById(int id);
+        Role GetById(Guid id);
         IEnumerable<Role> GetAll();
-        bool Delete(int id);
+        bool Delete(Guid id);
     }
 }

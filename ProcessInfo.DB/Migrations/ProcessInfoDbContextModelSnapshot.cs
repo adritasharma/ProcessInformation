@@ -19,10 +19,8 @@ namespace ProcessInfo.DB.Migrations
 
             modelBuilder.Entity("ProcessInfo.DB.Models.Application", b =>
                 {
-                    b.Property<int>("ApplicationId")
+                    b.Property<Guid>("ApplicationId")
                         .ValueGeneratedOnAdd();
-
-                    b.Property<int>("AddedByUserId");
 
                     b.Property<string>("ApplicationName");
 
@@ -43,12 +41,12 @@ namespace ProcessInfo.DB.Migrations
 
             modelBuilder.Entity("ProcessInfo.DB.Models.ApplicationEnvironment", b =>
                 {
-                    b.Property<int>("ApplicationEnvironmentId")
+                    b.Property<Guid>("ApplicationEnvironmentId")
                         .ValueGeneratedOnAdd();
 
                     b.Property<string>("AppPool");
 
-                    b.Property<int>("ApplicationId");
+                    b.Property<Guid>("ApplicationId");
 
                     b.Property<string>("ConfigFiles");
 
@@ -67,6 +65,8 @@ namespace ProcessInfo.DB.Migrations
                     b.HasKey("ApplicationEnvironmentId");
 
                     b.HasIndex("ApplicationId");
+
+                    b.HasIndex("EnvironmentId");
 
                     b.ToTable("ApplicationEnvironment");
                 });
@@ -87,7 +87,7 @@ namespace ProcessInfo.DB.Migrations
 
             modelBuilder.Entity("ProcessInfo.DB.Models.Role", b =>
                 {
-                    b.Property<int>("RoleId")
+                    b.Property<Guid>("RoleId")
                         .ValueGeneratedOnAdd();
 
                     b.Property<string>("RoleName");
@@ -99,7 +99,7 @@ namespace ProcessInfo.DB.Migrations
 
             modelBuilder.Entity("ProcessInfo.DB.Models.User", b =>
                 {
-                    b.Property<int>("UserId")
+                    b.Property<Guid>("UserId")
                         .ValueGeneratedOnAdd();
 
                     b.Property<string>("Email");
@@ -110,11 +110,9 @@ namespace ProcessInfo.DB.Migrations
 
                     b.Property<string>("MiddleName");
 
-                    b.Property<int?>("RoleId");
+                    b.Property<Guid>("RoleId");
 
                     b.HasKey("UserId");
-
-                    b.HasIndex("RoleId");
 
                     b.ToTable("User");
                 });
@@ -125,13 +123,11 @@ namespace ProcessInfo.DB.Migrations
                         .WithMany("ApplicationEnvironments")
                         .HasForeignKey("ApplicationId")
                         .OnDelete(DeleteBehavior.Cascade);
-                });
 
-            modelBuilder.Entity("ProcessInfo.DB.Models.User", b =>
-                {
-                    b.HasOne("ProcessInfo.DB.Models.Role", "Role")
-                        .WithMany()
-                        .HasForeignKey("RoleId");
+                    b.HasOne("ProcessInfo.DB.Models.Environment", "Environment")
+                        .WithMany("ApplicationEnvironments")
+                        .HasForeignKey("EnvironmentId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618
         }

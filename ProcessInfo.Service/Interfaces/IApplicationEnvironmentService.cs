@@ -12,10 +12,9 @@ namespace ProcessInfo.Service.Interfaces
     {
         ServiceResultModel<Application> Add(Application File);
         ServiceResultModel<Application> Edit(Application File);
-        Application GetById(int id);
-        Application GetByApplicationId(int id);
+        Application GetByApplicationId(Guid id);
         IEnumerable<Application> GetAll();
-        ServiceResultModel<bool> Delete(int id);
+        ServiceResultModel<bool> Delete(Guid id);
         FilteredResultModel<List<Application>> GetFilteredApplications(string searchText, string filterType, string sortColumn, FCSortDirection sortDirection, int? start = null, int? length = null);
     }
 }

@@ -61,14 +61,14 @@ namespace ProcessInfo.Web.Controllers
 
         [HttpGet]
         [Route("{id}")]
-        public IActionResult Get(int id)
+        public IActionResult Get(Guid id)
         {
             Application res = _service.GetByApplicationId(id);
             return Ok(_mapper.Map<ApplicationResponseDTO>(res));
         }
 
         [HttpDelete]
-        public IActionResult Delete(int id)
+        public IActionResult Delete(Guid id)
         {
            return Ok(_service.Delete(id));
         }

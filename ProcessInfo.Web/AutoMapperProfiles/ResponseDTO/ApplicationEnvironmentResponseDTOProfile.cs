@@ -12,7 +12,8 @@ namespace ProcessInfo.Web.AutoMapperProfiles.ResponseDTO
     {
         public ApplicationEnvironmentResponseDTOProfile()
         {
-            CreateMap<ApplicationEnvironment, ApplicationEnvironmentResponseDTO>();
+            CreateMap<ApplicationEnvironment, ApplicationEnvironmentResponseDTO>()
+              .ForMember(m => m.EnvironmentName, map => map.MapFrom(s => s.Environment.EnvironmentName));
         }
     }
 }

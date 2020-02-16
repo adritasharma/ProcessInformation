@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AppEnvironment } from 'src/app/_common/shared/models/appEnvironment.model';
 import { EnvironmentService } from '../environment.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-save-environment',
@@ -9,7 +10,7 @@ import { EnvironmentService } from '../environment.service';
 })
 export class SaveEnvironmentComponent implements OnInit {
 
-  constructor(private _environmentService: EnvironmentService) { }
+  constructor(private _environmentService: EnvironmentService, private router: Router) { }
 
   environmentData:AppEnvironment = new AppEnvironment
 
@@ -25,7 +26,7 @@ export class SaveEnvironmentComponent implements OnInit {
 
   saveData(){
     this._environmentService.saveEnvironment(this.environmentData).subscribe(resp => {
-      console.log(resp)
+     this.router.navigate(this.componentHeaderData.BackRouterLink)
     })
   }
 

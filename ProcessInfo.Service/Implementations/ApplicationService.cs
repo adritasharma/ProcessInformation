@@ -46,7 +46,7 @@ namespace ProcessInfo.Service.Implementations
             return res;
         }
 
-        public ServiceResultModel<bool> Delete(int id)
+        public ServiceResultModel<bool> Delete(Guid id)
         {
             throw new NotImplementedException();
         }
@@ -127,9 +127,9 @@ namespace ProcessInfo.Service.Implementations
             };
         }
 
-        public Application GetByApplicationId(int id)
+        public Application GetByApplicationId(Guid id)
         {
-            return _applicationRepository.FirstOrDefaultWithInclude(x => x.ApplicationId == id, y => y.Include(cc => cc.ApplicationEnvironments));
+            return _applicationRepository.FirstOrDefaultWithInclude(x => x.ApplicationId == id, y => y.Include(cc => cc.ApplicationEnvironments).ThenInclude(zz => zz.Environment));
         }
 
         public ServiceResultModel<bool> DeleteApplicationById(int id)
