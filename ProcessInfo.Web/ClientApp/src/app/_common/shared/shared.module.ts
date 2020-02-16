@@ -9,6 +9,7 @@ import { CustomInputTextComponent } from './components/inputs/custom-input-text/
 import { ChildFieldControlDirective } from './directives/ChildFieldControlDirective';
 import { DataTablesModule } from 'angular-datatables';
 import { ListActionsComponent } from './components/list-actions/list-actions.component';
+import { CustomInputSelectComponent } from './components/inputs/custom-input-text/custom-input-select/custom-input-select.component';
 
 @NgModule({
   imports: [
@@ -23,6 +24,7 @@ import { ListActionsComponent } from './components/list-actions/list-actions.com
     AdminPageHeaderComponent,
     ChildFieldControlDirective,
     CustomInputTextComponent,
+    CustomInputSelectComponent,
     ListActionsComponent
   ],
   exports: [
@@ -33,6 +35,7 @@ import { ListActionsComponent } from './components/list-actions/list-actions.com
     AdminPageHeaderComponent,
     ChildFieldControlDirective,
     CustomInputTextComponent,
+    CustomInputSelectComponent,
     ListActionsComponent
   ]
 })

@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
+using System.Linq;
+using System.Threading.Tasks;
 
-namespace ProcessInfo.DB.Models
+namespace ProcessInfo.Web.Models.DTOs.ResponseDTO
 {
-    public class ApplicationEnvironment
+    public class ApplicationEnvironmentResponseDTO
     {
         public int ApplicationEnvironmentId { get; set; }
         public Guid EnvironmentId { get; set; }
@@ -17,8 +17,5 @@ namespace ProcessInfo.DB.Models
         public string ConfigFiles { get; set; }
         public string Database { get; set; }
         public int ApplicationId { get; set; }
-
-        [ForeignKey("ApplicationId")]
-        public Application Application { get; set; }
     }
 }

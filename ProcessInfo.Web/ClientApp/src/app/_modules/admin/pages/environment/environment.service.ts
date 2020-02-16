@@ -9,7 +9,7 @@ import { HttpService } from 'src/app/_common/core/services/http.service';
 @Injectable({
   providedIn: 'root'
 })
-export class EnvironmentService extends HttpService  {
+export class EnvironmentService extends HttpService {
 
   constructor(public _http: HttpClient, private utility: UtilityService) {
     super(_http);
@@ -22,12 +22,16 @@ export class EnvironmentService extends HttpService  {
   }
 
   getAllEnvironments(dataTablesParameters: any): Observable<any> {
-    return this.get(`${this.environmentUrl}?${this.utility.convertToParam(dataTablesParameters)}`)
+    if (dataTablesParameters) {
+      return this.get(`${this.environmentUrl}?${this.utility.convertToParam(dataTablesParameters)}`)
+    } else {
+      return this.get(`${this.environmentUrl}`)
+    }
   }
 
   getEnvironmentById(id: any): Observable<IAppEnvironment> {
-     return this.get(`${this.environmentUrl}/${id}`)
-   }
- 
+    return this.get(`${this.environmentUrl}/${id}`)
+  }
+
 
 }

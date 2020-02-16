@@ -3,6 +3,8 @@ import { ActivatedRoute } from '@angular/router';
 import { ApplicationService } from '../application.service';
 import { Application } from 'src/app/_common/shared/models/application.model';
 import { ModalService } from 'src/app/_common/shared/services/modal.service';
+import { EnvironmentService } from 'src/app/_modules/admin/pages/environment/environment.service';
+import { AppEnvironment } from 'src/app/_common/shared/models/appEnvironment.model';
 
 @Component({
   selector: 'app-view-application',
@@ -11,12 +13,15 @@ import { ModalService } from 'src/app/_common/shared/services/modal.service';
 })
 export class ViewApplicationComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute, private _applicationService: ApplicationService, public modalService: ModalService) { }
+  constructor(private route: ActivatedRoute, private _applicationService: ApplicationService,private _environmentService: EnvironmentService, public modalService: ModalService) { }
 
   paramId: any = null
 
   applicationDetails: Application
   editApplicationData: Application
+
+  allEnvironments: AppEnvironment[] = [];
+
 
   componentHeaderData = {
     Title: "Applications",
@@ -32,10 +37,23 @@ export class ViewApplicationComponent implements OnInit {
         console.log(res)
       })
     }
+
+    this.getEnvironments()
+
   }
 
   editApplication() {
     this.editApplicationData = { ...this.applicationDetails }
+  }
+
+  getEnvironments(){
+    this._environmentService.getAllEnvironments(null).subscribe(resp => {
+      resp = resp.map(item => ({
+        id:item.environmentId,
+        text:item.environmentName,
+      }))
+      this.allEnvironments = resp
+    })
   }
 
 }

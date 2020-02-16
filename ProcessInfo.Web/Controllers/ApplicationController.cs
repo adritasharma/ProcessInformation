@@ -11,6 +11,7 @@ using ProcessInfo.DB.Models;
 using ProcessInfo.Service.Interfaces;
 using ProcessInfo.Web.AutoMapperProfiles.RequestDTOs;
 using ProcessInfo.Web.Models.DTOs.RequestDTOs;
+using ProcessInfo.Web.Models.DTOs.ResponseDTO;
 
 namespace ProcessInfo.Web.Controllers
 {
@@ -62,8 +63,8 @@ namespace ProcessInfo.Web.Controllers
         [Route("{id}")]
         public IActionResult Get(int id)
         {
-            var res = _service.GetById(id);
-            return Ok(res);
+            Application res = _service.GetByApplicationId(id);
+            return Ok(_mapper.Map<ApplicationResponseDTO>(res));
         }
 
         [HttpDelete]

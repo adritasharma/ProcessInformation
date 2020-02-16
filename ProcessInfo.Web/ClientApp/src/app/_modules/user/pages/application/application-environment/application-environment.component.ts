@@ -11,10 +11,12 @@ export class ApplicationEnvironmentComponent implements OnInit {
   constructor(private _applicationService: ApplicationService) { }
 
   @Input() applicationId: any
+  @Input() allEnvironments: any
 
   envData: any = {}
 
   ngOnInit() {
+    this.envData.environmentId = null
   }
 
   saveData() {

@@ -13,6 +13,7 @@ export class SaveApplicationComponent implements OnInit {
 
   applicationData = new Application()
 
+
   @Input() editApplicationData: any
 
   componentHeaderData = {
@@ -22,7 +23,7 @@ export class SaveApplicationComponent implements OnInit {
 
   ngOnInit() {
     if(this.editApplicationData){
-      this.applicationData = this.editApplicationData
+      this.applicationData = this.editApplicationData;
     }
   }
 
@@ -31,5 +32,7 @@ export class SaveApplicationComponent implements OnInit {
       console.log(resp)
     })
   }
+
+ 
 
 }

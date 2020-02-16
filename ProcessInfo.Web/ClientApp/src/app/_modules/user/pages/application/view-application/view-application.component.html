@@ -6,7 +6,9 @@
       <div class="card-header">
         Application Details
         <span class="float-right">
-          <span class="card-header-action"  (click)="editApplication();modalService.open(saveApplicationModal, { size: 'lg' })"><i class="fa fa-pencil"></i> Edit</span>
+          <span class="card-header-action"
+            (click)="editApplication();modalService.open(saveApplicationModal, { size: 'lg' })"><i
+              class="fa fa-pencil"></i> Edit</span>
           <span class="card-header-action"><i class="fa fa-trash"></i> Delete</span>
         </span>
       </div>
@@ -29,7 +31,8 @@
   <div class="card-header">
     Environment
     <span class="float-right">
-      <span class="card-header-action" (click)="modalService.open(saveEnvironmentModal, { size: 'lg' })"><i class="fa fa-plus"></i> Add</span>
+      <span class="card-header-action" (click)="modalService.open(saveEnvironmentModal, { size: 'lg' })"><i
+          class="fa fa-plus"></i> Add</span>
     </span>
   </div>
   <div class="card-body">
@@ -47,7 +50,7 @@
     </button>
   </div>
   <div class="modal-body">
-      <application-environment [applicationId]="paramId"></application-environment>
+    <application-environment [applicationId]="paramId" [allEnvironments]="allEnvironments"></application-environment>
   </div>
 
 </ng-template>
@@ -60,7 +63,7 @@
     </button>
   </div>
   <div class="modal-body">
-      <save-application [editApplicationData]="editApplicationData"></save-application>
+    <save-application [editApplicationData]="editApplicationData"></save-application>
   </div>
 
 </ng-template>

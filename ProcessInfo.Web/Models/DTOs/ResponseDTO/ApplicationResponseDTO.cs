@@ -1,15 +1,13 @@
-﻿using System;
+﻿using ProcessInfo.DB.Models;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
+using System.Linq;
+using System.Threading.Tasks;
 
-namespace ProcessInfo.DB.Models
+namespace ProcessInfo.Web.Models.DTOs.ResponseDTO
 {
-    public class Application
+    public class ApplicationResponseDTO
     {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ApplicationId { get; set; }
         public string ApplicationName { get; set; }
         public string ProjectName { get; set; }
@@ -18,6 +16,6 @@ namespace ProcessInfo.DB.Models
         public string Status { get; set; }
         public string ApplicationType { get; set; }
         public int AddedByUserId { get; set; }
-        public virtual ICollection<ApplicationEnvironment> ApplicationEnvironments { get; set; }
+        public List<ApplicationEnvironmentResponseDTO> ApplicationEnvironments { get; set; }
     }
 }

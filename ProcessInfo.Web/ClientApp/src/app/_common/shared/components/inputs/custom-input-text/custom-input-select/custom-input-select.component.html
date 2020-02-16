@@ -1,0 +1,18 @@
+<div class="form-group">
+  <label class="control-label">
+    {{label}} <span class="required-star" *ngIf="required"> *</span> :
+    <ng-container *ngIf="modelRef.invalid && modelRef.touched">
+      <span class="help-block error-block" *ngIf="model!=null && invalidMsg == undefined"> &nbsp; Invalid</span>
+      <span class="help-block error-block" *ngIf="model!=null && invalidMsg != undefined"> &nbsp; {{invalidMsg}}</span>
+      <span class="help-block error-block" *ngIf="model==null">&nbsp; Required</span>
+    </ng-container>
+  </label>
+  <span class="help-block warning-block" *ngIf="model!=null && lengthErrorMessage != undefined"> &nbsp;
+    {{lengthErrorMessage}}</span>
+  <div>
+    <select class="form-control" [id]="fieldId" [name]="fieldId" [disabled]="disabled" [(ngModel)]="model" (ngModelChange)="change($event)" [required]="required"
+      #modelRef="ngModel" ChildFieldValidation >
+      <option *ngFor="let item of dropdownValues" [ngValue]="item.id" [style.color]="item.id == null?'#999999':''">{{item.text}}</option>
+    </select>
+  </div>
+</div>
