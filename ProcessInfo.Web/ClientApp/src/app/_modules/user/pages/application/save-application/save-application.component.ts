@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Application, IApplication } from 'src/app/_common/shared/models/application.model';
 import { ApplicationService } from '../application.service';
 
@@ -15,6 +15,7 @@ export class SaveApplicationComponent implements OnInit {
 
 
   @Input() editApplicationData: any
+  @Output() OnSave = new EventEmitter();
 
   componentHeaderData = {
     Title: "Applications",
@@ -28,8 +29,12 @@ export class SaveApplicationComponent implements OnInit {
   }
 
   saveData(){
-    this._applicationService.saveApplication(this.applicationData).subscribe(resp => {
-      console.log(resp)
+
+    let requestUrl = this.editApplicationData ? this._applicationService.updateApplication(this.applicationData) : this._applicationService.saveApplication(this.applicationData);
+
+    requestUrl.subscribe(resp => {
+      console.log(resp);
+      this.OnSave.emit();
     })
   }
 

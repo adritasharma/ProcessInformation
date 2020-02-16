@@ -21,7 +21,7 @@ export class ViewApplicationComponent implements OnInit {
   editApplicationData: Application
 
   allEnvironments: AppEnvironment[] = [];
-
+  editEnvData: any = {}
 
   componentHeaderData = {
     Title: "Applications",
@@ -48,6 +48,9 @@ export class ViewApplicationComponent implements OnInit {
 
   editApplication() {
     this.editApplicationData = { ...this.applicationDetails }
+  }
+  editApplicationEnvironment(data) {
+    this.editEnvData = { ...data }
   }
 
   getEnvironments(){

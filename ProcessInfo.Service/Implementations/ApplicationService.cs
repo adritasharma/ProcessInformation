@@ -59,14 +59,19 @@ namespace ProcessInfo.Service.Implementations
 
             if(applicationFromDB != null)
             {
-                if (!IsApplicationNameAvailable(application.ApplicationName))
-                {
-                    res.Errors.Add("The Application Name is already present");
-                    return res;
-                }
+                //if (!IsApplicationNameAvailable(application.ApplicationName))
+                //{
+                //    res.Errors.Add("The Application Name is already present");
+                //    return res;
+                //}
 
 
-                applicationFromDB.ApplicationName = application.ApplicationName.Trim();
+                applicationFromDB.ApplicationName = application.ApplicationName.TrimSpace();
+                applicationFromDB.ProjectName = application.ProjectName.TrimSpace();
+                applicationFromDB.WorkObjectName = application.WorkObjectName;
+                applicationFromDB.TeamMembers = application.TeamMembers;
+                applicationFromDB.Status = application.Status.TrimSpace();
+                applicationFromDB.ApplicationType = application.ApplicationType.TrimSpace();
 
                 _applicationRepository.Edit(applicationFromDB);
 

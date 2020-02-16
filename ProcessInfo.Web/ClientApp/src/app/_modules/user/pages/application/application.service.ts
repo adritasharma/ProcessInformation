@@ -24,6 +24,10 @@ export class ApplicationService extends HttpService {
     return this.post(`${this.applicationUrl}`, payload)
   }
 
+  updateApplication(payload: IApplication): Observable<any> {
+    return this.update(`${this.applicationUrl}`, payload)
+  }
+
   getAllApplications(dataTablesParameters: any): Observable<any> {
     return this.get(`${this.applicationUrl}?${this.utility.convertToParam(dataTablesParameters)}`)
   }
@@ -34,6 +38,10 @@ export class ApplicationService extends HttpService {
  
    saveApplicationEnvironment(payload: any): Observable<any> {
     return this.post(`${this.applicationEnvironmentUrl}`, payload)
+  }
+
+  updateApplicationEnvironment(payload: any): Observable<any> {
+    return this.update(`${this.applicationEnvironmentUrl}`, payload)
   }
 
 }

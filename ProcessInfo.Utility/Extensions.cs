@@ -11,5 +11,15 @@ namespace ProcessInfo.Utility
             Type t = typeof(T);
             return t.GetProperty(name).GetValue(obj, null);
         }
+
+        public static string TrimSpace(this string value)
+        {
+            if (value != null)
+            {
+                
+                    return value.Trim();
+            }
+            return null;
+        }
     }
 }

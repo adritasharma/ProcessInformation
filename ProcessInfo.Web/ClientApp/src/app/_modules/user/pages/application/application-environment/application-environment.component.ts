@@ -12,19 +12,25 @@ export class ApplicationEnvironmentComponent implements OnInit {
 
   @Input() applicationId: any
   @Input() allEnvironments: any
+  @Input() envData: any = {}
 
   @Output() OnSave = new EventEmitter();
 
 
-  envData: any = {}
 
   ngOnInit() {
-    this.envData.environmentId = null
+    if (!this.envData.applicationEnvironmentId) {
+      this.envData.environmentId = null
+    }
   }
 
-  saveData() {
+  
+  saveData(){
     this.envData.applicationId = this.applicationId;
-    this._applicationService.saveApplicationEnvironment(this.envData).subscribe(resp => {
+
+    let requestUrl = this.envData.applicationEnvironmentId ? this._applicationService.updateApplicationEnvironment(this.envData) :this._applicationService.saveApplicationEnvironment(this.envData);
+
+    requestUrl.subscribe(resp => {
       this.OnSave.emit();
     })
   }

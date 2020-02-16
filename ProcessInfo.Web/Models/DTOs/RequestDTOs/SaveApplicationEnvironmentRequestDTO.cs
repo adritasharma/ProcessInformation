@@ -7,7 +7,7 @@ namespace ProcessInfo.Web.Models.DTOs.RequestDTOs
 {
     public class SaveApplicationEnvironmentRequestDTO
     {
-        public Guid ApplicationEnvironmentId { get; set; }
+        public Guid? ApplicationEnvironmentId { get; set; }
         public Guid EnvironmentId { get; set; }
         public string ServerPath { get; set; }
         public string AppPool { get; set; }

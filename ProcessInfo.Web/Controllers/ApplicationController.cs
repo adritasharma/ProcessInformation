@@ -74,7 +74,7 @@ namespace ProcessInfo.Web.Controllers
         }
 
         [HttpPut]
-        public async Task<IActionResult> Put(SaveApplicationEnvironmentRequestDTO applicationDTO)
+        public async Task<IActionResult> Put(SaveApplicationRequestDTO applicationDTO)
         {
             Application application = _mapper.Map<Application>(applicationDTO);
 

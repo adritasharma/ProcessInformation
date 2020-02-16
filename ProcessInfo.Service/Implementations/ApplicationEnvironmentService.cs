@@ -58,11 +58,11 @@ namespace ProcessInfo.Service.Implementations
 
             if(applicationEnvironmentFromDB != null)
             {
-                if (!IsEnvironmentAvailable(applicationEnvironment.EnvironmentId, applicationEnvironment.ApplicationId))
-                {
-                    res.Errors.Add("The ApplicationEnvironment Name is already present");
-                    return res;
-                }
+                //if (!IsEnvironmentAvailable(applicationEnvironment.EnvironmentId, applicationEnvironment.ApplicationId))
+                //{
+                //    res.Errors.Add("The ApplicationEnvironment Name is already present");
+                //    return res;
+                //}
 
                 applicationEnvironmentFromDB.ApplicationId = applicationEnvironment.ApplicationId;
                 applicationEnvironmentFromDB.ApplicationEnvironmentId = applicationEnvironment.ApplicationEnvironmentId;

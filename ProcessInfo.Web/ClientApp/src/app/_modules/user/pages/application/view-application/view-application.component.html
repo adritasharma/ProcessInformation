@@ -1,5 +1,5 @@
 <admin-page-header [options]="componentHeaderData"></admin-page-header>
-<div class="row" >
+<div class="row">
   <div class="col-md-12">
     <div class="card">
       <div class="card-header">
@@ -15,7 +15,7 @@
         <div class="row">
           <div class="col-md-6">
             <p><span class="bold">Application Name: </span>{{applicationDetails.applicationName}}</p>
-            <p><span class="bold">Application Type: </span>{{applicationDetails.aapplicationType}}</p>
+            <p><span class="bold">Application Type: </span>{{applicationDetails.applicationType}}</p>
           </div>
           <div class="col-md-6">
             <p><span class="bold">Project Name : </span>{{applicationDetails.projectName}}</p>
@@ -30,8 +30,9 @@
   <div class="card-header">
     Environment
     <span class="float-right">
-      <span class="card-header-action" (click)="modalService.open(saveEnvironmentModal, { size: 'lg' })"><i
-          class="fa fa-plus"></i> Add</span>
+      <span class="card-header-action"
+        (click)="editEnvData = {};modalService.open(saveEnvironmentModal, { size: 'lg' })"><i class="fa fa-plus"></i>
+        Add</span>
     </span>
   </div>
   <div class="card-body">
@@ -39,7 +40,16 @@
       <div class="col-md-12">
         <ngb-accordion #acc="ngbAccordion">
           <ng-container *ngFor="let env of applicationDetails.applicationEnvironments; let i=index">
-            <ngb-panel id="toggle-{{i}}" title="{{env.environmentName}}">
+            <ngb-panel id="toggle-{{i}}">
+              <ng-template ngbPanelTitle>
+                <span (click)="acc.toggle('toggle-i}}')" class="float-left">{{env.environmentName}}</span>
+                <span class="float-right">
+                  <span class="card-header-action"
+                    (click)="editApplicationEnvironment(env);modalService.open(saveEnvironmentModal, { size: 'lg' })"><i
+                      class="fa fa-pencil"></i> Edit</span>
+                  <span class="card-header-action" (click)="false"><i class="fa fa-trash"></i> Delete</span>
+                </span>
+              </ng-template>
               <ng-template ngbPanelContent>
                 <div class="row">
                   <div class="col-md-6">
@@ -71,7 +81,8 @@
     </button>
   </div>
   <div class="modal-body">
-    <application-environment [applicationId]="paramId" [allEnvironments]="allEnvironments" (OnSave)="getApplicationDetails();modal.dismiss('Cross click')"></application-environment>
+    <application-environment [applicationId]="paramId" [envData]="editEnvData" [allEnvironments]="allEnvironments"
+      (OnSave)="getApplicationDetails();modal.dismiss('Cross click')"></application-environment>
   </div>
 
 </ng-template>
@@ -84,7 +95,8 @@
     </button>
   </div>
   <div class="modal-body">
-    <save-application [editApplicationData]="editApplicationData"></save-application>
+    <save-application [editApplicationData]="editApplicationData"
+      (OnSave)="getApplicationDetails();modal.dismiss('Cross click')"></save-application>
   </div>
 
 </ng-template>
