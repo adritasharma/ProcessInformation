@@ -3,6 +3,7 @@ import { LoaderService } from './loader.service';
 import { HttpRequest, HttpHandler, HttpEvent, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
+import { ToastrService } from '../../shared/services/toastr.service';
 
 
 @Injectable({
@@ -10,7 +11,7 @@ import { tap } from 'rxjs/operators';
 })
 export class HttpInterceptorService {
 
-  constructor(private loaderService: LoaderService) { }
+  constructor(private loaderService: LoaderService, private toastr: ToastrService) { }
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     var token = "test";
@@ -32,22 +33,10 @@ export class HttpInterceptorService {
           if (event instanceof HttpResponse) {
           }
         }, error => {
-          // console.log(error);
-          // if (error.error != undefined || error.error != null) {
-          //   if (typeof error.error == "string") {
-          //     let errorMessage: string = "Something Went Wrong!"
-
-          //     errorMessage = error.error
-
-          //     toastr.options = {
-          //       "closeButton": true,
-          //       "timeOut": 0,
-          //     }
-          //     toastr.error(errorMessage);
-          //   } else if (typeof error.error == "object") {
-          //     this.checkErrorService.callLoadData(error.error);
-          //   }
-          // }
+          console.log(error);
+          if (error.error != undefined || error.error != null) {
+            this.displayErrorToastr(error.error)
+          }
 
         })
       )
@@ -58,6 +47,31 @@ export class HttpInterceptorService {
     //   // this.router.navigate(['/'])
     // }
 
+  }
+
+  displayErrorToastr(errorData: any) {
+
+    if (typeof errorData == "string") {
+      let errorMessage: string = "Something Went Wrong!"
+
+      errorMessage = errorData
+      this.toastr.displayToastr("error", errorMessage);
+    } else if (typeof errorData == "object") {
+      let errorMessageList = []
+      var errorObject = errorData;
+      for (var property in errorObject) {
+        console.log(errorObject[property])
+        if (typeof errorObject[property] == "string") {
+          errorMessageList.push(errorObject[property])
+          this.toastr.displayToastr("error", errorObject[property]);
+        } else {
+          for (var i = 0; i < errorObject[property].length; i++) {
+            errorMessageList.push(errorObject[property][i])
+            this.toastr.displayToastr("error", errorObject[property][i]);
+          }
+        }
+      }
+    }
   }
 
 }
