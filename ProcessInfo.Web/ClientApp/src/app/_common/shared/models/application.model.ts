@@ -1,12 +1,12 @@
 export interface IApplication {
-    applicationId: number;
+    applicationId: string;
     applicationName: string;
     projectName: string;
 }
 
 export class Application implements IApplication {
     constructor(
-        public applicationId: number = null,
+        public applicationId: string = null,
         public applicationName: string = '',
         public projectName = '') { }
 }

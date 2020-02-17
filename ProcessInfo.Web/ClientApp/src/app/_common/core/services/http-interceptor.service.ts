@@ -3,7 +3,7 @@ import { LoaderService } from './loader.service';
 import { HttpRequest, HttpHandler, HttpEvent, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
-import { ToastrService } from '../../shared/services/toastr.service';
+import { NotificationService } from '../../shared/services/notification.service';
 
 
 @Injectable({
@@ -11,7 +11,7 @@ import { ToastrService } from '../../shared/services/toastr.service';
 })
 export class HttpInterceptorService {
 
-  constructor(private loaderService: LoaderService, private toastr: ToastrService) { }
+  constructor(private loaderService: LoaderService, private toastr: NotificationService) { }
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     var token = "test";

@@ -47,7 +47,21 @@ namespace ProcessInfo.Service.Implementations
 
         public ServiceResultModel<bool> Delete(Guid id)
         {
-            throw new NotImplementedException();
+            var res = new ServiceResultModel<bool> { IsSuccess = false, Errors = new List<string>() };
+
+            var data = _applicationEnvironmentRepository.GetById(id);
+            if (res == null)
+            {
+                res.Data = false;
+                res.Errors.Add("The Environment for this Application doesn't exists");
+                return res;
+            }
+
+            _applicationEnvironmentRepository.Delete(data);
+            UnitOfWork.Commit();
+
+            res.Data = true;
+            return res;
         }
 
         public ServiceResultModel<ApplicationEnvironment> Edit(ApplicationEnvironment applicationEnvironment)

@@ -8,7 +8,7 @@
           <span class="card-header-action"
             (click)="editApplication();modalService.open(saveApplicationModal, { size: 'lg' })"><i
               class="fa fa-pencil"></i> Edit</span>
-          <span class="card-header-action"><i class="fa fa-trash"></i> Delete</span>
+          <span class="card-header-action" (click)="deleteApplication();"><i class="fa fa-trash"></i> Delete</span>
         </span>
       </div>
       <div class="card-body">
@@ -47,7 +47,7 @@
                   <span class="card-header-action"
                     (click)="editApplicationEnvironment(env);modalService.open(saveEnvironmentModal, { size: 'lg' })"><i
                       class="fa fa-pencil"></i> Edit</span>
-                  <span class="card-header-action" (click)="false"><i class="fa fa-trash"></i> Delete</span>
+                  <span class="card-header-action" (click)="deleteApplicationEnvironment(env.applicationEnvironmentId, env.environmentName )"><i class="fa fa-trash"></i> Delete</span>
                 </span>
               </ng-template>
               <ng-template ngbPanelContent>

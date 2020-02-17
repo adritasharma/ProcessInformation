@@ -10,6 +10,7 @@ import { ChildFieldControlDirective } from './directives/ChildFieldControlDirect
 import { DataTablesModule } from 'angular-datatables';
 import { ListActionsComponent } from './components/list-actions/list-actions.component';
 import { CustomInputSelectComponent } from './components/inputs/custom-input-text/custom-input-select/custom-input-select.component';
+import { ConfirmationDialogComponent } from './components/confirmation-dialog/confirmation-dialog.component';
 
 @NgModule({
   imports: [
@@ -18,6 +19,7 @@ import { CustomInputSelectComponent } from './components/inputs/custom-input-tex
     DataTablesModule
   ],
   declarations: [
+    ConfirmationDialogComponent,
     NavbarComponent,
     NotFoundComponent,
     InitialsPipe,
@@ -37,6 +39,7 @@ import { CustomInputSelectComponent } from './components/inputs/custom-input-tex
     CustomInputTextComponent,
     CustomInputSelectComponent,
     ListActionsComponent
-  ]
+  ],
+  entryComponents: [ ConfirmationDialogComponent ],
 })
 export class SharedModule { }

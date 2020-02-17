@@ -67,6 +67,7 @@ namespace ProcessInfo.Web.Controllers
         }
 
         [HttpDelete]
+        [Route("{id}")]
         public IActionResult Delete(Guid id)
         {
            return Ok(_service.Delete(id));

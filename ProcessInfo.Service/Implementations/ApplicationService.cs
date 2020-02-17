@@ -48,7 +48,21 @@ namespace ProcessInfo.Service.Implementations
 
         public ServiceResultModel<bool> Delete(Guid id)
         {
-            throw new NotImplementedException();
+            var res = new ServiceResultModel<bool> { IsSuccess = false, Errors = new List<string>() };
+
+            var data = _applicationRepository.GetById(id);
+            if (res == null)
+            {
+                res.Data = false;
+                res.Errors.Add("The Application doesn't exists");
+                return res;
+            }
+
+            _applicationRepository.Delete(data);
+            UnitOfWork.Commit();
+
+            res.Data = true;
+            return res;
         }
 
         public ServiceResultModel<Application> Edit(Application application)

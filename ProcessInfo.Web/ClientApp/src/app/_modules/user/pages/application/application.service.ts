@@ -33,15 +33,22 @@ export class ApplicationService extends HttpService {
   }
 
   getApplicationById(id: any): Observable<Application> {
-     return this.get(`${this.applicationUrl}/${id}`)
-   }
- 
-   saveApplicationEnvironment(payload: any): Observable<any> {
+    return this.get(`${this.applicationUrl}/${id}`)
+  }
+
+  saveApplicationEnvironment(payload: any): Observable<any> {
     return this.post(`${this.applicationEnvironmentUrl}`, payload)
   }
 
   updateApplicationEnvironment(payload: any): Observable<any> {
     return this.update(`${this.applicationEnvironmentUrl}`, payload)
+  }
+
+  deleteApplication(id: string): Observable<any> {
+    return this.delete(`${this.applicationUrl}/${id}`)
+  }
+  deleteApplicationEnvironment(id: string): Observable<any> {
+    return this.delete(`${this.applicationEnvironmentUrl}/${id}`)
   }
 
 }

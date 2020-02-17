@@ -11,6 +11,7 @@ import { UserSidebarComponent } from './user-sidebar/user-sidebar.component';
 import { ListApplicationComponent } from './pages/application/list-application/list-application.component';
 import { ViewApplicationComponent } from './pages/application/view-application/view-application.component';
 import { ApplicationEnvironmentComponent } from './pages/application/application-environment/application-environment.component';
+import { UserDashboardComponent } from './pages/application/user-dashboard/user-dashboard.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { ApplicationEnvironmentComponent } from './pages/application/application
     SaveApplicationComponent,
     ListApplicationComponent,
     ViewApplicationComponent,
-    ApplicationEnvironmentComponent
+    ApplicationEnvironmentComponent,
+    UserDashboardComponent
   ]
 })
 export class UserModule { }
