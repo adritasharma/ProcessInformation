@@ -39,8 +39,8 @@ export class ListApplicationComponent implements OnInit {
           console.log("Result - ", resp);
           this.allApplications = resp.data
           callback({
-            recordsTotal: resp.recordsTotal,
-            recordsFiltered: resp.recordsFiltered,
+            recordsTotal: resp.totalRecords,
+            recordsFiltered: resp.totalRecordsFiltered,
             data: []
           });
         });

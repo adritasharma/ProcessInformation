@@ -137,7 +137,6 @@ namespace ProcessInfo.Service.Implementations
             {
                 query =  _applicationRepository.FindWithInclude(deleg, defaultOrderBy, null, null, start, length);
             }
-
             return new FilteredResultModel<List<Application>>
             {
                 Data = query.ToList(),
