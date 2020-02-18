@@ -1,34 +1,30 @@
 <admin-page-header [options]="componentHeaderData"></admin-page-header>
-<div class="row">
-  <div class="col-md-12">
-    <div class="table-responsive">
-      <table datatable [dtOptions]="dtOptions" class="table table-hover table-striped">
-        <thead>
-          <tr>
-            <th style="text-align:center">Action</th>
-            <th>Environment Name</th>
-            <th>Description</th>
-          </tr>
-        </thead>
-        <tbody *ngIf="allEnvironments?.length != 0">
-          <tr *ngFor="let item of allEnvironments ;let i=index">
-            <td class="tdOption">
-              <list-actions [modulePath]="'/user/environment'" [itemId]="item.environmentId" [canDelete]="true" [canEdit]="true"
-                (isDeleteClicked)="deleteItem(item.environmentId)"></list-actions>
 
-            </td>
-            <td>
-              <a [routerLink]="['/user/environment/view',item.environmentId]">{{item.environmentName}}</a>
-            </td>
-            <td>{{item.environmentDescription}}</td>
-          </tr>
-        </tbody>
-        <tbody *ngIf="allEnvironments?.length == 0">
-          <tr>
-            <td colspan="3" class="no-data-available">No data!</td>
-          </tr>
-        <tbody>
-      </table>
-    </div>
-  </div>
-</div>
+<!-- <div class="table-responsive"> -->
+<table datatable [dtOptions]="dtOptions" class="table table-hover table-striped">
+  <thead>
+    <tr>
+      <th class="action-cell">Action</th>
+      <th>Environment Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody *ngIf="allEnvironments?.length != 0">
+    <tr *ngFor="let item of allEnvironments ;let i=index">
+      <td class="action-cell">
+        <list-actions [modulePath]="'/admin/environment'" [itemId]="item.environmentId" [canDelete]="true"
+          [canEdit]="true" (isDeleteClicked)="deleteEnvironment(item.environmentId,item.environmentName)"></list-actions>
+      </td>
+      <td>
+        {{item.environmentName}}
+      </td>
+      <td>{{item.environmentDescription}}</td>
+    </tr>
+  </tbody>
+  <tbody *ngIf="allEnvironments?.length == 0">
+    <tr>
+      <td colspan="3" class="no-data-available">No data!</td>
+    </tr>
+  <tbody>
+</table>
+<!-- </div> -->

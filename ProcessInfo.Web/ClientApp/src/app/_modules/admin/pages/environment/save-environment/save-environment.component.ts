@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AppEnvironment } from 'src/app/_common/shared/models/appEnvironment.model';
 import { EnvironmentService } from '../environment.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
+import { NotificationService } from 'src/app/_common/shared/services/notification.service';
 
 @Component({
   selector: 'app-save-environment',
@@ -10,9 +11,11 @@ import { Router } from '@angular/router';
 })
 export class SaveEnvironmentComponent implements OnInit {
 
-  constructor(private _environmentService: EnvironmentService, private router: Router) { }
+  constructor(private route: ActivatedRoute, private _environmentService: EnvironmentService, private _notification: NotificationService, private _router: Router) { }
 
-  environmentData:AppEnvironment = new AppEnvironment
+  paramId: any = null
+
+  environmentData: any = {}
 
 
   componentHeaderData = {
@@ -21,14 +24,32 @@ export class SaveEnvironmentComponent implements OnInit {
   }
 
   ngOnInit() {
-  
+    this.paramId = this.route.snapshot.params["id"];
+
+    if (this.paramId) {
+      this.getEnvironmentDetails();
+    }
   }
 
-  saveData(){
-    this._environmentService.saveEnvironment(this.environmentData).subscribe(resp => {
-     this.router.navigate(this.componentHeaderData.BackRouterLink)
+  getEnvironmentDetails() {
+    this._environmentService.getEnvironmentById(this.paramId).subscribe(res => {
+      this.environmentData = res
+      console.log(res)
     })
   }
+
+
+
+  saveData() {
+
+    let requestUrl = this.paramId ? this._environmentService.updateEnvironment(this.environmentData) : this._environmentService.saveEnvironment(this.environmentData);
+
+    requestUrl.subscribe(resp => {
+      console.log(resp);
+      this._router.navigate(this.componentHeaderData.BackRouterLink)
+    })
+  }
+
 
 
 }

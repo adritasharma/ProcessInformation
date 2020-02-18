@@ -20,7 +20,7 @@ export class ListActionsComponent implements OnInit {
   viewLink: any
   
   ngOnInit() {
-    this.editLink = [`${this.modulePath}/Edit/${this.itemId}`]
+    this.editLink = [`${this.modulePath}/edit/${this.itemId}`]
     this.viewLink = [`${this.modulePath}/view/${this.itemId}`]
   }
   emitDelete() {

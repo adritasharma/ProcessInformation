@@ -13,8 +13,8 @@ export const adminRoutes: Routes = [
         children: [
             { path: '', component: AdminDashboardComponent },
             { path: 'environment', component: ListEnvironmentComponent },
-            { path: 'environment/save', component: SaveEnvironmentComponent }
-
+            { path: 'environment/save', component: SaveEnvironmentComponent },
+            { path: 'environment/edit/:id', component: SaveEnvironmentComponent }
         ]
     }
 ];

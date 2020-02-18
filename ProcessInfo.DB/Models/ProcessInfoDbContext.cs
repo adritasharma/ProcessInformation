@@ -25,9 +25,9 @@ namespace ProcessInfo.DB.Models
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseMySql("server=localhost;database=processinfo;user=root;password=root;Allow User Variables=True;");
+                //optionsBuilder.UseMySql("server=localhost;database=processinfo;user=root;password=root;Allow User Variables=True;");
                 // optionsBuilder.UseSqlServer("Server=localhost;Database=ProcessInformation;Trusted_Connection=True;User Id=sa;Password=admin!@#123;Integrated Security=false;");
-               // optionsBuilder.UseSqlServer("Server=localhost;Database=ProcessInformation;Trusted_Connection=True");
+              optionsBuilder.UseSqlServer("Server=localhost;Database=ProcessInformation;Trusted_Connection=True");
 
             }
         }

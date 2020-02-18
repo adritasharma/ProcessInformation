@@ -33,5 +33,11 @@ export class EnvironmentService extends HttpService {
     return this.get(`${this.environmentUrl}/${id}`)
   }
 
+  updateEnvironment(payload: any): Observable<any> {
+    return this.update(`${this.environmentUrl}`, payload)
+  }
 
+  deleteEnvironment(id: string): Observable<any> {
+    return this.delete(`${this.environmentUrl}/${id}`)
+  }
 }

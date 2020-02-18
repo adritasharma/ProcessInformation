@@ -1,3 +1,97 @@
-<p>
-  user-dashboard works!
-</p>
+<h5 class="themeColor">Dashboard</h5>
+<hr>
+<div class="row">
+  <div class="col-md-12">
+
+    <div class="card shadow mb-4">
+      <div class="card-body">
+        <div class="row">
+
+          <!-- Earnings (Monthly) Card Example -->
+          <div class="col-md-4">
+            <div class="card border-left-primary shadow h-100 py-2">
+              <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                  <div class="col mr-2">
+                    <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">New Cases </div>
+                    <div class="h5 mb-0 font-weight-bold text-gray-800">{{caseStatus.newCaseCount}}</div>
+                  </div>
+                  <div class="col-auto">
+                    <i class="fa fa-newspaper-o fa-2x text-gray-300"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="card border-left-success shadow h-100 py-2">
+              <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                  <div class="col mr-2">
+                    <div class="text-xs font-weight-bold text-success text-uppercase mb-1">In Progress cases</div>
+                    <div class="h5 mb-0 font-weight-bold text-gray-800">{{caseStatus.newCaseCount}}</div>
+                  </div>
+                  <div class="col-auto">
+                    <i class="fa fa-line-chart fa-2x text-gray-300"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="card border-left-info shadow h-100 py-2">
+              <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                  <div class="col mr-2">
+                    <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Completed cases</div>
+                    <div class="h5 mb-0 font-weight-bold text-gray-800">{{caseStatus.completedCaseCount}}</div>
+                  </div>
+                  <div class="col-auto">
+                    <i class="fa fa-check fa-2x text-gray-300"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12" style="margin-top: 30px;"></div>
+          <div class="col-md-4">
+            <div class="card border-left-warning shadow h-100 py-2">
+              <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                  <div class="col mr-2">
+                    <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Total cases </div>
+                    <div class="h5 mb-0 font-weight-bold text-gray-800">{{caseStatus.totalCaseCount}}</div>
+                  </div>
+                  <div class="col-auto">
+                    <i class="fa fa-calendar-o fa-2x text-gray-300"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="card border-left-danger shadow h-100 py-2">
+              <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                  <div class="col mr-2">
+                    <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">Total Closed cases</div>
+                    <div class="h5 mb-0 font-weight-bold text-gray-800">{{caseStatus.closedCaseCount}}</div>
+                  </div>
+                  <div class="col-auto">
+                    <i class="fa fa-calendar-check-o fa-2x text-gray-300"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>

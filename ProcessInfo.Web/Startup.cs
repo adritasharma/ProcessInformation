@@ -53,8 +53,13 @@ namespace ProcessInfo.Web
             services.AddScoped(typeof(IApplicationEnvironmentService), typeof(ApplicationEnvironmentService));
             services.AddScoped(typeof(IEnvironmentService), typeof(EnvironmentService));
 
+            //services.AddDbContext<ProcessInfoDbContext>(options =>
+            //            options.UseMySql(Configuration.GetConnectionString("processinfo")));
+
             services.AddDbContext<ProcessInfoDbContext>(options =>
-                        options.UseMySql(Configuration.GetConnectionString("processinfo")));
+                        options.UseSqlServer(Configuration.GetConnectionString("processinfo")));
+
+
             services.AddAutoMapper(typeof(Startup));
 
             var datatableOptions = new Options()

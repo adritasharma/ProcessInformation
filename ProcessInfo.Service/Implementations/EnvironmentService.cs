@@ -46,9 +46,23 @@ namespace ProcessInfo.Service.Implementations
             return res;
         }
 
-        public ServiceResultModel<bool> Delete(int id)
+        public ServiceResultModel<bool> Delete(Guid id)
         {
-            throw new NotImplementedException();
+            var res = new ServiceResultModel<bool> { IsSuccess = false, Errors = new List<string>() };
+
+            var data = _environmentRepository.GetById(id);
+            if (res == null)
+            {
+                res.Data = false;
+                res.Errors.Add("The Environment doesn't exists");
+                return res;
+            }
+
+            _environmentRepository.Delete(data);
+            UnitOfWork.Commit();
+
+            res.Data = true;
+            return res;
         }
 
         public ServiceResultModel<Environment> Edit(Environment environment)
@@ -126,7 +140,7 @@ namespace ProcessInfo.Service.Implementations
             };
         }
 
-        public Environment GetByEnvironmentId(int id)
+        public Environment GetById(Guid id)
         {
             return _environmentRepository.GetById(id);
         }
