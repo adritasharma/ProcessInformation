@@ -15,6 +15,6 @@ namespace ProcessInfo.Service.Interfaces
         ApplicationEnvironment GetById(Guid id);
         IEnumerable<ApplicationEnvironment> GetAll();
         ServiceResultModel<bool> Delete(Guid id);
-        FilteredResultModel<List<ApplicationEnvironment>> GetFilteredApplicationEnvironments(string searchText, string filterType, string sortColumn, FCSortDirection sortDirection, int? start = null, int? length = null);
+        FilteredResultModel<List<PortListResultModel>> GetFilteredPorts(string searchText, string filterType, string sortColumn, FCSortDirection sortDirection, int? start = null, int? length = null);
     }
 }

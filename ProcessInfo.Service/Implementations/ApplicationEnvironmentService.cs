@@ -87,6 +87,7 @@ namespace ProcessInfo.Service.Implementations
                 applicationEnvironmentFromDB.SiteUrl = applicationEnvironment.SiteUrl;
                 applicationEnvironmentFromDB.ConfigFiles = applicationEnvironment.ConfigFiles;
                 applicationEnvironmentFromDB.Database = applicationEnvironment.Database;
+                applicationEnvironmentFromDB.Port = applicationEnvironment.Port;
 
                 _applicationEnvironmentRepository.Edit(applicationEnvironmentFromDB);
 
@@ -116,14 +117,18 @@ namespace ProcessInfo.Service.Implementations
             }
         }
 
-        public FilteredResultModel<List<ApplicationEnvironment>> GetFilteredApplicationEnvironments(string searchText, string filterType, string sortColumn, FCSortDirection sortDirection, int? start = null, int? length = null)
+        public FilteredResultModel<List<PortListResultModel>> GetFilteredPorts(string searchText, string filterType, string sortColumn, FCSortDirection sortDirection, int? start = null, int? length = null)
         {
+            List<PortListResultModel> portList = new List<PortListResultModel>();
             Expression<Func<ApplicationEnvironment, bool>> deleg = null;
             if (!string.IsNullOrEmpty(searchText))
             {
-                string rawPhoneNumber = searchText.Replace("-", "", StringComparison.InvariantCultureIgnoreCase);
                 searchText = searchText.ToLower();
-              //  deleg = x => x.EnvironmentId.ToLower().Contains(searchText);
+                //  deleg = x => x.EnvironmentId.ToLower().Contains(searchText);
+
+                deleg = x => x.Application.ApplicationName.Contains(searchText);
+                deleg = x => x.Environment.EnvironmentName.Contains(searchText);
+
             }
 
             IEnumerable<ApplicationEnvironment> query;
@@ -137,9 +142,20 @@ namespace ProcessInfo.Service.Implementations
                 query =  _applicationEnvironmentRepository.FindWithInclude(deleg, defaultOrderBy, null, null, start, length);
             }
 
-            return new FilteredResultModel<List<ApplicationEnvironment>>
+            foreach(ApplicationEnvironment item in query)
             {
-                Data = query.ToList(),
+                portList.Add(new PortListResultModel
+                {
+                    ApplicationId = item.ApplicationId,
+                    ApplicationName = item.Application.ApplicationName,
+                    SiteUrl = item.SiteUrl,
+                    Port = item.Port
+                });
+            }
+
+            return new FilteredResultModel<List<PortListResultModel>>
+            {
+                Data = portList,
                 TotalDataCount = _applicationEnvironmentRepository.Count(),
                 FilteredDataCount = _applicationEnvironmentRepository.Count(deleg)
             };

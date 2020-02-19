@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { ApplicationService } from '../application.service';
+import { ValueConverter } from '@angular/compiler/src/render3/view/template';
 
 @Component({
   selector: 'application-environment',
@@ -33,6 +34,15 @@ export class ApplicationEnvironmentComponent implements OnInit {
     requestUrl.subscribe(resp => {
       this.OnSave.emit();
     })
+  }
+
+  getPort(value:string){
+    if(!this.envData.applicationEnvironmentId){
+      let index = value.indexOf(':')
+      if(index != -1){
+        this.envData.port = value.slice(index + 1, index + 5)
+      }
+    }
   }
 
 }

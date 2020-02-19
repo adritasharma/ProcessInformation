@@ -1,16 +1,18 @@
 <form #form="ngForm" (ngSubmit)="saveData()">
   <div class="row">
     <div class="col-md-6">
-      <input-select [(model)]="envData.environmentId" label="Environment" [required]="true" [dropdownValues]="allEnvironments"></input-select>
+      <input-select [(model)]="envData.environmentId" label="Environment" [required]="true"
+        [dropdownValues]="allEnvironments"></input-select>
       <input-text [(model)]="envData.serverPath" label="Server Path" [required]="true"></input-text>
-      <input-text [(model)]="envData.appPool" label="App Pool" [isTextArea]="true"></input-text>
+      <input-text [(model)]="envData.appPool" label="App Pool"></input-text>
       <input-text [(model)]="envData.iisInstance" label="IIS Instance"></input-text>
+      <input-text [(model)]="envData.versionControlPath" label="Version Control Path"></input-text>
     </div>
     <div class="col-md-6">
-      <input-text [(model)]="envData.siteUrl" label="Site Url"></input-text>
+      <input-text [(model)]="envData.siteUrl" label="Site Url" (blur)="getPort(envData.serverPath)"></input-text>
+      <input-text [(model)]="envData.port" label="Port" [required]="true"></input-text>
       <input-text [(model)]="envData.configFiles" label="Config Files"></input-text>
       <input-text [(model)]="envData.database" label="Database"></input-text>
-      <input-text [(model)]="envData.versionControlPath" label="Version Control Path"></input-text>
     </div>
     <hr>
     <div class="col-md-2 offset-md-10 text-right">

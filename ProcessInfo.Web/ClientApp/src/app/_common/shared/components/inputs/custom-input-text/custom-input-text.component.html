@@ -12,7 +12,7 @@
       {{lengthErrorMessage}}</span>
     <input type="text" class="form-control" [id]="fieldId" [name]="fieldId" [placeholder]="label" [(ngModel)]="model"
       (ngModelChange)="change($event)" [required]="required" [pattern]="pattern" #modelRef="ngModel" (keypress)="(maxLength == undefined || $event.target.value.length < maxLength) ? true : false"
-      ChildFieldControl [disabled]="isDisabled">
+      ChildFieldControl [disabled]="isDisabled" (blur)="onBlur()" >
   </div>
 
   <div *ngIf="isTextArea">

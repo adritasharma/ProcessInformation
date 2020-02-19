@@ -16,6 +16,8 @@ namespace ProcessInfo.DB.Models
         public string IISInstance { get; set; }
         public string VersionControlPath { get; set; }
         public string SiteUrl { get; set; }
+        public string Port { get; set; }
+
         public string ConfigFiles { get; set; }
         public string Database { get; set; }
         public Guid ApplicationId { get; set; }

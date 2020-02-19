@@ -18,6 +18,7 @@ namespace ProcessInfo.Web.Models.DTOs.ResponseDTO
         public string Database { get; set; }
         public Guid ApplicationId { get; set; }
         public string EnvironmentName { get; set; }
+        public string Port { get; set; }
 
     }
 }

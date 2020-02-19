@@ -25,6 +25,7 @@ export class CustomInputTextComponent implements OnInit, AfterViewInit {
   lengthErrorMessage: string;
 
   @Output() modelChange = new EventEmitter();
+  @Output() blur = new EventEmitter();
 
   @ViewChild('modelRef') modelRef: NgModel;
 
@@ -150,5 +151,9 @@ export class CustomInputTextComponent implements OnInit, AfterViewInit {
         this.model = this.model.toUpperCase()
       }
     }
+  }
+
+  onBlur(){
+    this.blur.emit()
   }
 }

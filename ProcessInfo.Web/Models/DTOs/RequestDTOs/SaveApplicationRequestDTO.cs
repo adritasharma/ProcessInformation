@@ -15,5 +15,6 @@ namespace ProcessInfo.Web.Models.DTOs.RequestDTOs
         public string TeamMembers { get; set; }
         public string Status { get; set; }
         public string ApplicationType { get; set; }
+
     }
 }

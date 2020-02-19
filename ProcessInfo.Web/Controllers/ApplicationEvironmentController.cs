@@ -52,7 +52,7 @@ namespace ProcessInfo.Web.Controllers
             {
                 var dtOptions = _mapper.Map<DataTablesRequestDTO>(request);
 
-                var res =  _service.GetFilteredApplicationEnvironments(dtOptions.SearchText, dtOptions.FilterType, dtOptions.SortColumn, dtOptions.SortType, dtOptions.Start, dtOptions.Length);
+                var res =  _service.GetFilteredPorts(dtOptions.SearchText, dtOptions.FilterType, dtOptions.SortColumn, dtOptions.SortType, dtOptions.Start, dtOptions.Length);
 
                 return Ok(DataTablesResponse.Create(request, res.TotalDataCount, res.FilteredDataCount, res.Data));
             }
