@@ -12,6 +12,7 @@ import { ListApplicationComponent } from './pages/application/list-application/l
 import { ViewApplicationComponent } from './pages/application/view-application/view-application.component';
 import { ApplicationEnvironmentComponent } from './pages/application/application-environment/application-environment.component';
 import { UserDashboardComponent } from './pages/application/user-dashboard/user-dashboard.component';
+import { ListPortsComponent } from './pages/application/list-ports/list-ports.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { UserDashboardComponent } from './pages/application/user-dashboard/user-
     ListApplicationComponent,
     ViewApplicationComponent,
     ApplicationEnvironmentComponent,
-    UserDashboardComponent
+    UserDashboardComponent,
+    ListPortsComponent
   ]
 })
 export class UserModule { }

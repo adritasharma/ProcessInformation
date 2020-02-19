@@ -1,4 +1,5 @@
-﻿using ProcessInfo.DB;
+﻿using Microsoft.EntityFrameworkCore;
+using ProcessInfo.DB;
 using ProcessInfo.DB.Models;
 using ProcessInfo.Repository.Interfaces;
 using ProcessInfo.Service.Interfaces;
@@ -128,6 +129,8 @@ namespace ProcessInfo.Service.Implementations
 
                 deleg = x => x.Application.ApplicationName.Contains(searchText);
                 deleg = x => x.Environment.EnvironmentName.Contains(searchText);
+                deleg = x => x.Port.Contains(searchText);
+                deleg = x => x.SiteUrl.Contains(searchText);
 
             }
 
@@ -142,14 +145,19 @@ namespace ProcessInfo.Service.Implementations
                 query =  _applicationEnvironmentRepository.FindWithInclude(deleg, defaultOrderBy, null, null, start, length);
             }
 
-            foreach(ApplicationEnvironment item in query)
+
+            foreach (ApplicationEnvironment item in query)
             {
+                item.Application = _applicationEnvironmentRepository.FirstOrDefaultWithInclude(x => x.ApplicationEnvironmentId == item.ApplicationEnvironmentId, y => y.Include(z => z.Application)).Application;
+                item.Environment = _applicationEnvironmentRepository.FirstOrDefaultWithInclude(x => x.ApplicationEnvironmentId == item.ApplicationEnvironmentId, y => y.Include(z => z.Environment)).Environment;
+
                 portList.Add(new PortListResultModel
                 {
                     ApplicationId = item.ApplicationId,
                     ApplicationName = item.Application.ApplicationName,
                     SiteUrl = item.SiteUrl,
-                    Port = item.Port
+                    Port = item.Port,
+                    EnvironmentName = item.Environment.EnvironmentName
                 });
             }
 

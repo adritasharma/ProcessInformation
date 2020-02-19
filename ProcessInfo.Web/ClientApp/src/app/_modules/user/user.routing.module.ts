@@ -6,6 +6,7 @@ import { SaveApplicationComponent } from './pages/application/save-application/s
 import { ListApplicationComponent } from './pages/application/list-application/list-application.component';
 import { ViewApplicationComponent } from './pages/application/view-application/view-application.component';
 import { UserDashboardComponent } from './pages/application/user-dashboard/user-dashboard.component';
+import { ListPortsComponent } from './pages/application/list-ports/list-ports.component';
 
 export const userRoutes: Routes = [
     {
@@ -16,7 +17,9 @@ export const userRoutes: Routes = [
 
             { path: 'application/save', component: SaveApplicationComponent },
             { path: 'application/list', component: ListApplicationComponent },
-            { path: 'application/view/:id', component: ViewApplicationComponent }
+            { path: 'application/view/:id', component: ViewApplicationComponent },
+
+            { path: 'ports', component: ListPortsComponent },
 
         ]
     }

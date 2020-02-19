@@ -1,0 +1,32 @@
+<admin-page-header [options]="componentHeaderData"></admin-page-header>
+<div class="row">
+  <div class="col-md-12">
+    <div class="">
+      <table datatable [dtOptions]="dtOptions" class="table table-hover table-striped">
+        <thead>
+          <tr>
+            <th>Port</th>
+            <th>Application Name</th>
+            <th>Environment</th>
+            <th>Site Url</th>
+          </tr>
+        </thead>
+        <tbody *ngIf="allApplications?.length != 0">
+          <tr *ngFor="let item of allApplications ;let i=index">
+            <td>{{item.port}}</td>
+            <td>
+              <a [routerLink]="['/user/application/view',item.applicationId]">{{item.applicationName}}</a>
+            </td>
+            <td>{{item.environmentName}}</td>
+            <td>{{item.siteUrl}}</td>
+          </tr>
+        </tbody>
+        <tbody *ngIf="allApplications?.length == 0">
+          <tr>
+            <td colspan="4" class="no-data-available">No data!</td>
+          </tr>
+        <tbody>
+      </table>
+    </div>
+  </div>
+</div>

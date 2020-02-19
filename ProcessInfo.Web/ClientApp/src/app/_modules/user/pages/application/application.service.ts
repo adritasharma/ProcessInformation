@@ -51,4 +51,9 @@ export class ApplicationService extends HttpService {
     return this.delete(`${this.applicationEnvironmentUrl}/${id}`)
   }
 
+  getAllPorts(dataTablesParameters: any): Observable<any> {
+    return this.get(`${this.applicationEnvironmentUrl}?${this.utility.convertToParam(dataTablesParameters)}`)
+  }
+
+
 }
