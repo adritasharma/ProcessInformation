@@ -32,7 +32,12 @@ namespace ProcessInfo.Service.Implementations
 
             if (!IsEnvironmentAvailable(applicationEnvironment.EnvironmentId, applicationEnvironment.ApplicationId))
             {
-                res.Errors.Add("The ApplicationEnvironment Name is already present");
+                res.Errors.Add("The Environment is already added for this Application");
+                return res;
+            }
+            if (!IsPortAvailable(applicationEnvironment.Port, applicationEnvironment.EnvironmentId))
+            {
+                res.Errors.Add($"The Port {applicationEnvironment.Port} is already taken for this environment");
                 return res;
             }
 
@@ -113,6 +118,18 @@ namespace ProcessInfo.Service.Implementations
             {
                 return false;
             } else
+            {
+                return true;
+            }
+        }
+
+        private bool IsPortAvailable(string port, Guid environmentId)
+        {
+            if (_applicationEnvironmentRepository.Any(x => x.Port == port && x.EnvironmentId == environmentId))
+            {
+                return false;
+            }
+            else
             {
                 return true;
             }
