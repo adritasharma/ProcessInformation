@@ -151,6 +151,11 @@ namespace ProcessInfo.Service.Implementations
 
             }
 
+            if (!string.IsNullOrEmpty(filterType))
+            {
+                deleg = x => x.EnvironmentId.ToString() == filterType;
+            }
+
             IEnumerable<ApplicationEnvironment> query;
             //Implement OrderBy or OrderByDesc
             string defaultOrderBy = "ApplicationEnvironmentName";
@@ -174,7 +179,8 @@ namespace ProcessInfo.Service.Implementations
                     ApplicationName = item.Application.ApplicationName,
                     SiteUrl = item.SiteUrl,
                     Port = item.Port,
-                    EnvironmentName = item.Environment.EnvironmentName
+                    EnvironmentName = item.Environment.EnvironmentName,
+                    EnvironmentId = item.EnvironmentId
                 });
             }
 

@@ -49,6 +49,10 @@
 .loader-icon {
     font-size: 50px;
 }
+.nav-link.active {
+    background-color: #060062 !important;
+    color: #fff !important;
+}
 
 .pointer {
     cursor: pointer;
