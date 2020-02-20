@@ -10,7 +10,15 @@
 
 <body>
     <app-navbar></app-navbar>
-    <div>
-        <router-outlet></router-outlet>
+    <!-- <router-outlet></router-outlet> -->
+    <div >
+        <div [class.disabled-screen]="showLoader">
+            <router-outlet></router-outlet>
+        </div>
+        <div  class="loader-container" *ngIf="showLoader">
+            <div class="loader-icon">
+                <i class="fa fa-circle-o-notch fa-spin theme-color" style="font-size:35px;"></i>
+            </div>
+        </div>
     </div>
 </body>

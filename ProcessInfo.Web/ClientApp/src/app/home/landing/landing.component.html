@@ -1,4 +1,23 @@
-<p>
-  landing works!
-</p>
-<!-- <list-tours [Tours]="tourList$"></list-tours> -->
+<ngb-carousel>
+  <ng-template ngbSlide>
+    <img src="assets/images/slide1.jpg" alt="Random first slide" height="570px;" width="100%">
+    <div class="carousel-caption">
+      <h3>Hosted Path</h3>
+      <p>Get to know where an Application is hosted across all Environments</p>
+    </div>
+  </ng-template>
+  <ng-template ngbSlide>
+    <img src="assets/images/slide2.jpg" alt="Random second slide" height="570px;" width="100%">
+    <div class="carousel-caption">
+      <h3>One Place for Ports</h3>
+      <p>Say Goodbye To wondering whether a port is available.</p>
+    </div>
+  </ng-template>
+  <ng-template ngbSlide>
+    <img src="assets/images/slide3.png" alt="Random third slide" height="570px;" width="100%">
+    <div class="carousel-caption" style="color:black">
+      <h3>Developer Information</h3>
+      <p>Know the Developers who worked on the Application</p>
+    </div>
+  </ng-template>
+</ngb-carousel>
