@@ -12,4 +12,8 @@ export class UtilityService {
     return $.param(json);
   }
 
+  getArrayFromEnum(input: any) {
+    return (Object.keys(input)).filter(value => isNaN(Number(value)) === false)
+      .map(key => ({ label: input[key], value: key }))
+  }
 }

@@ -2,6 +2,8 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Application, IApplication } from 'src/app/_common/shared/models/application.model';
 import { ApplicationService } from '../application.service';
 import { Router } from '@angular/router';
+import { ProjectType } from 'src/app/_common/shared/enums/enum';
+import { UtilityService } from 'src/app/_common/shared/services/utility.service';
 
 @Component({
   selector: 'save-application',
@@ -10,7 +12,7 @@ import { Router } from '@angular/router';
 })
 export class SaveApplicationComponent implements OnInit {
 
-  constructor(private _applicationService: ApplicationService, private _router: Router) { }
+  constructor(private _applicationService: ApplicationService, private _router: Router, private _utility:UtilityService) { }
 
   applicationData = new Application()
 
@@ -23,6 +25,8 @@ export class SaveApplicationComponent implements OnInit {
     BackRouterLink: ['/user/application/list']
   }
 
+  projectTypes = this._utility.getArrayFromEnum(ProjectType);
+  
   ngOnInit() {
     if (this.editApplicationData) {
       this.applicationData = this.editApplicationData;

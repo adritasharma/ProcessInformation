@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-custom-input-radio',
+  selector: 'input-radio',
   templateUrl: './custom-input-radio.component.html',
   styleUrls: ['./custom-input-radio.component.css']
 })
@@ -9,7 +9,15 @@ export class CustomInputRadioComponent implements OnInit {
 
   constructor() { }
 
+  @Input() itemList: any
+  @Input() model: any;
+  @Input() label: string;
+  @Input() id: string;
+  @Input() required: boolean;
+  @Input() disabled: boolean;
+  
   ngOnInit() {
+    this.model = this.itemList[0].value
   }
 
 }
