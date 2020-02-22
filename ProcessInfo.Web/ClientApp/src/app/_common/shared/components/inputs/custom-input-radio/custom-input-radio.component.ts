@@ -15,9 +15,11 @@ export class CustomInputRadioComponent implements OnInit {
   @Input() id: string;
   @Input() required: boolean;
   @Input() disabled: boolean;
-  
+
   ngOnInit() {
-    this.model = this.itemList[0].value
+    if (this.required) {
+      this.model = this.itemList[0].value;
+    }
   }
 
 }

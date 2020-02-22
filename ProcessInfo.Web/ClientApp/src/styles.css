@@ -61,7 +61,9 @@
 .container {
     max-width: 100% !important;
 }
-
+.required-star{
+    color: #c70000
+}
 .sidebar {
     height: 100%;
 }
