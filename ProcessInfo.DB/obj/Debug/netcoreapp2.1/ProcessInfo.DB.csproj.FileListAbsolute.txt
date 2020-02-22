@@ -16,3 +16,12 @@ C:\Adrita\Workspace\GitHub\Projects\ProcessInformation\ProcessInfo.DB\obj\Debug\
 C:\Adrita\Workspace\GitHub\Projects\ProcessInformation\ProcessInfo.DB\obj\Debug\netcoreapp2.1\ProcessInfo.DB.AssemblyInfo.cs
 C:\Adrita\Workspace\GitHub\Projects\ProcessInformation\ProcessInfo.DB\obj\Debug\netcoreapp2.1\ProcessInfo.DB.dll
 C:\Adrita\Workspace\GitHub\Projects\ProcessInformation\ProcessInfo.DB\obj\Debug\netcoreapp2.1\ProcessInfo.DB.pdb
+F:\Angular7\tttttt\ProcessInformation\ProcessInfo.DB\bin\Debug\netcoreapp2.1\ProcessInfo.DB.deps.json
+F:\Angular7\tttttt\ProcessInformation\ProcessInfo.DB\bin\Debug\netcoreapp2.1\ProcessInfo.DB.dll
+F:\Angular7\tttttt\ProcessInformation\ProcessInfo.DB\bin\Debug\netcoreapp2.1\ProcessInfo.DB.pdb
+F:\Angular7\tttttt\ProcessInformation\ProcessInfo.DB\obj\Debug\netcoreapp2.1\ProcessInfo.DB.csprojAssemblyReference.cache
+F:\Angular7\tttttt\ProcessInformation\ProcessInfo.DB\obj\Debug\netcoreapp2.1\ProcessInfo.DB.csproj.CoreCompileInputs.cache
+F:\Angular7\tttttt\ProcessInformation\ProcessInfo.DB\obj\Debug\netcoreapp2.1\ProcessInfo.DB.AssemblyInfoInputs.cache
+F:\Angular7\tttttt\ProcessInformation\ProcessInfo.DB\obj\Debug\netcoreapp2.1\ProcessInfo.DB.AssemblyInfo.cs
+F:\Angular7\tttttt\ProcessInformation\ProcessInfo.DB\obj\Debug\netcoreapp2.1\ProcessInfo.DB.dll
+F:\Angular7\tttttt\ProcessInformation\ProcessInfo.DB\obj\Debug\netcoreapp2.1\ProcessInfo.DB.pdb

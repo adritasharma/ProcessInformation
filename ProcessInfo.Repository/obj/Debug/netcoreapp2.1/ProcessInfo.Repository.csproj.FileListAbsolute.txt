@@ -29,3 +29,17 @@ F:\Angular6\GitHub\ll\ProcessInfo\ProcessInfo.Repository\bin\Debug\netcoreapp2.1
 >>>>>>> 90ba68ec3fa16a8621a979b34fe7d851fdc09f4d
 C:\Adrita\Workspace\GitHub\Projects\ProcessInformation\ProcessInfo.Repository\bin\Debug\netcoreapp2.1\ProcessInfo.Utility.dll
 C:\Adrita\Workspace\GitHub\Projects\ProcessInformation\ProcessInfo.Repository\bin\Debug\netcoreapp2.1\ProcessInfo.Utility.pdb
+F:\Angular7\tttttt\ProcessInformation\ProcessInfo.Repository\bin\Debug\netcoreapp2.1\ProcessInfo.Repository.deps.json
+F:\Angular7\tttttt\ProcessInformation\ProcessInfo.Repository\bin\Debug\netcoreapp2.1\ProcessInfo.Repository.dll
+F:\Angular7\tttttt\ProcessInformation\ProcessInfo.Repository\bin\Debug\netcoreapp2.1\ProcessInfo.Repository.pdb
+F:\Angular7\tttttt\ProcessInformation\ProcessInfo.Repository\bin\Debug\netcoreapp2.1\ProcessInfo.DB.dll
+F:\Angular7\tttttt\ProcessInformation\ProcessInfo.Repository\bin\Debug\netcoreapp2.1\ProcessInfo.Utility.dll
+F:\Angular7\tttttt\ProcessInformation\ProcessInfo.Repository\bin\Debug\netcoreapp2.1\ProcessInfo.DB.pdb
+F:\Angular7\tttttt\ProcessInformation\ProcessInfo.Repository\bin\Debug\netcoreapp2.1\ProcessInfo.Utility.pdb
+F:\Angular7\tttttt\ProcessInformation\ProcessInfo.Repository\obj\Debug\netcoreapp2.1\ProcessInfo.Repository.csprojAssemblyReference.cache
+F:\Angular7\tttttt\ProcessInformation\ProcessInfo.Repository\obj\Debug\netcoreapp2.1\ProcessInfo.Repository.csproj.CoreCompileInputs.cache
+F:\Angular7\tttttt\ProcessInformation\ProcessInfo.Repository\obj\Debug\netcoreapp2.1\ProcessInfo.Repository.AssemblyInfoInputs.cache
+F:\Angular7\tttttt\ProcessInformation\ProcessInfo.Repository\obj\Debug\netcoreapp2.1\ProcessInfo.Repository.AssemblyInfo.cs
+F:\Angular7\tttttt\ProcessInformation\ProcessInfo.Repository\obj\Debug\netcoreapp2.1\ProcessInfo.Repository.csproj.CopyComplete
+F:\Angular7\tttttt\ProcessInformation\ProcessInfo.Repository\obj\Debug\netcoreapp2.1\ProcessInfo.Repository.dll
+F:\Angular7\tttttt\ProcessInformation\ProcessInfo.Repository\obj\Debug\netcoreapp2.1\ProcessInfo.Repository.pdb
