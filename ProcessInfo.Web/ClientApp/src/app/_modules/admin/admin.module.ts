@@ -9,7 +9,7 @@ import { AdminSidebarComponent } from './admin-sidebar/admin-sidebar.component';
 import { AdminDashboardComponent } from './pages/admin-dashboard/admin-dashboard.component';
 import { SaveEnvironmentComponent } from './pages/environment/save-environment/save-environment.component';
 import { ListEnvironmentComponent } from './pages/environment/list-environment/list-environment.component';
-import { ListApplicationTypesComponent } from './pages/application-types/list-application-types/list-application-types.component';
+import { ListApplicationTypeComponent } from './pages/application-types/list-application-types/list-application-types.component';
 import { SaveApplicationTypeComponent } from './pages/application-types/save-application-type/save-application-type.component';
 
 
@@ -26,7 +26,7 @@ import { SaveApplicationTypeComponent } from './pages/application-types/save-app
     AdminDashboardComponent,
     SaveEnvironmentComponent,
     ListEnvironmentComponent,
-    ListApplicationTypesComponent,
+    ListApplicationTypeComponent,
     SaveApplicationTypeComponent
   ]
 })
