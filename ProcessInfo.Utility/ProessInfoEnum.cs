@@ -31,4 +31,11 @@ namespace ProcessInfo.Utility
         Demo = 1,
         Temporary = 2
     }
+
+    public enum Role
+    {
+        Admin = 0,
+        User = 1
+    }
+
 }

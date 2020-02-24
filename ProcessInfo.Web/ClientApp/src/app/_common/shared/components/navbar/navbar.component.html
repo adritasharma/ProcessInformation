@@ -9,6 +9,11 @@
             Login
           </a>
         </li>
+        <li class="nav-item">
+          <a [routerLink]="['/signup']" class="nav-link" style="padding-right:85px;">
+            SignUp
+          </a>
+        </li>
       </ng-template>
 
       <li class="nav-item dropdown" ngbDropdown *ngIf="userFirstName; else loginContent">

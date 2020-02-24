@@ -49,7 +49,7 @@ namespace ProcessInfo.Web
             services.AddScoped(typeof(IEnvironmentRepository), typeof(EnvironmentRepository));
 
             services.AddScoped(typeof(IApplicationService), typeof(ApplicationService));
-           // services.AddScoped(typeof(IUserService), typeof(UserService));
+            services.AddScoped(typeof(IUserService), typeof(UserService));
             services.AddScoped(typeof(IApplicationEnvironmentService), typeof(ApplicationEnvironmentService));
             services.AddScoped(typeof(IEnvironmentService), typeof(EnvironmentService));
 
