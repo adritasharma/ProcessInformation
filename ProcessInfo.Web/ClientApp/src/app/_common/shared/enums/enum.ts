@@ -3,10 +3,8 @@ export enum UserType {
     Admin = 1
 }
 
-export enum Environment {
-    DEV = 0,
-    QA = 1,
-    UAT = 2,
-    DR = 3,
-    PROD = 4
+export enum ProjectType  {
+    RealTime = 0,
+    Demo = 1,
+    Temporary = 2
 }

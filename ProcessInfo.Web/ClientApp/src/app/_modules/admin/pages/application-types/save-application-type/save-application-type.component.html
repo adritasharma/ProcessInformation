@@ -1,0 +1,14 @@
+<admin-page-header [options]="componentHeaderData" ></admin-page-header>
+<div class="row">
+  <div class="col-md-11 mx-auto">
+    <form #form="ngForm" (ngSubmit)="saveData()">
+      <div class="row">
+        <div class="col-md-6">
+          <input-text [(model)]="applicationTypeData.applicationTypeName" [label]="'ApplicationType Name'" [required]="true" [focus]="true"></input-text>
+          <input-text [(model)]="applicationTypeData.applicationTypeDescription" [label]="'Description'" [required]="true"></input-text>
+          <input type="submit" class="btn btn-primary" value="Submit" [disabled]="!form.valid"/>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

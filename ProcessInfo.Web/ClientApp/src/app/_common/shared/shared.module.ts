@@ -11,12 +11,16 @@ import { DataTablesModule } from 'angular-datatables';
 import { ListActionsComponent } from './components/list-actions/list-actions.component';
 import { CustomInputSelectComponent } from './components/inputs/custom-input-text/custom-input-select/custom-input-select.component';
 import { ConfirmationDialogComponent } from './components/confirmation-dialog/confirmation-dialog.component';
+import { CustomInputRadioComponent } from './components/inputs/custom-input-radio/custom-input-radio.component';
+import { CustomChartComponent } from './components/custom-chart/custom-chart.component';
+import { GoogleChartsModule } from 'angular-google-charts';
 
 @NgModule({
   imports: [
     CommonModule,
     CoreModule,
-    DataTablesModule
+    DataTablesModule,
+    GoogleChartsModule
   ],
   declarations: [
     ConfirmationDialogComponent,
@@ -27,7 +31,9 @@ import { ConfirmationDialogComponent } from './components/confirmation-dialog/co
     ChildFieldControlDirective,
     CustomInputTextComponent,
     CustomInputSelectComponent,
-    ListActionsComponent
+    CustomInputRadioComponent,
+    ListActionsComponent,
+    CustomChartComponent
   ],
   exports: [
     DataTablesModule,
@@ -38,7 +44,9 @@ import { ConfirmationDialogComponent } from './components/confirmation-dialog/co
     ChildFieldControlDirective,
     CustomInputTextComponent,
     CustomInputSelectComponent,
-    ListActionsComponent
+    CustomInputRadioComponent,
+    ListActionsComponent,
+    CustomChartComponent
   ],
   entryComponents: [ ConfirmationDialogComponent ],
 })

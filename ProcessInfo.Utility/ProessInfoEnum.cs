@@ -24,4 +24,11 @@ namespace ProcessInfo.Utility
         Ascending = 0,
         Descending = 1
     }
+
+    public enum ProjectType
+    {
+        Ascending = 0,
+        Demo = 1,
+        Temporary = 2
+    }
 }

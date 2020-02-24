@@ -30,9 +30,13 @@ namespace ProcessInfo.DB.Migrations
 
                     b.Property<string>("ProjectName");
 
+                    b.Property<int>("ProjectType");
+
                     b.Property<string>("Status");
 
                     b.Property<string>("TeamMembers");
+
+                    b.Property<string>("TechnologiesUsed");
 
                     b.Property<int>("WorkObjectName");
 
@@ -108,15 +112,29 @@ namespace ProcessInfo.DB.Migrations
 
                     b.Property<string>("Email");
 
+                    b.Property<string>("EmailAddress");
+
                     b.Property<string>("FirstName");
+
+                    b.Property<bool>("IsEmailConfirmed");
 
                     b.Property<string>("LastName");
 
                     b.Property<string>("MiddleName");
 
+                    b.Property<string>("Password");
+
+                    b.Property<string>("PasswordHash");
+
+                    b.Property<string>("PasswordSalt");
+
                     b.Property<Guid>("RoleId");
 
+                    b.Property<string>("Username");
+
                     b.HasKey("UserId");
+
+                    b.HasIndex("RoleId");
 
                     b.ToTable("User");
                 });
@@ -131,6 +149,14 @@ namespace ProcessInfo.DB.Migrations
                     b.HasOne("ProcessInfo.DB.Models.Environment", "Environment")
                         .WithMany("ApplicationEnvironments")
                         .HasForeignKey("EnvironmentId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("ProcessInfo.DB.Models.User", b =>
+                {
+                    b.HasOne("ProcessInfo.DB.Models.Role", "Role")
+                        .WithMany()
+                        .HasForeignKey("RoleId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618

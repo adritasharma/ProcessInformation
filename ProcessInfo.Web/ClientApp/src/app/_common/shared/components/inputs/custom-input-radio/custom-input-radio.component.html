@@ -1,0 +1,14 @@
+<div class="form-group">
+    <label class="control-label">
+        {{label}} <span class="required-star" *ngIf="required"> *</span> :
+    </label>
+    <div>
+        <span class="col-sm-12">
+            <label class="radio-container" *ngFor="let item of itemList;let i=index">
+                <input type="radio" [name]="id" [(ngModel)]="model" [value]="item.value" >
+                <span class="checkmark"></span>
+                <span class="radio-label">{{item.label}}</span>
+            </label>
+        </span>
+    </div>
+</div>
