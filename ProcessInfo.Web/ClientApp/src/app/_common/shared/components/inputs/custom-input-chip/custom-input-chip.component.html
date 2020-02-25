@@ -1,0 +1,7 @@
+<div class="form-group">
+	<tag-input [(ngModel)]="model" [onlyFromAutocomplete]="false" [onAdding]="onAdding" (onAdd)="onAdd($event)"
+		(onRemove)="onRemove()">
+		<tag-input-dropdown [autocompleteItems]="AutocompleteItems" [displayBy]="'value'" [identifyBy]="'id'">
+		</tag-input-dropdown>
+	</tag-input>
+</div>

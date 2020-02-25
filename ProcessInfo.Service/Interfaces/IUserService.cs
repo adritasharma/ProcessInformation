@@ -13,5 +13,6 @@ namespace ProcessInfo.Service.Interfaces
         User GetById(Guid id);
         IEnumerable<User> GetAll();
         ServiceResultModel<bool> Delete(Guid id);
+        IEnumerable<User> SearchUserByKeyword(string keyword);
     }
 }
