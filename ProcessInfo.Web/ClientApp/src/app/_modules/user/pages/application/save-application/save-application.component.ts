@@ -26,6 +26,11 @@ export class SaveApplicationComponent implements OnInit {
   }
 
   projectTypes = this._utility.getArrayFromEnum(ProjectType);
+
+  options ={
+    AllowNewItem:true,
+    IsAutoCompleteObservable:true
+  }
   
   ngOnInit() {
     if (this.editApplicationData) {

@@ -1,17 +1,20 @@
 import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
 import { Observable, of } from 'rxjs';
-import { filter } from 'rxjs/operators';
+import { filter, map } from 'rxjs/operators';
+import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 
 @Component({
-  selector: 'app-custom-input-chip',
+  selector: 'input-chip',
   templateUrl: './custom-input-chip.component.html',
   styleUrls: ['./custom-input-chip.component.css']
 })
 export class CustomInputChipComponent implements OnInit {
 
-  constructor() { }
+  constructor(public _http: HttpClient) {
+  }
   @Input() AutocompleteItems: any[];
-  @Input() Options: any[];
+  @Input() Options: any;
   @Input() model: any;
   @Input() label: string;
   @Input() fieldId: string;
@@ -42,5 +45,16 @@ export class CustomInputChipComponent implements OnInit {
     console.log(this.model);
     this.modelChange.emit(this.model);
   }
+
+  public requestAutocompleteItems = (text: string): Observable<any> => {
+    const url = `${environment.apiUrl}user/search/${text}`;
+    ;
+    return this._http
+      .get(url);
+
+    // return of([{userId: "one",firstName:"one"}])
+  };
+
+  itemsAsObjects = [{userId: "one",firstName:"one"}]
 
 }

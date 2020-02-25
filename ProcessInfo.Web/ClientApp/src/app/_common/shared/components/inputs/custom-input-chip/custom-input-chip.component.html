@@ -1,7 +1,16 @@
-<div class="form-group">
-	<tag-input [(ngModel)]="model" [onlyFromAutocomplete]="false" [onAdding]="onAdding" (onAdd)="onAdd($event)"
-		(onRemove)="onRemove()">
-		<tag-input-dropdown [autocompleteItems]="AutocompleteItems" [displayBy]="'value'" [identifyBy]="'id'">
+<!-- <div class="form-group">
+  {{model | json}}
+  <tag-input [(ngModel)]="model" [onlyFromAutocomplete]="false" [onAdding]="onAdding" (onAdd)="onAdd($event)"
+    (onRemove)="onRemove()" [displayBy]="'firstName'" [identifyBy]="'userId'">
+    <tag-input-dropdown [autocompleteObservable]="requestAutocompleteItems" [displayBy]="'firstName'"
+      [identifyBy]="'userId'" *ngIf="Options.IsAutoCompleteObservable">
+    </tag-input-dropdown>
+    <tag-input-dropdown [autocompleteItems]="AutocompleteItems" [displayBy]="'value'" [identifyBy]="'id'" *ngIf="!Options.IsAutoCompleteObservable">
 		</tag-input-dropdown>
-	</tag-input>
-</div>
+  </tag-input>
+</div> -->
+<tag-input [(ngModel)]="itemsAsObjects" [identifyBy]="'userId'" [displayBy]="'firstName'">
+  <tag-input-dropdown [autocompleteObservable]="requestAutocompleteItems" [displayBy]="'firstName'"
+    [identifyBy]="'userId'" >
+  </tag-input-dropdown>
+</tag-input>

@@ -12,7 +12,8 @@
           <input-radio [(model)]="applicationData.projectType" label="Project Type" [required]="true" [itemList]="projectTypes"
             id="projectType">
           </input-radio>
-          <input-text [(model)]="applicationData.teamMembers" label="Team Members" [isTextArea]="true"></input-text>
+          <input-chip [AutocompleteItems]="autocompleteItemsAsObjects" [Options]="options" [(model)]="items" [(model)]="applicationData.teamMembers" label="Team Members"></input-chip>
+          <!-- <input-text [(model)]="applicationData.teamMembers" label="Team Members" [isTextArea]="true"></input-text> -->
           <input-text [(model)]="applicationData.applicationType" label="Application Type" [required]="true">
           </input-text>
         </div>

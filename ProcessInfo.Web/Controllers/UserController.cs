@@ -87,5 +87,14 @@ namespace ProcessInfo.Web.Controllers
                 return BadRequest(res.Errors);
         }
 
+        [HttpGet]
+        [Route("search/{keyword}")]
+        public IActionResult SearchUserByKeyword(string keyword)
+        {
+            var res = _service.SearchUserByKeyword(keyword);
+            //return Ok(_mapper.Map<UserResponseDTO>(res));
+            return Ok(res);
+        }
+
     }
 }

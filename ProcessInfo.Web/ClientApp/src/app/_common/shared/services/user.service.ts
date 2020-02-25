@@ -53,6 +53,8 @@ export class UserService extends HttpService {
   getAllPorts(dataTablesParameters: any): Observable<any> {
     return this.get(`${this.userEnvironmentUrl}?${this.utility.convertToParam(dataTablesParameters)}`)
   }
-
+  searchUserByKeyword(keyword: string): Observable<any> {
+    return this.get(`${this.userUrl}/${keyword}`)
+  }
 
 }
