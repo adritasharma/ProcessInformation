@@ -182,5 +182,9 @@ namespace ProcessInfo.Service.Implementations
             return res;
         }
 
+        public IEnumerable<User> SearchUserByKeyword(string keyword)
+        {
+            return _userRepository.FindWithInclude(x => x.FirstName.Contains(keyword) || x.LastName.Contains(keyword) || x.Username.Contains(keyword) || x.EmailAddress.Contains(keyword));
+        }
     }
 }
