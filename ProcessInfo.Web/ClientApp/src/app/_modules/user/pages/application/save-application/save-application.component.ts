@@ -40,6 +40,8 @@ export class SaveApplicationComponent implements OnInit {
 
   saveData() {
 
+    console.log(this.applicationData)
+
     let requestUrl = this.editApplicationData ? this._applicationService.updateApplication(this.applicationData) : this._applicationService.saveApplication(this.applicationData);
 
     requestUrl.subscribe(resp => {

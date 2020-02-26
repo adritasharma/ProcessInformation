@@ -11,8 +11,8 @@ namespace ProcessInfo.DB.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid ApplicationDeveloperId { get; set; }
-        public string ApplicationId { get; set; }
-        public string UserId { get; set; }
+        public Guid ApplicationId { get; set; }
+        public Guid UserId { get; set; }
         [ForeignKey("UserId")]
         public User User { get; set; }
     }

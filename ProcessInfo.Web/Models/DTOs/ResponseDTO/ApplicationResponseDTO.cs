@@ -12,10 +12,10 @@ namespace ProcessInfo.Web.Models.DTOs.ResponseDTO
         public string ApplicationName { get; set; }
         public string ProjectName { get; set; }
         public int WorkObjectName { get; set; }
-        public string TeamMembers { get; set; }
+        public string TeamMemberNames { get; set; }
         public string Status { get; set; }
         public string ApplicationType { get; set; }
-
+        public List<User> TeamMembers { get; set; }
         public List<ApplicationEnvironmentResponseDTO> ApplicationEnvironments { get; set; }
     }
 }

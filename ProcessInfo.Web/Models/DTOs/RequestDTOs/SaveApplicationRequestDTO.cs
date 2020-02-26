@@ -12,7 +12,7 @@ namespace ProcessInfo.Web.Models.DTOs.RequestDTOs
         public string ApplicationName { get; set; }
         public string ProjectName { get; set; }
         public int WorkObjectName { get; set; }
-        public string TeamMembers { get; set; }
+        public List<SaveUserRequestDTO> TeamMembers { get; set; }
         public string Status { get; set; }
         public string ApplicationType { get; set; }
 

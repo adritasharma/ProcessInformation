@@ -9,8 +9,9 @@
 		</tag-input-dropdown>
   </tag-input>
 </div> -->
-<tag-input [(ngModel)]="itemsAsObjects" [identifyBy]="'userId'" [displayBy]="'firstName'">
+<tag-input [(ngModel)]="model" [identifyBy]="'userId'" [displayBy]="'firstName'" [onlyFromAutocomplete]="false"
+  [onAdding]="onAdding" (onAdd)="onAdd($event)" (onRemove)="onRemove()">
   <tag-input-dropdown [autocompleteObservable]="requestAutocompleteItems" [displayBy]="'firstName'"
-    [identifyBy]="'userId'" >
+    [identifyBy]="'userId'">
   </tag-input-dropdown>
 </tag-input>
