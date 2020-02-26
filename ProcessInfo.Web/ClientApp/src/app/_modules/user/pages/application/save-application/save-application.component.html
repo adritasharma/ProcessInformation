@@ -1,18 +1,20 @@
-<admin-page-header [options]="componentHeaderData" *ngIf="!applicationId"></admin-page-header>
+<admin-page-header [options]="componentHeaderData" [hidden]="editApplicationData"></admin-page-header>
 <div class="row">
   <div class="col-md-11 mx-auto">
     <form #form="ngForm" (ngSubmit)="saveData()">
       <div class="row">
         <div class="col-md-6">
-          <input-text [(model)]="applicationData.applicationName" label="Application Name" [required]="true" [focus]="true"></input-text>
+          <input-text [(model)]="applicationData.applicationName" label="Application Name" [required]="true"
+            [focus]="true"></input-text>
           <input-text [(model)]="applicationData.projectName" label="Project Name" [required]="true"></input-text>
-          <input-text [(model)]="applicationData.technologiesUsed" label="Technologies Used" [isTextArea]="true"></input-text>
+          <input-text [(model)]="applicationData.technologiesUsed" label="Technologies Used" [isTextArea]="true">
+          </input-text>
         </div>
         <div class="col-md-6">
-          <input-radio [(model)]="applicationData.projectType" label="Project Type" [required]="true" [itemList]="projectTypes"
-            id="projectType">
+          <input-radio [(model)]="applicationData.projectType" label="Project Type" [required]="true"
+            [itemList]="projectTypes" id="projectType">
           </input-radio>
-          <input-chip [AutocompleteItems]="autocompleteItemsAsObjects" [Options]="options" [(model)]="applicationData.teamMembers" label="Team Members"></input-chip>
+          <input-chip [Options]="options" [(model)]="applicationData.teamMembers" label="Team Members"></input-chip>
           <!-- <input-text [(model)]="applicationData.teamMembers" label="Team Members" [isTextArea]="true"></input-text> -->
           <input-text [(model)]="applicationData.applicationType" label="Application Type" [required]="true">
           </input-text>

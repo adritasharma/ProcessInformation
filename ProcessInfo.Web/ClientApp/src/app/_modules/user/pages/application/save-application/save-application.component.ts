@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Application, IApplication } from 'src/app/_common/shared/models/application.model';
 import { ApplicationService } from '../application.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { ProjectType } from 'src/app/_common/shared/enums/enum';
 import { UtilityService } from 'src/app/_common/shared/services/utility.service';
 
@@ -12,7 +12,7 @@ import { UtilityService } from 'src/app/_common/shared/services/utility.service'
 })
 export class SaveApplicationComponent implements OnInit {
 
-  constructor(private _applicationService: ApplicationService, private _router: Router, private _utility:UtilityService) { }
+  constructor(private route: ActivatedRoute, private _applicationService: ApplicationService, private _router: Router, private _utility:UtilityService) { }
 
   applicationData = new Application()
 
@@ -24,6 +24,7 @@ export class SaveApplicationComponent implements OnInit {
     Title: "Applications",
     BackRouterLink: ['/user/application/list']
   }
+  paramId: any = null
 
   projectTypes = this._utility.getArrayFromEnum(ProjectType);
 
@@ -31,18 +32,32 @@ export class SaveApplicationComponent implements OnInit {
     AllowNewItem:true,
     IsAutoCompleteObservable:true
   }
+
+  isEdit:boolean = false;
   
   ngOnInit() {
     if (this.editApplicationData) {
       this.applicationData = this.editApplicationData;
+      this.isEdit = true;
+    }
+    this.paramId = this.route.snapshot.params["id"];
+
+    if (this.paramId) {
+      this.isEdit = true;
+      this.getApplicationDetails();
     }
   }
-
+  getApplicationDetails() {
+    this._applicationService.getApplicationById(this.paramId).subscribe(res => {
+      this.applicationData = res
+      console.log(res)
+    })
+  }
   saveData() {
 
     console.log(this.applicationData)
 
-    let requestUrl = this.editApplicationData ? this._applicationService.updateApplication(this.applicationData) : this._applicationService.saveApplication(this.applicationData);
+    let requestUrl = this.isEdit ? this._applicationService.updateApplication(this.applicationData) : this._applicationService.saveApplication(this.applicationData);
 
     requestUrl.subscribe(resp => {
       console.log(resp);

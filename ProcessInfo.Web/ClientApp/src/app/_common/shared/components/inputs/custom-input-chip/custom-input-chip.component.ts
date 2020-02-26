@@ -13,7 +13,7 @@ export class CustomInputChipComponent implements OnInit {
 
   constructor(public _http: HttpClient) {
   }
-  @Input() AutocompleteItems: any[];
+  @Input() AutocompleteItems?: any[];
   @Input() Options: any;
   @Input() model: any;
   @Input() label: string;

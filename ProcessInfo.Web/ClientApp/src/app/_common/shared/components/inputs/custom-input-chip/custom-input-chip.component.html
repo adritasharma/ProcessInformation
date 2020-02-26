@@ -10,8 +10,8 @@
   </tag-input>
 </div> -->
 <tag-input [(ngModel)]="model" [identifyBy]="'userId'" [displayBy]="'firstName'" [onlyFromAutocomplete]="false"
-  [onAdding]="onAdding" (onAdd)="onAdd($event)" (onRemove)="onRemove()">
+  [onAdding]="onAdding" (onAdd)="onAdd($event)" (onRemove)="onRemove()" >
   <tag-input-dropdown [autocompleteObservable]="requestAutocompleteItems" [displayBy]="'firstName'"
-    [identifyBy]="'userId'">
+    [identifyBy]="'userId'"  [appendToBody]="false">
   </tag-input-dropdown>
 </tag-input>
