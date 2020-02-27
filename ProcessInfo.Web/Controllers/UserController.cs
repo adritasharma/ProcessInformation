@@ -12,6 +12,10 @@ using ProcessInfo.Service.Interfaces;
 using ProcessInfo.Web.AutoMapperProfiles.RequestDTOs;
 using ProcessInfo.Web.Models.DTOs.RequestDTOs;
 using ProcessInfo.Web.Models.DTOs.ResponseDTO;
+using System.IO;
+using OfficeOpenXml;
+using ProcessInfo.Web.Helper;
+using System.ComponentModel.DataAnnotations;
 
 namespace ProcessInfo.Web.Controllers
 {
@@ -40,24 +44,24 @@ namespace ProcessInfo.Web.Controllers
                 return BadRequest(res.Errors);
         }
 
-        //[DisableRequestSizeLimit]
-        //[HttpGet]
-        //public IActionResult Get(IDataTablesRequest request)
-        //{
-        //    if (request == null)
-        //    {
-        //        var res =  _service.GetAll();
-        //        return Ok(res);
-        //    }
-        //    else
-        //    {
-        //        var dtOptions = _mapper.Map<DataTablesRequestDTO>(request);
+        [DisableRequestSizeLimit]
+        [HttpGet]
+        public IActionResult Get(IDataTablesRequest request)
+        {
+            if (request == null)
+            {
+                var res = _service.GetAll();
+                return Ok(res);
+            }
+            else
+            {
+                var dtOptions = _mapper.Map<DataTablesRequestDTO>(request);
 
-        //        var res =  _service.GetFilteredUsers(dtOptions.SearchText, dtOptions.FilterType, dtOptions.SortColumn, dtOptions.SortType, dtOptions.Start, dtOptions.Length);
+                var res = _service.GetFilteredUsers(dtOptions.SearchText, dtOptions.FilterType, dtOptions.SortColumn, dtOptions.SortType, dtOptions.Start, dtOptions.Length);
 
-        //        return Ok(DataTablesResponse.Create(request, res.TotalDataCount, res.FilteredDataCount, res.Data));
-        //    }
-        //}
+                return Ok(DataTablesResponse.Create(request, res.TotalDataCount, res.FilteredDataCount, res.Data));
+            }
+        }
 
         [HttpGet]
         [Route("{id}")]
@@ -95,6 +99,90 @@ namespace ProcessInfo.Web.Controllers
             //return Ok(_mapper.Map<UserResponseDTO>(res));
             return Ok(res);
         }
+        [HttpPost]
+        [Route("addcandidates")]
+        public async Task<ActionResult> AddCandidates([FromForm]BulkUploadUserRequestDTO fileUpload)
+        {
+            var errors = new List<string>();
+            var file = Request.Form.Files[0];
+           
+            var users = new List<SaveUserRequestDTO>();
 
+            using (var memoryStream = new MemoryStream())
+            {
+                await file.CopyToAsync(memoryStream).ConfigureAwait(false);
+                using (var package = new ExcelPackage(memoryStream))
+                {
+                    var worksheet = package.Workbook.Worksheets[1]; // Tip: To access the first worksheet, try index 1, not 0
+                    users.AddRange(ExcelHelper.ReadExcelForBulkUploadUser(package, worksheet));
+                }
+            }
+            //Validate the data
+
+            var validationErrors = ValidateUser(users);
+            if (validationErrors != null && validationErrors.Any())
+                return Ok(new { SavedRecord = new List<UserResponseDTO>(), Errors = validationErrors });
+
+            //If we come so far, then we the correct data in place. Try Storing them.
+            // var addedUsers = new List<UserResponseDTO>();
+            var addedUsers = new List<User>();
+
+            var errorsWhileSavingData = new List<string>();
+            int row = 2;
+            //var bulkUploadId = Guid.NewGuid();
+            foreach (var user in users)
+            {
+                var result = _service.Add( _mapper.Map<User>(user));
+
+                if (result.IsSuccess)
+                    //   addedUsers.Add(_mapper.Map<UserResponseDTO>(result.Data));
+
+                    addedUsers.Add(result.Data);
+                else
+                    errorsWhileSavingData.Add($"{string.Join(", ", result.Errors)} for Row # {row}");
+
+                row++;
+            }
+
+            //BulkUploadNotificationEmailModel emailModel = new BulkUploadNotificationEmailModel()
+            //{
+            //    FullName = "",
+            //    AddedCaseCount = addedCandidates.Count
+            //};
+
+            //List<string> emailIds = _configuration.GetSection("KeyValuePairs").GetValue<string>("BulkUploadNotificationEmailIds").Split(",").ToList();
+
+            //foreach (string emailId in emailIds)
+            //{
+            //    var emailRes = _email.SendEmail(emailModel, "_BulkUploadComplete", "Bulk Upload Notification", "Bulk Upload Notification", emailId, null, null, null, null);
+            //}
+
+            return Ok(new { SavedRecord = addedUsers, Errors = errorsWhileSavingData });
+        }
+
+        private List<string> ValidateUser(List<SaveUserRequestDTO> candidates)
+        {
+            var errors = new List<string>();
+            if (candidates != null && candidates.Any())
+            {
+                int row = 2;
+                foreach (var candidate in candidates)
+                {
+                    var context = new System.ComponentModel.DataAnnotations.ValidationContext(candidate, serviceProvider: null, items: null);
+                    var results = new List<ValidationResult>();
+                    var isValid = Validator.TryValidateObject(candidate, context, results);
+
+                    if (!isValid)
+                    {
+                        foreach (var validationResult in results)
+                        {
+                            errors.Add($"{validationResult.ErrorMessage} - On Row #{row}");
+                        }
+                    }
+                    row++;
+                }
+            }
+            return errors;
+        }
     }
 }

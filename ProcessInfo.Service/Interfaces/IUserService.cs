@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Text;
 using ProcessInfo.Service.Models;
 using ProcessInfo.DB.Models;
+using ProcessInfo.Service.ServiceModels;
+using ProcessInfo.Utility;
 
 namespace ProcessInfo.Service.Interfaces
 {
@@ -14,5 +16,7 @@ namespace ProcessInfo.Service.Interfaces
         IEnumerable<User> GetAll();
         ServiceResultModel<bool> Delete(Guid id);
         IEnumerable<User> SearchUserByKeyword(string keyword);
+        FilteredResultModel<List<User>> GetFilteredUsers(string searchText, string filterType, string sortColumn, FCSortDirection sortDirection, int? start = null, int? length = null);
+
     }
 }
