@@ -16,6 +16,7 @@ import { CustomChartComponent } from './components/custom-chart/custom-chart.com
 import { GoogleChartsModule } from 'angular-google-charts';
 import { CustomInputChipComponent } from './components/inputs/custom-input-chip/custom-input-chip.component';
 import { TagInputModule } from 'ngx-chips';
+import { CustomInputFileComponent } from './components/inputs/custom-input-file/custom-input-file.component';
 
 @NgModule({
   imports: [
@@ -37,7 +38,8 @@ import { TagInputModule } from 'ngx-chips';
     CustomInputRadioComponent,
     CustomInputChipComponent,
     ListActionsComponent,
-    CustomChartComponent
+    CustomChartComponent,
+    CustomInputFileComponent
   ],
   exports: [
     DataTablesModule,
@@ -51,7 +53,8 @@ import { TagInputModule } from 'ngx-chips';
     CustomInputRadioComponent,
     CustomInputChipComponent,
     ListActionsComponent,
-    CustomChartComponent
+    CustomChartComponent,
+    CustomInputFileComponent
   ],
   entryComponents: [ ConfirmationDialogComponent ],
 })
