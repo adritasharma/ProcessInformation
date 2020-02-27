@@ -42,9 +42,9 @@ export class CustomInputFileComponent implements OnInit {
     // }
 
 
-    if (this.config.options.Webcam) {
-      uppy.use(Webcam, { target: Dashboard, companionUrl: 'https://companion.uppy.io' })
-    }
+    // if (this.config.options.Webcam) {
+    //   uppy.use(Webcam, { target: Dashboard, companionUrl: 'https://companion.uppy.io' })
+    // }
 
 
     uppy.use(Uppy.XHRUpload, {

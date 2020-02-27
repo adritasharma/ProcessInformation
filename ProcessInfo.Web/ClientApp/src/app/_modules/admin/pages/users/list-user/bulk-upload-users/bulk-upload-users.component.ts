@@ -3,6 +3,7 @@ import { UppyConfig } from 'src/app/_common/shared/models/UppyConfig';
 import { environment } from 'src/environments/environment';
 import { HttpService } from 'src/app/_common/core/services/http.service';
 import { saveAs } from 'file-saver';
+import { ModalService } from 'src/app/_common/shared/services/modal.service';
 
 @Component({
   selector: 'app-bulk-upload-users',
@@ -11,7 +12,7 @@ import { saveAs } from 'file-saver';
 })
 export class BulkUploadUsersComponent implements OnInit {
 
-  constructor(private http: HttpService) { }
+  constructor(private http: HttpService, private _modal:ModalService) { }
 
   uploadErrorList: Array<string> = []
   savedCasesList: Array<any> = []
@@ -21,10 +22,10 @@ export class BulkUploadUsersComponent implements OnInit {
 
   settings: UppyConfig = {
     uploadAPI: {
-      endpoint: environment.apiUrl + 'files/Upload',
-      headers: {
-        Authorization: 'Bearer ' + localStorage.getItem('userToken')
-      }
+      endpoint: environment.apiUrl + 'user/bulk-upload-users',
+      // headers: {
+      //   Authorization: 'Bearer ' + localStorage.getItem('userToken')
+      // }
     },
 
     options: {
