@@ -184,5 +184,16 @@ namespace ProcessInfo.Web.Controllers
             }
             return errors;
         }
+
+        [Route("downloadSampleBulkUserUploadFile")]
+        public async Task<IActionResult> DownloadSample()
+        {
+
+            //Download the sample report here. 
+            var file = Path.Combine(Directory.GetCurrentDirectory(),
+                            "StaticDocuments", "Sheets", "ExcelSheetForBulkUpload.xlsx");
+
+            return PhysicalFile(file, "application/vnd.ms-excel", "SampleSheetForUpload.xlsx");
+        }
     }
 }
