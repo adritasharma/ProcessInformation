@@ -8,7 +8,7 @@ import * as Tus from '@uppy/tus';
 import { UppyConfig } from '../../../models/UppyConfig';
 
 @Component({
-  selector: 'app-custom-input-file',
+  selector: 'uppy-input-file',
   templateUrl: './custom-input-file.component.html',
   styleUrls: ['./custom-input-file.component.css']
 })

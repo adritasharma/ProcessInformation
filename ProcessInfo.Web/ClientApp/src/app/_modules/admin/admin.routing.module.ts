@@ -26,7 +26,7 @@ export const adminRoutes: Routes = [
             { path: 'application-type/edit/:id', component: SaveApplicationTypeComponent },
 
             { path: 'user', component: ListUserComponent },
-            { path: 'bulk-upload', component: BulkUploadUsersComponent },
+            { path: 'user/bulk-upload', component: BulkUploadUsersComponent },
             { path: 'user/save', component: SaveUserComponent },
             { path: 'user/edit/:id', component: SaveUserComponent }
         ]

@@ -100,8 +100,8 @@ namespace ProcessInfo.Web.Controllers
             return Ok(res);
         }
         [HttpPost]
-        [Route("addcandidates")]
-        public async Task<ActionResult> AddCandidates([FromForm]BulkUploadUserRequestDTO fileUpload)
+        [Route("bulk-upload-users")]
+        public async Task<ActionResult> BulkUploadUsers([FromForm]BulkUploadUserRequestDTO fileUpload)
         {
             var errors = new List<string>();
             var file = Request.Form.Files[0];
