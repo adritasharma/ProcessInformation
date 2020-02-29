@@ -28,11 +28,14 @@
     "datatables.net-bs": "^1.10.19",
     "datatables.net-bs4": "^1.10.19",
     "datatables.net-dt": "^1.10.20",
-    "file-saver": "^2.0.0",
+    "file-saver": "^2.0.2",
     "jquery": "^3.4.1",
+    "ngx-chips": "^2.1.0",
+    "redux": "^4.0.5",
     "rxjs": "~6.3.3",
     "toastr": "^2.1.4",
     "tslib": "^1.9.0",
+    "uppy": "^1.5.2",
     "zone.js": "~0.8.26"
   },
   "devDependencies": {

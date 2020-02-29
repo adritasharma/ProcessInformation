@@ -1,0 +1,90 @@
+<!-- <div class="head componentHead">
+  <a (click)="stopLoader()" routerLink="previousUrl" class="pull-right" style="font-size:15px;position: relative;
+        line-height: 2.3;">
+    <i style="position: absolute;font-size: 2.3em;" class="fa fa-angle-left fa-3x themeColor"></i>
+    <span style="margin-right: 8px; margin-left: 20px;" class="themeColor">Back To Index</span>
+  </a>
+  <h5 class="themeColor">Upload Case</h5>
+</div> -->
+
+<div class="card" style="margin-top:50px; margin-left:10%;margin-right:10%">
+  <div class="card-header">
+    <a (click)="_modal.open(modalContent, { size: 'lg' });clientName='';clientId=null" class="btn btn-md btn-primary pull-right">
+      <i class="fa fa-plus" style="padding-right: 6px"> </i>Upload
+    </a>
+
+    <a (click)="downloadSample()" class="btn btn-md btn-warning pull-right" style="margin-right:8px">
+      <i class="fa fa-download" style="padding-right: 6px"> </i>Download Sample
+    </a>
+  </div>
+  <div class="card-body">
+    We support bulk uploading users when they are uploaded through a secific Excel Format. We recommend you
+    downloading the Excel Sample by clicking the Download Sample button. Once downloaded, we fill the
+    specifc columns in the mentioned manner. And then reupload the same excel for processing.
+    <br><br><br>
+    Notes : - <br><br>
+    1. We only support excel sheets on the above mentioned format.Therefore do not upload any other excel sheets.
+    <br><br>
+    2. Columns "FirstName", "Middle Name", "LastName", "Username" and "Email Address" are
+    required.<br><br>
+   
+  </div>
+</div>
+<div class="card" style="margin-left:10%;margin-right:10%; margin-top:10px;" *ngIf="uploadErrorList.length>0 || savedCasesList.length>0 ">
+  <div class="card-body">
+    <ng-container>
+      <div class="row bg-success">
+        <div class="col-sm padding10">
+          <h5>Saved Records:</h5>
+        </div>
+      </div>
+      <div>
+        <table class="table">
+          <tr>
+            <th>Name</th>
+            <th>Father's Name</th>
+            <th>Phone Number</th>
+          </tr>
+          <tr *ngFor="let item of savedCasesList">
+            <td>{{item.fullName}}</td>
+            <td>{{item.fathersName}}</td>
+            <td>{{item.phoneNumber}}</td>
+          </tr>
+        </table>
+      </div>
+      <hr />
+    </ng-container>
+    <ng-container *ngIf="uploadErrorList.length>0" style="margin-top:20px;">
+      <div class="row bg-danger">
+        <div class="col-sm padding10">
+          <h5>Errors:</h5>
+        </div>
+      </div>
+      <div>
+        <table class="table">
+          <tr *ngFor="let item of uploadErrorList">
+            <td>{{item}}</td>
+          </tr>
+        </table>
+      </div>
+    </ng-container>
+
+  </div>
+</div>
+
+<ng-template #modalContent let-modal>
+  <div class="modal-header">
+    <h5 class="themeColor modal-title" id="modal-basic-title">Upload Files</h5>
+    <button type="button" class="close" aria-label="Close" id="closeModal" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <button type="button" id="pick-files" (click)="uploadInitiate()" style="display:none">Pick Files</button>
+    <button type="button" id="pick-files" (click)="uploadInitiate()" style="display:none">Pick Files</button>
+    <div class="row" style="padding:15px">
+      <uppy-input-file [config]="settings" (onFileAdd)="onFileAdd($event)" (onFileUpload)="onFileUpload($event)"
+        (uploadResult)="uploadResult($event)"></uppy-input-file>
+    </div>
+  </div>
+</ng-template>

@@ -29,7 +29,11 @@
         },
         "frameworks": {
           "netcoreapp2.1": {
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Adrita\\Workspace\\GitHub\\Projects\\ProcessInformation\\ProcessInfo.Utility\\ProcessInfo.Utility.csproj": {
+                "projectPath": "C:\\Adrita\\Workspace\\GitHub\\Projects\\ProcessInformation\\ProcessInfo.Utility\\ProcessInfo.Utility.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

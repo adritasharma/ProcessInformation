@@ -12,7 +12,9 @@ namespace ProcessInfo.Web.AutoMapperProfiles.ResponseDTO
     {
         public ApplicationResponseDTOProfile()
         {
-            CreateMap<Application, ApplicationResponseDTO>();
+            CreateMap<Application, ApplicationResponseDTO>()
+               .ForMember(m => m.TeamMembers, map => map.MapFrom(s => s.ApplicationDevelopers.Select(x => x.User)))
+               .ForMember(m => m.TeamMemberNames, map => map.MapFrom(s => (string.Join(",", (s.ApplicationDevelopers.Select(x =>x.User)).Select(y => y.FirstName)))));
         }
     }
 }

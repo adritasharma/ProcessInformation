@@ -1,0 +1,31 @@
+<div class="justify-content-center">
+  <div class="col-8 mx-auto">
+    <div style="text-align: center;margin:30px">
+      <h4>Sign Up</h4>
+    </div>
+
+    <form #userForm="ngForm" (ngSubmit)="onSubmit()">
+      <div class="row">
+        <div class="col-md-6">
+          <input-text [(model)]="userdetails.firstName" label="First Name" [required]="true" [focus]="true">
+          </input-text>
+          <input-text [(model)]="userdetails.middleName" label="Middle Name"></input-text>
+          <input-text [(model)]="userdetails.lastName" label="Last Name"></input-text>
+          <input-text [(model)]="userdetails.emailAddress" label="Email Address"></input-text>
+
+        </div>
+        <div class="col-md-6">
+          <input-text [(model)]="userdetails.username" label="Username"></input-text>
+          <input-text [(model)]="userdetails.password" label="Password" (modelChange)="matchPassword()"></input-text>
+          <input-text [(model)]="userdetails.confirmPassword" label="Confirm Password" (modelChange)="matchPassword()"></input-text>
+          <div class="invalid-message" *ngIf="passwordNotMatch">
+            Password and Confirm Password doesn't Match
+          </div>
+        </div>
+        <div class="col-md-2">
+          <input type="submit" class="btn btn-primary" value="Submit" [disabled]="!userForm.valid" />
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

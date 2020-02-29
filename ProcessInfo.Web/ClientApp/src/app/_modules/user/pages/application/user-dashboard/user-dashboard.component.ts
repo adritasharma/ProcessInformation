@@ -19,11 +19,11 @@ export class UserDashboardComponent implements OnInit {
     data: [
       ["Demo", 5, 'red'],
       ["Temporary", 15, '#b87333'],
-      ["Real Time", 5, 'yellow'],
+      ["Real Time", 28, 'yellow'],
     ],
     options: {
       pieHole: 0.4,
-      colors: ['#2c9e1e', '#c7c7c7','yellow']
+      colors: ['#138a9d', 'khaki','#b38a9d']
     },
   }
 
@@ -37,7 +37,7 @@ export class UserDashboardComponent implements OnInit {
     data: [
       ["UI", 5, 'red'],
       ["API", 15, '#b87333'],
-      ["Backend Service", 5, 'yellow'],
+      ["Backend Service", 5, '#138a9d'],
       ["Package", 15, 'indigo'],
       ["VBA", 15, 'salmon']
     ],

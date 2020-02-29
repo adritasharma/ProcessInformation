@@ -15,7 +15,6 @@ namespace ProcessInfo.DB.Models
         }
 
         public virtual DbSet<User> User { get; set; }
-        public virtual DbSet<Role> Role { get; set; }
         public virtual DbSet<Application> Application { get; set; }
         public virtual DbSet<ApplicationEnvironment> ApplicationEnvironment { get; set; }
         public virtual DbSet<Environment> Environment { get; set; }

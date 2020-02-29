@@ -9,6 +9,11 @@
             Login
           </a>
         </li>
+        <li class="nav-item">
+          <a [routerLink]="['/signup']" class="nav-link" style="padding-right:85px;">
+            SignUp
+          </a>
+        </li>
       </ng-template>
 
       <li class="nav-item dropdown" ngbDropdown *ngIf="userFirstName; else loginContent">
@@ -16,7 +21,7 @@
           <i class="fa fa-user"></i> {{userFirstName}} <b class="caret"></b>
         </a>
         <div class="dropdown-menu-right" ngbDropdownMenu>
-          <a class="dropdown-item"  [routerLink]="['/user/dashboard']">
+          <a class="dropdown-item"  [routerLink]="dashboardLink">
             <i class="fa fa-fw fa-user"></i> Dashboard
           </a>
           <a class="dropdown-item pointer" href="javascript:void(0)" (click)="logOut()">

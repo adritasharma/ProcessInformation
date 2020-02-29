@@ -11,6 +11,9 @@ import { SaveEnvironmentComponent } from './pages/environment/save-environment/s
 import { ListEnvironmentComponent } from './pages/environment/list-environment/list-environment.component';
 import { ListApplicationTypeComponent } from './pages/application-types/list-application-types/list-application-types.component';
 import { SaveApplicationTypeComponent } from './pages/application-types/save-application-type/save-application-type.component';
+import { ListUserComponent } from './pages/users/list-user/list-user.component';
+import { BulkUploadUsersComponent } from './pages/users/list-user/bulk-upload-users/bulk-upload-users.component';
+import { SaveUserComponent } from './pages/users/list-user/save-user/save-user.component';
 
 
 @NgModule({
@@ -27,7 +30,10 @@ import { SaveApplicationTypeComponent } from './pages/application-types/save-app
     SaveEnvironmentComponent,
     ListEnvironmentComponent,
     ListApplicationTypeComponent,
-    SaveApplicationTypeComponent
+    SaveApplicationTypeComponent,
+    ListUserComponent,
+    BulkUploadUsersComponent,
+    SaveUserComponent
   ]
 })
 export class AdminModule { }

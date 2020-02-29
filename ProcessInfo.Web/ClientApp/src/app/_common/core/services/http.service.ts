@@ -29,4 +29,8 @@ export class HttpService {
     return this._http.delete(url)
   }
 
+  getFile(url: string): Observable<any> {
+    return this._http.get(url, { responseType: 'blob' })
+  }
+
 }

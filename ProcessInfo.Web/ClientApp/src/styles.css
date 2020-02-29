@@ -5,6 +5,30 @@
 .bold {
     font-weight: bold;
 }
+.border-left-success {
+    border-left: .25rem solid #1cc88a!important;
+}
+
+.border-left-primary {
+    border-left: .25rem solid #4e73df!important;
+}
+
+.border-left-info {
+    border-left: .25rem solid #36b9cc!important;
+}
+
+.border-left-warning {
+    border-left: .25rem solid #ffc107 !important;
+}
+
+.border-left-danger {
+    border-left: .25rem solid #e74a3b!important;
+}
+
+.btn-primary, .btn-warning{
+    color: #fff !important;
+}
+
 .action-cell {
     text-align: center;
     max-width: 50px !important;
@@ -20,7 +44,10 @@
     font-size: 42px;
     color: #381653;
 }
-
+.invalid-message {
+    color:#c22929;
+    font-weight: normal;
+}
 .card-header-action {
     margin-left: 15px;
     cursor: pointer;
@@ -68,10 +95,15 @@
     height: 100%;
 }
 
+.tdOption{
+    text-align: center;
+}
 .toast {
     max-width: 100%;
 }
-
+.text-gray-300 {
+    color: #dddfeb!important;
+}
 .toast-container {
     width: 100% !important;
 }
@@ -87,7 +119,12 @@
 .theme-color {
     color: #060062 !important;
 }
-
+.uppy-Dashboard-dropFilesHereHint{
+    display: none;
+}
+.uppy-Dashboard-poweredBy{
+    display: none;
+}
 .btn-default {
     color: #fff !important;
     background-color: #060062 !important;

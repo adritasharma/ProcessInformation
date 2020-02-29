@@ -14,13 +14,18 @@ import { ConfirmationDialogComponent } from './components/confirmation-dialog/co
 import { CustomInputRadioComponent } from './components/inputs/custom-input-radio/custom-input-radio.component';
 import { CustomChartComponent } from './components/custom-chart/custom-chart.component';
 import { GoogleChartsModule } from 'angular-google-charts';
+import { CustomInputChipComponent } from './components/inputs/custom-input-chip/custom-input-chip.component';
+import { TagInputModule } from 'ngx-chips';
+import { CustomInputFileComponent } from './components/inputs/custom-input-file/custom-input-file.component';
+import { CustomInputPasswordComponent } from './components/inputs/custom-input-password/custom-input-password.component';
 
 @NgModule({
   imports: [
     CommonModule,
     CoreModule,
     DataTablesModule,
-    GoogleChartsModule
+    GoogleChartsModule,
+    TagInputModule
   ],
   declarations: [
     ConfirmationDialogComponent,
@@ -32,8 +37,11 @@ import { GoogleChartsModule } from 'angular-google-charts';
     CustomInputTextComponent,
     CustomInputSelectComponent,
     CustomInputRadioComponent,
+    CustomInputChipComponent,
     ListActionsComponent,
-    CustomChartComponent
+    CustomChartComponent,
+    CustomInputFileComponent,
+    CustomInputPasswordComponent
   ],
   exports: [
     DataTablesModule,
@@ -45,8 +53,11 @@ import { GoogleChartsModule } from 'angular-google-charts';
     CustomInputTextComponent,
     CustomInputSelectComponent,
     CustomInputRadioComponent,
+    CustomInputChipComponent,
     ListActionsComponent,
-    CustomChartComponent
+    CustomChartComponent,
+    CustomInputFileComponent,
+    CustomInputPasswordComponent
   ],
   entryComponents: [ ConfirmationDialogComponent ],
 })

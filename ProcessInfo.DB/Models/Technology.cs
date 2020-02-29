@@ -2,14 +2,17 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text;
 
 namespace ProcessInfo.DB.Models
 {
-    public  class Role
+    public class Technology
     {
+
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public Guid RoleId { get; set; }
-        public string RoleName { get; set; }
+        public Guid TechnologyId { get; set; }
+        public string TechnologyName { get; set; }
+        public virtual ICollection<ApplicationTechnology> ApplicationTechnologys { get; set; }
     }
 }

@@ -988,6 +988,16 @@
         "compile": {
           "ref/netstandard1.3/System.Threading.Tasks.dll": {}
         }
+      },
+      "ProcessInfo.Utility/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.1",
+        "compile": {
+          "bin/placeholder/ProcessInfo.Utility.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ProcessInfo.Utility.dll": {}
+        }
       }
     }
   },
@@ -3723,6 +3733,11 @@
         "system.threading.tasks.4.3.0.nupkg.sha512",
         "system.threading.tasks.nuspec"
       ]
+    },
+    "ProcessInfo.Utility/1.0.0": {
+      "type": "project",
+      "path": "../ProcessInfo.Utility/ProcessInfo.Utility.csproj",
+      "msbuildProject": "../ProcessInfo.Utility/ProcessInfo.Utility.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -3732,7 +3747,8 @@
       "Microsoft.EntityFrameworkCore >= 2.1.8",
       "Microsoft.EntityFrameworkCore.SqlServer >= 2.1.8",
       "Microsoft.NETCore.App >= 2.1.0",
-      "Pomelo.EntityFrameworkCore.MySql >= 2.1.4"
+      "Pomelo.EntityFrameworkCore.MySql >= 2.1.4",
+      "ProcessInfo.Utility >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -3764,7 +3780,11 @@
       },
       "frameworks": {
         "netcoreapp2.1": {
-          "projectReferences": {}
+          "projectReferences": {
+            "F:\\Angular7\\tttttt\\ProcessInformation\\ProcessInfo.Utility\\ProcessInfo.Utility.csproj": {
+              "projectPath": "F:\\Angular7\\tttttt\\ProcessInformation\\ProcessInfo.Utility\\ProcessInfo.Utility.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

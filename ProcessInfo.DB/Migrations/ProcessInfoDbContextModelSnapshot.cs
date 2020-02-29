@@ -30,15 +30,35 @@ namespace ProcessInfo.DB.Migrations
 
                     b.Property<string>("ProjectName");
 
+                    b.Property<int>("ProjectType");
+
                     b.Property<string>("Status");
 
-                    b.Property<string>("TeamMembers");
+                    b.Property<string>("TechnologiesUsed");
 
                     b.Property<int>("WorkObjectName");
 
                     b.HasKey("ApplicationId");
 
                     b.ToTable("Application");
+                });
+
+            modelBuilder.Entity("ProcessInfo.DB.Models.ApplicationDevelopers", b =>
+                {
+                    b.Property<Guid>("ApplicationDeveloperId")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<Guid>("ApplicationId");
+
+                    b.Property<Guid>("UserId");
+
+                    b.HasKey("ApplicationDeveloperId");
+
+                    b.HasIndex("ApplicationId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("ApplicationDevelopers");
                 });
 
             modelBuilder.Entity("ProcessInfo.DB.Models.ApplicationEnvironment", b =>
@@ -89,36 +109,45 @@ namespace ProcessInfo.DB.Migrations
                     b.ToTable("Environment");
                 });
 
-            modelBuilder.Entity("ProcessInfo.DB.Models.Role", b =>
-                {
-                    b.Property<Guid>("RoleId")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("RoleName");
-
-                    b.HasKey("RoleId");
-
-                    b.ToTable("Role");
-                });
-
             modelBuilder.Entity("ProcessInfo.DB.Models.User", b =>
                 {
                     b.Property<Guid>("UserId")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("Email");
+                    b.Property<string>("EmailAddress");
 
                     b.Property<string>("FirstName");
+
+                    b.Property<bool>("IsEmailConfirmed");
 
                     b.Property<string>("LastName");
 
                     b.Property<string>("MiddleName");
 
-                    b.Property<Guid>("RoleId");
+                    b.Property<string>("PasswordHash");
+
+                    b.Property<string>("PasswordSalt");
+
+                    b.Property<int>("Role");
+
+                    b.Property<string>("Username");
 
                     b.HasKey("UserId");
 
                     b.ToTable("User");
+                });
+
+            modelBuilder.Entity("ProcessInfo.DB.Models.ApplicationDevelopers", b =>
+                {
+                    b.HasOne("ProcessInfo.DB.Models.Application")
+                        .WithMany("ApplicationDevelopers")
+                        .HasForeignKey("ApplicationId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("ProcessInfo.DB.Models.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("ProcessInfo.DB.Models.ApplicationEnvironment", b =>

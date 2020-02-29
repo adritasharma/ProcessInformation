@@ -590,7 +590,8 @@
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "7.0.0",
           "Microsoft.EntityFrameworkCore": "2.1.8",
           "Microsoft.EntityFrameworkCore.SqlServer": "2.1.8",
-          "Pomelo.EntityFrameworkCore.MySql": "2.1.4"
+          "Pomelo.EntityFrameworkCore.MySql": "2.1.4",
+          "ProcessInfo.Utility": "1.0.0"
         },
         "runtime": {
           "ProcessInfo.DB.dll": {}

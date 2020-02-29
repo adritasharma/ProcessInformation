@@ -16,6 +16,7 @@ C:\Adrita\Workspace\GitHub\Projects\ProcessInformation\ProcessInfo.DB\obj\Debug\
 C:\Adrita\Workspace\GitHub\Projects\ProcessInformation\ProcessInfo.DB\obj\Debug\netcoreapp2.1\ProcessInfo.DB.AssemblyInfo.cs
 C:\Adrita\Workspace\GitHub\Projects\ProcessInformation\ProcessInfo.DB\obj\Debug\netcoreapp2.1\ProcessInfo.DB.dll
 C:\Adrita\Workspace\GitHub\Projects\ProcessInformation\ProcessInfo.DB\obj\Debug\netcoreapp2.1\ProcessInfo.DB.pdb
+<<<<<<< HEAD
 F:\Angular7\tttttt\ProcessInformation\ProcessInfo.DB\bin\Debug\netcoreapp2.1\ProcessInfo.DB.deps.json
 F:\Angular7\tttttt\ProcessInformation\ProcessInfo.DB\bin\Debug\netcoreapp2.1\ProcessInfo.DB.dll
 F:\Angular7\tttttt\ProcessInformation\ProcessInfo.DB\bin\Debug\netcoreapp2.1\ProcessInfo.DB.pdb
@@ -25,3 +26,11 @@ F:\Angular7\tttttt\ProcessInformation\ProcessInfo.DB\obj\Debug\netcoreapp2.1\Pro
 F:\Angular7\tttttt\ProcessInformation\ProcessInfo.DB\obj\Debug\netcoreapp2.1\ProcessInfo.DB.AssemblyInfo.cs
 F:\Angular7\tttttt\ProcessInformation\ProcessInfo.DB\obj\Debug\netcoreapp2.1\ProcessInfo.DB.dll
 F:\Angular7\tttttt\ProcessInformation\ProcessInfo.DB\obj\Debug\netcoreapp2.1\ProcessInfo.DB.pdb
+=======
+C:\Adrita\Workspace\GitHub\Projects\ProcessInformation\ProcessInfo.DB\bin\Debug\netcoreapp2.1\ProcessInfo.Utility.dll
+C:\Adrita\Workspace\GitHub\Projects\ProcessInformation\ProcessInfo.DB\bin\Debug\netcoreapp2.1\ProcessInfo.Utility.pdb
+C:\Adrita\Workspace\GitHub\Projects\ProcessInformation\ProcessInfo.DB\obj\Debug\netcoreapp2.1\ProcessInfo.DB.csproj.CopyComplete
+>>>>>>> bfd9bd34c3f603f181677687b639c582105a2eef
+F:\Angular7\tttttt\ProcessInformation\ProcessInfo.DB\bin\Debug\netcoreapp2.1\ProcessInfo.Utility.dll
+F:\Angular7\tttttt\ProcessInformation\ProcessInfo.DB\bin\Debug\netcoreapp2.1\ProcessInfo.Utility.pdb
+F:\Angular7\tttttt\ProcessInformation\ProcessInfo.DB\obj\Debug\netcoreapp2.1\ProcessInfo.DB.csproj.CopyComplete

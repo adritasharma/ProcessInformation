@@ -1,0 +1,23 @@
+<admin-page-header [options]="componentHeaderData" [hidden]="editApplicationData"></admin-page-header>
+<div class="row">
+  <div class="col-md-11 mx-auto">
+    <form #userForm="ngForm" (ngSubmit)="onSubmit()">
+      <div class="row">
+        <div class="col-md-6">
+          <input-text [(model)]="userdetails.firstName" label="First Name" [required]="true" [focus]="true">
+          </input-text>
+          <input-text [(model)]="userdetails.middleName" label="Middle Name"></input-text>
+          <input-text [(model)]="userdetails.lastName" label="Last Name"></input-text>
+
+        </div>
+        <div class="col-md-6">
+          <input-text [(model)]="userdetails.emailAddress" label="Email Address"></input-text>
+          <input-text [(model)]="userdetails.username" label="Username"></input-text>
+        </div>
+        <div class="col-md-2">
+          <input type="submit" class="btn btn-primary" value="Submit" [disabled]="!userForm.valid" />
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

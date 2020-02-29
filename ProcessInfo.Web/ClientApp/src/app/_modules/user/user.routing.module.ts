@@ -12,12 +12,14 @@ export const userRoutes: Routes = [
     {
         path: '', component: UserComponent,
         children: [
+            { path: '', component: UserDashboardComponent },
             { path: 'dashboard', component: UserDashboardComponent },
             { path: 'profile', component: ProfileComponent },
 
             { path: 'application/save', component: SaveApplicationComponent },
             { path: 'application/list', component: ListApplicationComponent },
             { path: 'application/view/:id', component: ViewApplicationComponent },
+            { path: 'application/edit/:id', component: SaveApplicationComponent },
 
             { path: 'ports', component: ListPortsComponent },
 

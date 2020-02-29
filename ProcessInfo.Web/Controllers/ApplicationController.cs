@@ -32,6 +32,18 @@ namespace ProcessInfo.Web.Controllers
         {
             Application application = _mapper.Map<Application>(applicationDTO);
 
+            List<ApplicationDevelopers> developers = new List<ApplicationDevelopers>();
+
+            foreach (SaveUserRequestDTO developer in applicationDTO.TeamMembers)
+            {
+                developers.Add(new ApplicationDevelopers
+                {
+                    ApplicationId = application.ApplicationId,
+                    UserId = developer.UserId.Value
+                });
+            }
+            application.ApplicationDevelopers = developers;
+
             var res =  _service.Add(application);
 
             if (res.IsSuccess)
@@ -55,7 +67,7 @@ namespace ProcessInfo.Web.Controllers
 
                 var res =  _service.GetFilteredApplications(dtOptions.SearchText, dtOptions.FilterType, dtOptions.SortColumn, dtOptions.SortType, dtOptions.Start, dtOptions.Length);
 
-                return Ok(DataTablesResponse.Create(request, res.TotalDataCount, res.FilteredDataCount, res.Data));
+                return Ok(DataTablesResponse.Create(request, res.TotalDataCount, res.FilteredDataCount, _mapper.Map<List<ApplicationResponseDTO>>(res.Data)));
             }
         }
 

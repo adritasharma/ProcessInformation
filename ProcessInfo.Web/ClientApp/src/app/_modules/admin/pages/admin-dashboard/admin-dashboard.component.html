@@ -1,3 +1,73 @@
-<p>
-  admin-dashboard works!
-</p>
+<h5 class="themeColor">Dashboard</h5>
+<hr>
+<div class="row">
+  <div class="col-md-12">
+    <div class=" mb-4">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="card border-left-success shadow h-100 py-2">
+              <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                  <div class="col mr-2">
+                    <div class="text-xs font-weight-bold text-success text-uppercase mb-1">My Applications </div>
+                    <div class="h5 mb-0 font-weight-bold text-gray-800">37</div>
+                  </div>
+                  <div class="col-auto">
+                    <i class="fa fa-newspaper-o fa-2x text-gray-300"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="card border-left-warning shadow h-100 py-2">
+              <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                  <div class="col mr-2">
+                    <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Total Applicaions</div>
+                    <div class="h5 mb-0 font-weight-bold text-gray-800">151</div>
+                  </div>
+                  <div class="col-auto">
+                    <i class="fa fa-line-chart fa-2x text-gray-300"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="card border-left-info shadow h-100 py-2">
+              <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                  <div class="col mr-2">
+                    <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Under Development</div>
+                    <div class="h5 mb-0 font-weight-bold text-gray-800">7</div>
+                  </div>
+                  <div class="col-auto">
+                    <i class="fa fa-check fa-2x text-gray-300"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-12">
+    <div class="">
+      <div class="">
+        <div class="row">
+          <div class="card col-md-6">
+            <custom-chart [chart]="applicationType"></custom-chart>
+          </div>
+          <div class="card col-md-6">
+            <custom-chart [chart]="projectType"></custom-chart>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

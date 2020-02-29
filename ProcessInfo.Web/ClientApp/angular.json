@@ -27,7 +27,8 @@
               "src/theme.css",
               "src/styles.css",
               "node_modules/datatables.net-bs4/css/dataTables.bootstrap4.css",
-              "node_modules/toastr/build/toastr.css"
+              "node_modules/toastr/build/toastr.css",
+              "src/assets/CSS/uppy.min.css"
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.js",

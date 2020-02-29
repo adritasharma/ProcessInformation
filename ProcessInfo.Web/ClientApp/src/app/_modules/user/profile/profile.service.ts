@@ -13,7 +13,7 @@ constructor(public _http: HttpClient) {
   super(_http);
 }
 
-getUserData(userId: number): Observable<IUser> {
+getUserData(userId: number): Observable<any> {
   // return this.post("http://www.mocky.io/v2/5d7dcdfc2f00000834fedf90",loginData)
 
   return of({

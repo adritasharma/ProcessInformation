@@ -1,0 +1,19 @@
+<div class="form-group">
+  <label class="control-label">
+    {{label}} <span class="required-star" *ngIf="required"> *</span> :
+  </label>
+  <ng-container *ngIf="Options.ModelType == 'object'">
+    <tag-input [(ngModel)]="model" [identifyBy]="Options.identifyBy" [displayBy]="Options.displayBy"
+      [onlyFromAutocomplete]="true" (onAdd)="onAdd($event)" (onRemove)="onRemove()">
+      <tag-input-dropdown [autocompleteObservable]="requestAutocompleteItems" [displayBy]="Options.displayBy"
+        [identifyBy]="Options.identifyBy" [appendToBody]="false">
+      </tag-input-dropdown>
+    </tag-input>
+  </ng-container>
+  <ng-container *ngIf="Options.ModelType != 'object'">
+    <tag-input [(ngModel)]="model" (onSelect)="onSelect($event)" (onAdd)="onAdd($event)" (onRemove)="onRemove()" [modelAsStrings]="true">
+    </tag-input>
+  </ng-container>
+</div>
+
+<!-- [onAdding]="onAdding" -->
