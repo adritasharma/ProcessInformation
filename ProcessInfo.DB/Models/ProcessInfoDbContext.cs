@@ -18,6 +18,7 @@ namespace ProcessInfo.DB.Models
         public virtual DbSet<Application> Application { get; set; }
         public virtual DbSet<ApplicationEnvironment> ApplicationEnvironment { get; set; }
         public virtual DbSet<Environment> Environment { get; set; }
+        public virtual DbSet<ApplicationType> ApplicationType { get; set; }
 
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

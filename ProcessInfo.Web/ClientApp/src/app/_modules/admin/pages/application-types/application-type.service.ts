@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
-import { environment } from 'src/environments/environment';
 import { HttpService } from 'src/app/_common/core/services/http.service';
 import { UtilityService } from 'src/app/_common/shared/services/utility.service';
 import { IApplicationType } from 'src/app/_common/shared/models/application-type.model';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -16,30 +16,30 @@ export class ApplicationTypeService extends HttpService {
   }
 
 
-environmentUrl = `${environment.apiUrl}environment`;
+applicationTypeUrl = `${environment.apiUrl}applicationType`;
 
 saveApplicationType(payload: IApplicationType): Observable<any> {
-  return this.post(`${this.environmentUrl}`, payload)
+  return this.post(`${this.applicationTypeUrl}`, payload)
 }
 
 getAllApplicationTypes(dataTablesParameters: any): Observable<any> {
   if (dataTablesParameters) {
-    return this.get(`${this.environmentUrl}?${this.utility.convertToParam(dataTablesParameters)}`)
+    return this.get(`${this.applicationTypeUrl}?${this.utility.convertToParam(dataTablesParameters)}`)
   } else {
-    return this.get(`${this.environmentUrl}`)
+    return this.get(`${this.applicationTypeUrl}`)
   }
 }
 
 getApplicationTypeById(id: any): Observable<IApplicationType> {
-  return this.get(`${this.environmentUrl}/${id}`)
+  return this.get(`${this.applicationTypeUrl}/${id}`)
 }
 
 updateApplicationType(payload: any): Observable<any> {
-  return this.update(`${this.environmentUrl}`, payload)
+  return this.update(`${this.applicationTypeUrl}`, payload)
 }
 
 deleteApplicationType(id: string): Observable<any> {
-  return this.delete(`${this.environmentUrl}/${id}`)
+  return this.delete(`${this.applicationTypeUrl}/${id}`)
 }
 
 }

@@ -84,7 +84,7 @@ namespace ProcessInfo.Service.Implementations
                 applicationFromDB.ProjectName = application.ProjectName.TrimSpace();
                 applicationFromDB.WorkObjectName = application.WorkObjectName;
                 applicationFromDB.Status = application.Status.TrimSpace();
-                applicationFromDB.ApplicationType = application.ApplicationType.TrimSpace();
+                //applicationFromDB.ApplicationType = application.ApplicationType;
 
                 _applicationRepository.Edit(applicationFromDB);
 

@@ -34,6 +34,7 @@ export class HttpInterceptorService {
           }
         }, error => {
           console.log(error);
+          this.loaderService.display(false);
           if (error.error != undefined || error.error != null) {
             this.displayErrorToastr(error.error)
           }
