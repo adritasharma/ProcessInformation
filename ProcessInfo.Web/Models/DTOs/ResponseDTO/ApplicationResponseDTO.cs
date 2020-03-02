@@ -14,7 +14,7 @@ namespace ProcessInfo.Web.Models.DTOs.ResponseDTO
         public int WorkObjectName { get; set; }
         public string TeamMemberNames { get; set; }
         public string Status { get; set; }
-        public string ApplicationType { get; set; }
+        public Guid ApplicationTypeId { get; set; }
         public List<User> TeamMembers { get; set; }
         public List<ApplicationEnvironmentResponseDTO> ApplicationEnvironments { get; set; }
     }

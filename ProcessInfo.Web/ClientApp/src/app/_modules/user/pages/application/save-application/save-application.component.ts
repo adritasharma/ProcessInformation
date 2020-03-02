@@ -73,6 +73,7 @@ export class SaveApplicationComponent implements OnInit {
         text: item.applicationTypeName,
       }))
       this.allApplicationTypes = resp
+      console.log(this.allApplicationTypes)
     })
   }
   saveData() {

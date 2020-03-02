@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, SimpleChanges } from '@angular/core';
 
 @Component({
   selector: 'input-select',
@@ -37,6 +37,18 @@ export class CustomInputSelectComponent implements OnInit {
       this.modelChange.emit(newValue);
     }
   }
-
+  ngOnChanges(changes: SimpleChanges) {
+    if (changes.dropdownValues) {
+      this.dropdownValues = changes.dropdownValues.currentValue;
+      if ((this.dropdownValues.filter(x => x.id == null) < 1)) {
+        this.dropdownValues.unshift(
+          {
+            id: null,
+            text: `  -- Select ${this.label} --`
+          }
+        )
+      }
+    }
+  }
 
 }

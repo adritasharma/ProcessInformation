@@ -17,7 +17,7 @@
           <!-- <input-text [(model)]="applicationData.teamMembers" label="Team Members" [isTextArea]="true"></input-text> -->
           <!-- <input-text [(model)]="applicationData.applicationType" label="Application Type" [required]="true">
           </input-text> -->
-          <input-select [(model)]="applicationData.applicationType" label="Application Type" [required]="true" [dropdownValues]="allApplicationTypes"></input-select>
+          <input-select [(model)]="applicationData.applicationTypeId" label="Application Type" [required]="true" [dropdownValues]="allApplicationTypes"></input-select>
           <input-chip [Options]="options" [(model)]="applicationData.teamMembers" label="Team Members"></input-chip>
         </div>
         <div class="col-md-2">

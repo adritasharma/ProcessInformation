@@ -14,7 +14,7 @@ namespace ProcessInfo.Web.Models.DTOs.RequestDTOs
         public int WorkObjectName { get; set; }
         public List<SaveUserRequestDTO> TeamMembers { get; set; }
         public string Status { get; set; }
-        public string ApplicationType { get; set; }
+        public Guid ApplicationTypeId { get; set; }
 
     }
 }
