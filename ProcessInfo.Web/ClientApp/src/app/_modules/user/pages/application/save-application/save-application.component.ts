@@ -4,6 +4,7 @@ import { ApplicationService } from '../application.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ProjectType } from 'src/app/_common/shared/enums/enum';
 import { UtilityService } from 'src/app/_common/shared/services/utility.service';
+import { ApplicationTypeService } from 'src/app/_modules/admin/pages/application-types/application-type.service';
 
 @Component({
   selector: 'save-application',
@@ -12,7 +13,7 @@ import { UtilityService } from 'src/app/_common/shared/services/utility.service'
 })
 export class SaveApplicationComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute, private _applicationService: ApplicationService, private _router: Router, private _utility:UtilityService) { }
+  constructor(private route: ActivatedRoute, private _applicationService: ApplicationService, private _router: Router, private _utility: UtilityService, private _appTypeService: ApplicationTypeService) { }
 
   applicationData = new Application()
 
@@ -28,14 +29,25 @@ export class SaveApplicationComponent implements OnInit {
 
   projectTypes = this._utility.getArrayFromEnum(ProjectType);
 
-  options ={
-    AllowNewItem:true,
-    IsAutoCompleteObservable:true
+  options = {
+    AllowNewItem: false,
+    IsAutoCompleteObservable: true,
+    identifyBy: 'userId',
+    displayBy: 'firstName',
+    ModelType: 'object'
   }
 
-  isEdit:boolean = false;
-  
+  technologyChipOptions = {
+    AllowNewItem: true,
+    ModelType: 'string'
+  }
+
+  isEdit: boolean = false;
+  allApplicationTypes: any = []
+
   ngOnInit() {
+    this.getApplicationTypes();
+
     if (this.editApplicationData) {
       this.applicationData = this.editApplicationData;
       this.isEdit = true;
@@ -51,6 +63,16 @@ export class SaveApplicationComponent implements OnInit {
     this._applicationService.getApplicationById(this.paramId).subscribe(res => {
       this.applicationData = res
       console.log(res)
+    })
+  }
+
+  getApplicationTypes() {
+    this._appTypeService.getAllApplicationTypes(null).subscribe(resp => {
+      resp = resp.map(item => ({
+        id: item.applicationTypeId,
+        text: item.applicationTypeName,
+      }))
+      this.allApplicationTypes = resp
     })
   }
   saveData() {

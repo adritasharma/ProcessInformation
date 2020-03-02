@@ -4,6 +4,7 @@ export interface IUser {
     lastName: string;
     fullName: string;
     password: string;
+    confirmPassword:string;
 }
 
 export class User implements IUser {
@@ -13,5 +14,6 @@ export class User implements IUser {
         public firstName: string = '',
         public fullName: string = '',
         public lastName: string = '',
+        public confirmPassword: string = ''
     ) { }
 }

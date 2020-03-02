@@ -32,14 +32,14 @@ export class CustomInputChipComponent implements OnInit {
     this.onModelChange();
   }
 
-  public onAdding(tag): Observable<any> {
-    const confirm =
-      typeof tag == "string"
-        ? window.confirm("Do you really want to add this tag?")
-        : true;
-    return of(tag).pipe(
-      filter(() => confirm));
-  }
+  // public onAdding(tag): Observable<any> {
+  //   const confirm =
+  //     typeof tag == "string"
+  //       ? window.confirm("Do you really want to add this tag?")
+  //       : true;
+  //   return of(tag).pipe(
+  //     filter(() => confirm));
+  // }
 
   onModelChange() {
     console.log(this.model);
@@ -55,6 +55,9 @@ export class CustomInputChipComponent implements OnInit {
     // return of([{userId: "one",firstName:"one"}])
   };
 
-  itemsAsObjects = [{userId: "one",firstName:"one"}]
+  onSelect(evt){
+    console.log(evt)
+  }
+  // itemsAsObjects = [{userId: "one",firstName:"one"}]
 
 }

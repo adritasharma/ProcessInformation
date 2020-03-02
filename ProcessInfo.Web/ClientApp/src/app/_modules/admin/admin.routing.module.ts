@@ -17,6 +17,7 @@ export const adminRoutes: Routes = [
         path: '', component: AdminComponent,
         children: [
             { path: '', component: AdminDashboardComponent },
+            { path: 'dashboard', component: AdminDashboardComponent },
             { path: 'environment', component: ListEnvironmentComponent },
             { path: 'environment/save', component: SaveEnvironmentComponent },
             { path: 'environment/edit/:id', component: SaveEnvironmentComponent },

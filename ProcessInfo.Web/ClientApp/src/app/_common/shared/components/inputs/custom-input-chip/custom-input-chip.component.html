@@ -1,17 +1,19 @@
-<!-- <div class="form-group">
-  {{model | json}}
-  <tag-input [(ngModel)]="model" [onlyFromAutocomplete]="false" [onAdding]="onAdding" (onAdd)="onAdd($event)"
-    (onRemove)="onRemove()" [displayBy]="'firstName'" [identifyBy]="'userId'">
-    <tag-input-dropdown [autocompleteObservable]="requestAutocompleteItems" [displayBy]="'firstName'"
-      [identifyBy]="'userId'" *ngIf="Options.IsAutoCompleteObservable">
-    </tag-input-dropdown>
-    <tag-input-dropdown [autocompleteItems]="AutocompleteItems" [displayBy]="'value'" [identifyBy]="'id'" *ngIf="!Options.IsAutoCompleteObservable">
-		</tag-input-dropdown>
-  </tag-input>
-</div> -->
-<tag-input [(ngModel)]="model" [identifyBy]="'userId'" [displayBy]="'firstName'" [onlyFromAutocomplete]="false"
-  [onAdding]="onAdding" (onAdd)="onAdd($event)" (onRemove)="onRemove()" >
-  <tag-input-dropdown [autocompleteObservable]="requestAutocompleteItems" [displayBy]="'firstName'"
-    [identifyBy]="'userId'"  [appendToBody]="false">
-  </tag-input-dropdown>
-</tag-input>
+<div class="form-group">
+  <label class="control-label">
+    {{label}} <span class="required-star" *ngIf="required"> *</span> :
+  </label>
+  <ng-container *ngIf="Options.ModelType == 'object'">
+    <tag-input [(ngModel)]="model" [identifyBy]="Options.identifyBy" [displayBy]="Options.displayBy"
+      [onlyFromAutocomplete]="true" (onAdd)="onAdd($event)" (onRemove)="onRemove()">
+      <tag-input-dropdown [autocompleteObservable]="requestAutocompleteItems" [displayBy]="Options.displayBy"
+        [identifyBy]="Options.identifyBy" [appendToBody]="false">
+      </tag-input-dropdown>
+    </tag-input>
+  </ng-container>
+  <ng-container *ngIf="Options.ModelType != 'object'">
+    <tag-input [(ngModel)]="model" (onSelect)="onSelect($event)" (onAdd)="onAdd($event)" (onRemove)="onRemove()" [modelAsStrings]="true">
+    </tag-input>
+  </ng-container>
+</div>
+
+<!-- [onAdding]="onAdding" -->

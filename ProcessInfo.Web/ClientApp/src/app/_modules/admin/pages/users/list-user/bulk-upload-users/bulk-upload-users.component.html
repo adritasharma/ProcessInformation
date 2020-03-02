@@ -9,31 +9,28 @@
 
 <div class="card" style="margin-top:50px; margin-left:10%;margin-right:10%">
   <div class="card-header">
-    <a (click)="_modal.open(modalContent);clientName='';clientId=null" class="btn btn-md btn-primary pull-right">
+    <a (click)="_modal.open(modalContent, { size: 'lg' });clientName='';clientId=null" class="btn btn-md btn-primary pull-right">
       <i class="fa fa-plus" style="padding-right: 6px"> </i>Upload
     </a>
 
-    <a (click)="downloadSample()" class="btn btn-md btn-primary pull-right" style="margin-right:8px">
+    <a (click)="downloadSample()" class="btn btn-md btn-warning pull-right" style="margin-right:8px">
       <i class="fa fa-download" style="padding-right: 6px"> </i>Download Sample
     </a>
   </div>
   <div class="card-body">
-    We support bulk uploading candidate/cases when they are uploaded throug a secific Excel Format. We recommend you
-    downloading the Excel Sample by clicking the Download Sample button. Once downloaded, we recomment you filling the
+    We support bulk uploading users when they are uploaded through a secific Excel Format. We recommend you
+    downloading the Excel Sample by clicking the Download Sample button. Once downloaded, we fill the
     specifc columns in the mentioned manner. And then reupload the same excel for processing.
     <br><br><br>
     Notes : - <br><br>
-    1. We only support excel sheets on the abobe mentioned format.Therefore do not upload any other excel sheets.
+    1. We only support excel sheets on the above mentioned format.Therefore do not upload any other excel sheets.
     <br><br>
-    2. Columns like "Candidate FirstName", "Candidate LastName", "Date Of Birth", "Father's Name", Phone number are
+    2. Columns "FirstName", "Middle Name", "LastName", "Username" and "Email Address" are
     required.<br><br>
-    3. Please make sure you enter the Date of Birth and Date of joining in the specific format.<br><br>
-    4. For the checks you want to verfy, you will have to type "YES" manually against those columns. Other checks will
-    not be verified.
+   
   </div>
 </div>
-<div class="card" style="margin-left:10%;margin-right:10%; margin-top:10px;"
-  *ngIf="uploadErrorList.length>0 || savedCasesList.length>0 ">
+<div class="card" style="margin-left:10%;margin-right:10%; margin-top:10px;" *ngIf="uploadErrorList.length>0 || savedCasesList.length>0 ">
   <div class="card-body">
     <ng-container>
       <div class="row bg-success">

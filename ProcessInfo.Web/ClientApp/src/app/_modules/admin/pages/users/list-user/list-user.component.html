@@ -1,3 +1,5 @@
+<admin-page-header [options]="componentHeaderData"></admin-page-header>
+
 <div class="row">
   <div class="col-md-12">
     <div class="btn-group float-right">
@@ -5,6 +7,38 @@
         <i class="fa fa-dashboard iconSpace"></i>
         <span>Bulk Upload</span>
       </a>
+    </div>
+  </div>
+  <div class="col-md-12" style="margin-top:20px">
+    <div class="table-responsive">
+      <table datatable [dtOptions]="dtOptions" class="table table-hover table-striped">
+        <thead>
+          <tr>
+            <th class="action-cell">Action</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Username</th>
+            <th>User Type</th>
+          </tr>
+        </thead>
+        <tbody *ngIf="allUsers?.length != 0">
+          <tr *ngFor="let item of allUsers ;let i=index">
+            <td class="action-cell">
+              <list-actions [modulePath]="'/admin/user'" [itemId]="item.userId" [canDelete]="true" [canEdit]="true"
+                (isDeleteClicked)="deleteUser(item.userId,item.fullname)"></list-actions>
+            </td>
+            <td>{{item.fullName}}</td>
+            <td>{{item.emailAddress}}</td>
+            <td> {{item.username}} </td>
+            <td> {{item.userType}} </td>
+          </tr>
+        </tbody>
+        <tbody *ngIf="allUsers?.length == 0">
+          <tr>
+            <td colspan="5" class="no-data-available">No data!</td>
+          </tr>
+        <tbody>
+      </table>
     </div>
   </div>
 </div>

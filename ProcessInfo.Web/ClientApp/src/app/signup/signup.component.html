@@ -16,8 +16,11 @@
         </div>
         <div class="col-md-6">
           <input-text [(model)]="userdetails.username" label="Username"></input-text>
-          <input-text [(model)]="userdetails.password" label="Password"></input-text>
-          <input-text [(model)]="userdetails.confirmPassword" label="Confirm Password"></input-text>
+          <input-text [(model)]="userdetails.password" label="Password" (modelChange)="matchPassword()"></input-text>
+          <input-text [(model)]="userdetails.confirmPassword" label="Confirm Password" (modelChange)="matchPassword()"></input-text>
+          <div class="invalid-message" *ngIf="passwordNotMatch">
+            Password and Confirm Password doesn't Match
+          </div>
         </div>
         <div class="col-md-2">
           <input type="submit" class="btn btn-primary" value="Submit" [disabled]="!userForm.valid" />

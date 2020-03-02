@@ -12,6 +12,7 @@ export const userRoutes: Routes = [
     {
         path: '', component: UserComponent,
         children: [
+            { path: '', component: UserDashboardComponent },
             { path: 'dashboard', component: UserDashboardComponent },
             { path: 'profile', component: ProfileComponent },
 
