@@ -28,9 +28,9 @@ export class HttpInterceptorService {
     return next.handle(authRquest)
       .pipe(
         tap(event => {
-          this.loaderService.display(false);
 
           if (event instanceof HttpResponse) {
+            this.loaderService.display(false);
           }
         }, error => {
           console.log(error);
