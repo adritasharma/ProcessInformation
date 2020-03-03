@@ -59,7 +59,7 @@ namespace ProcessInfo.Web.Controllers
 
                 var res = _service.GetFilteredUsers(dtOptions.SearchText, dtOptions.FilterType, dtOptions.SortColumn, dtOptions.SortType, dtOptions.Start, dtOptions.Length);
 
-                return Ok(DataTablesResponse.Create(request, res.TotalDataCount, res.FilteredDataCount, res.Data));
+                return Ok(DataTablesResponse.Create(request, res.TotalDataCount, res.FilteredDataCount, _mapper.Map<List<UserResponseDTO>>(res.Data)));
             }
         }
 
@@ -96,7 +96,7 @@ namespace ProcessInfo.Web.Controllers
         public IActionResult SearchUserByKeyword(string keyword)
         {
             var res = _service.SearchUserByKeyword(keyword);
-            //return Ok(_mapper.Map<UserResponseDTO>(res));
+            return Ok(_mapper.Map<List<UserResponseDTO>>(res));
             return Ok(res);
         }
         [HttpPost]

@@ -87,8 +87,8 @@ namespace ProcessInfo.Service.Implementations
 
                 userFromDB.FirstName = user.FirstName.TrimSpace();
                 userFromDB.MiddleName = user.MiddleName.TrimSpace();
-                userFromDB.LastName = user.LastName;
-                userFromDB.EmailAddress = user.EmailAddress;
+                userFromDB.LastName = user.LastName.TrimSpace();
+                userFromDB.EmailAddress = user.EmailAddress.TrimSpace();
 
                 _userRepository.Edit(userFromDB);
 

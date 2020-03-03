@@ -20,6 +20,8 @@ namespace ProcessInfo.DB.Models
         public string PasswordHash { get; set; }
         public string PasswordSalt { get; set; }
         public Role Role { get; set; }
+        public string FullName() => (!string.IsNullOrEmpty(MiddleName)) ? $"{FirstName} {MiddleName} {LastName}"?.Trim() : $"{FirstName} {LastName}";
+        public string ReverseFullName() => (!string.IsNullOrEmpty(MiddleName)) ? $"{LastName} {MiddleName} {FirstName}"?.Trim() : $"{LastName} {FirstName}";
 
     }
 }

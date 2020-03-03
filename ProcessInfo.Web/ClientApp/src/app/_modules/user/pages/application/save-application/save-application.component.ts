@@ -33,7 +33,7 @@ export class SaveApplicationComponent implements OnInit {
     AllowNewItem: false,
     IsAutoCompleteObservable: true,
     identifyBy: 'userId',
-    displayBy: 'firstName',
+    displayBy: 'fullName',
     ModelType: 'object'
   }
 
