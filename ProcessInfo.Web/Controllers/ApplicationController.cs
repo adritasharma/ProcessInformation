@@ -89,7 +89,18 @@ namespace ProcessInfo.Web.Controllers
         [HttpPut]
         public async Task<IActionResult> Put(SaveApplicationRequestDTO applicationDTO)
         {
+            List<ApplicationDevelopers> developers = new List<ApplicationDevelopers>();
+
+            foreach (SaveUserRequestDTO developer in applicationDTO.TeamMembers)
+            {
+                developers.Add(new ApplicationDevelopers
+                {
+                    ApplicationId = applicationDTO.ApplicationId.Value,
+                    UserId = developer.UserId.Value
+                });
+            }
             Application application = _mapper.Map<Application>(applicationDTO);
+            application.ApplicationDevelopers = developers;
 
             var res = _service.Edit(application);
 
