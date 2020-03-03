@@ -17,9 +17,8 @@ namespace ProcessInfo.DB.Models
         public int WorkObjectName { get; set; }
         public string Status { get; set; }
 
-        public string TechnologiesUsed { get; set; }
         public ProjectType ProjectType { get; set; }
-        public Guid ApplicationTypeId { get; set; }
+       // public Guid ApplicationTypeId { get; set; }
         //[ForeignKey("ApplicationTypeId")]
         //public ApplicationType ApplicationType { get; set; }
         public virtual ICollection<ApplicationEnvironment> ApplicationEnvironments { get; set; }

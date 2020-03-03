@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
+import { Component, OnInit, Input, Output, EventEmitter, SimpleChanges } from "@angular/core";
 import { Observable, of } from 'rxjs';
 import { filter, map } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
@@ -59,5 +59,9 @@ export class CustomInputChipComponent implements OnInit {
     console.log(evt)
   }
   // itemsAsObjects = [{userId: "one",firstName:"one"}]
-
+  ngOnChanges(changes: SimpleChanges) {
+    if (changes.model) {
+      this.model = changes.model.currentValue;
+    }
+  }
 }

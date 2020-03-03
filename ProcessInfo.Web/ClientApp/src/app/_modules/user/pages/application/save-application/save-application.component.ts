@@ -37,10 +37,10 @@ export class SaveApplicationComponent implements OnInit {
     ModelType: 'object'
   }
 
-  technologyChipOptions = {
-    AllowNewItem: true,
-    ModelType: 'string'
-  }
+  // technologyChipOptions = {
+  //   AllowNewItem: true,
+  //   ModelType: 'string'
+  // }
 
   isEdit: boolean = false;
   allApplicationTypes: any = []
@@ -61,7 +61,8 @@ export class SaveApplicationComponent implements OnInit {
   }
   getApplicationDetails() {
     this._applicationService.getApplicationById(this.paramId).subscribe(res => {
-      this.applicationData = res
+      this.applicationData = res;
+    //  this.applicationData.technologiesUsed = ['css', 'angular']
       console.log(res)
     })
   }

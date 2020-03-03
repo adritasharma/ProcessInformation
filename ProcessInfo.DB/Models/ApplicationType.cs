@@ -13,7 +13,7 @@ namespace ProcessInfo.DB.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid ApplicationTypeId { get; set; }
         public string ApplicationTypeName { get; set; }
-      //  public string ApplicationTypeDescription { get; set; }
+        public string ApplicationTypeDescription { get; set; }
 
       //  public virtual Application Application { get; set; }
 

@@ -4,20 +4,17 @@
     <form #form="ngForm" (ngSubmit)="saveData()">
       <div class="row">
         <div class="col-md-6">
-          <input-text [(model)]="applicationData.applicationName" label="Application Name" [required]="true" [focus]="true"></input-text>
+          <input-text [(model)]="applicationData.applicationName" label="Application Name" [required]="true"
+            [focus]="true"></input-text>
           <input-text [(model)]="applicationData.projectName" label="Project Name" [required]="true"></input-text>
-          <!-- <input-text [(model)]="applicationData.technologiesUsed" label="Technologies Used" [isTextArea]="true">
-          </input-text> -->
-          <input-chip [Options]="technologyChipOptions" [(model)]="applicationData.technologiesUsed" label="Technologies Used"></input-chip>
+          <!-- <input-chip [Options]="technologyChipOptions" [(model)]="applicationData.technologiesUsed" label="Technologies Used"></input-chip> -->
+          <input-radio [(model)]="applicationData.projectType" label="Project Type" [required]="true"
+            [itemList]="projectTypes" id="projectType">
+          </input-radio>
         </div>
         <div class="col-md-6">
-          <input-radio [(model)]="applicationData.projectType" label="Project Type" [required]="true" [itemList]="projectTypes"
-            id="projectType">
-          </input-radio>
-          <!-- <input-text [(model)]="applicationData.teamMembers" label="Team Members" [isTextArea]="true"></input-text> -->
-          <!-- <input-text [(model)]="applicationData.applicationType" label="Application Type" [required]="true">
-          </input-text> -->
-          <input-select [(model)]="applicationData.applicationTypeId" label="Application Type" [required]="true" [dropdownValues]="allApplicationTypes"></input-select>
+          <input-select [(model)]="applicationData.applicationTypeId" label="Application Type" [required]="true"
+            [dropdownValues]="allApplicationTypes"></input-select>
           <input-chip [Options]="options" [(model)]="applicationData.teamMembers" label="Team Members"></input-chip>
         </div>
         <div class="col-md-2">
