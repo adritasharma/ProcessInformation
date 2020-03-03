@@ -84,7 +84,7 @@ namespace ProcessInfo.Service.Implementations
                 applicationFromDB.ProjectName = application.ProjectName.TrimSpace();
                 applicationFromDB.WorkObjectName = application.WorkObjectName;
                 applicationFromDB.Status = application.Status.TrimSpace();
-               // applicationFromDB.ApplicationTypeId = application.ApplicationTypeId;
+                applicationFromDB.ApplicationTypeId = application.ApplicationTypeId;
 
                 _applicationRepository.Edit(applicationFromDB);
 
@@ -130,10 +130,10 @@ namespace ProcessInfo.Service.Implementations
             if (!string.IsNullOrEmpty(sortColumn) && sortColumn.ToLower() != "ApplicationId")
             {
 
-                query = _applicationRepository.FindWithInclude(deleg, sortColumn, sortDirection, x => x.Include(y => y.ApplicationDevelopers).ThenInclude(y => y.User), start, length);
+                query = _applicationRepository.FindWithInclude(deleg, sortColumn, sortDirection, x => x.Include(y => y.ApplicationDevelopers).ThenInclude(y => y.User).Include(s => s.ApplicationType), start, length);
             }
             {
-                query =  _applicationRepository.FindWithInclude(deleg, defaultOrderBy, null, x => x.Include(y => y.ApplicationDevelopers).ThenInclude(y => y.User), start, length);
+                query =  _applicationRepository.FindWithInclude(deleg, defaultOrderBy, null, x => x.Include(y => y.ApplicationDevelopers).ThenInclude(y => y.User).Include(s => s.ApplicationType), start, length);
             }
             return new FilteredResultModel<List<Application>>
             {
@@ -145,7 +145,7 @@ namespace ProcessInfo.Service.Implementations
 
         public Application GetByApplicationId(Guid id)
         {
-            return _applicationRepository.FirstOrDefaultWithInclude(x => x.ApplicationId == id, y => y.Include(cc => cc.ApplicationEnvironments).ThenInclude(zz => zz.Environment).Include(c => c.ApplicationDevelopers).ThenInclude(cc => cc.User));
+            return _applicationRepository.FirstOrDefaultWithInclude(x => x.ApplicationId == id, y => y.Include(cc => cc.ApplicationEnvironments).ThenInclude(zz => zz.Environment).Include(c => c.ApplicationDevelopers).ThenInclude(cc => cc.User).Include(t => t.ApplicationType));
         }
 
         public ServiceResultModel<bool> DeleteApplicationById(int id)

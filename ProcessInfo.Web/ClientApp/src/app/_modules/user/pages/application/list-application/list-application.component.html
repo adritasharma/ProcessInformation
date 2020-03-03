@@ -15,13 +15,14 @@
         <tbody *ngIf="allApplications?.length != 0">
           <tr *ngFor="let item of allApplications ;let i=index">
             <td class="tdOption">
-              <list-actions [modulePath]="'/user/application'" [itemId]="item.applicationId" [canDelete]="true" [canEdit]="true"
-                (isDeleteClicked)="deleteItem(item.applicationId)"></list-actions>
+              <list-actions [modulePath]="'/user/application'" [itemId]="item.applicationId" [canDelete]="true"
+                [canEdit]="true" (isDeleteClicked)="deleteApplication(item.applicationId,item.applicationName)">
+              </list-actions>
             </td>
             <td>
               <a [routerLink]="['/user/application/view',item.applicationId]">{{item.applicationName}}</a>
             </td>
-            <td>{{item.applicationType}}</td>
+            <td>{{item.applicationTypeName}}</td>
             <td>{{item.projectName}}</td>
             <td>{{item.teamMemberNames}}</td>
           </tr>

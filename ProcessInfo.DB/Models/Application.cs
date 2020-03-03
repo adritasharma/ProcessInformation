@@ -18,9 +18,9 @@ namespace ProcessInfo.DB.Models
         public string Status { get; set; }
 
         public ProjectType ProjectType { get; set; }
-       // public Guid ApplicationTypeId { get; set; }
-        //[ForeignKey("ApplicationTypeId")]
-        //public ApplicationType ApplicationType { get; set; }
+        public Guid ApplicationTypeId { get; set; }
+        [ForeignKey("ApplicationTypeId")]
+        public ApplicationType ApplicationType { get; set; }
         public virtual ICollection<ApplicationEnvironment> ApplicationEnvironments { get; set; }
         public virtual ICollection<ApplicationDevelopers> ApplicationDevelopers { get; set; }
 
