@@ -68,7 +68,7 @@ namespace ProcessInfo.Service.Implementations
         public ServiceResultModel<Application> Edit(Application application)
         {
             var res = new ServiceResultModel<Application> { IsSuccess = false, Errors = new List<string>() };
-            var applicationFromDB = _applicationRepository.FirstOrDefault(x => x.ApplicationId == application.ApplicationId);
+            var applicationFromDB = _applicationRepository.FirstOrDefaultWithInclude(x => x.ApplicationId == application.ApplicationId, y => y.Include(z => z.ApplicationDevelopers));
 
 
             if(applicationFromDB != null)
@@ -79,6 +79,7 @@ namespace ProcessInfo.Service.Implementations
                 //    return res;
                 //}
 
+                applicationFromDB.ApplicationDevelopers.Clear();
 
                 applicationFromDB.ApplicationName = application.ApplicationName.TrimSpace();
                 applicationFromDB.ProjectName = application.ProjectName.TrimSpace();
