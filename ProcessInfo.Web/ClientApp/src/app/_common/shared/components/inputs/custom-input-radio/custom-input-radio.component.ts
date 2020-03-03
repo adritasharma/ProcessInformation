@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'input-radio',
@@ -16,10 +16,16 @@ export class CustomInputRadioComponent implements OnInit {
   @Input() required: boolean;
   @Input() disabled: boolean;
 
+  @Output() modelChange = new EventEmitter();
+
   ngOnInit() {
-    if (this.required) {
+    if (this.required && !this.model) {
       this.model = this.itemList[0].value;
     }
+  }
+
+  change() {
+    this.modelChange.emit(this.model);
   }
 
 }

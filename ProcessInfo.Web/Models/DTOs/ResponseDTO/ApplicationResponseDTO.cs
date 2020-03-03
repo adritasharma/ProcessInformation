@@ -1,4 +1,5 @@
 ﻿using ProcessInfo.DB.Models;
+using ProcessInfo.Utility;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,6 +17,8 @@ namespace ProcessInfo.Web.Models.DTOs.ResponseDTO
         public string Status { get; set; }
         public Guid ApplicationTypeId { get; set; }
         public string ApplicationTypeName { get; set; }
+        public ProjectType ProjectType { get; set; }
+        public string ProjectTypeName { get; set; }
 
         public List<UserResponseDTO> TeamMembers { get; set; }
         public List<ApplicationEnvironmentResponseDTO> ApplicationEnvironments { get; set; }

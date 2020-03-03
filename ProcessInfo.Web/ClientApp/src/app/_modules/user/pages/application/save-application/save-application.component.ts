@@ -58,6 +58,9 @@ export class SaveApplicationComponent implements OnInit {
       this.isEdit = true;
       this.getApplicationDetails();
     }
+
+  console.log(this.projectTypes)
+
   }
   getApplicationDetails() {
     this._applicationService.getApplicationById(this.paramId).subscribe(res => {

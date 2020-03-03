@@ -27,7 +27,7 @@ namespace ProcessInfo.Utility
 
     public enum ProjectType
     {
-        Ascending = 0,
+        RealTime = 0,
         Demo = 1,
         Temporary = 2
     }

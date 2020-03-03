@@ -5,7 +5,7 @@
     <div>
         <span class="col-sm-12">
             <label class="radio-container" *ngFor="let item of itemList;let i=index">
-                <input type="radio" [name]="id" [(ngModel)]="model" [value]="item.value" >
+                <input type="radio" [name]="id" [(ngModel)]="model" [value]="item.value" ChildFieldValidation  (ngModelChange)="change($event)">
                 <span class="checkmark"></span>
                 <span class="radio-label">{{item.label}}</span>
             </label>

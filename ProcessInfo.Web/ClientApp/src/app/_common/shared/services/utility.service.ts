@@ -14,6 +14,6 @@ export class UtilityService {
 
   getArrayFromEnum(input: any) {
     return (Object.keys(input)).filter(value => isNaN(Number(value)) === false)
-      .map(key => ({ label: input[key], value: key }))
+      .map(key => ({ label: input[key], value: Number(key) }))
   }
 }
