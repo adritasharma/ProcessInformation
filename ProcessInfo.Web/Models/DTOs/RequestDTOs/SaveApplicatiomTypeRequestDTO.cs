@@ -9,6 +9,6 @@ namespace ProcessInfo.Web.Models.DTOs.RequestDTOs
     {
         public Guid? ApplicationTypeId { get; set; }
         public string ApplicationTypeName { get; set; }
-   //     public string ApplicationTypeDescription { get; set; }
+        public string ApplicationTypeDescription { get; set; }
     }
 }

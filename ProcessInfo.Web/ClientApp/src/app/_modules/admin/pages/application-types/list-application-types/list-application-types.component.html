@@ -12,7 +12,7 @@
   <tbody *ngIf="allApplicationTypes?.length != 0">
     <tr *ngFor="let item of allApplicationTypes ;let i=index">
       <td class="action-cell">
-        <list-actions [modulePath]="'/admin/applicationType'" [itemId]="item.applicationTypeId" [canDelete]="true" [canEdit]="true"
+        <list-actions [modulePath]="'/admin/application-type'" [itemId]="item.applicationTypeId" [canDelete]="true" [canEdit]="true"
           (isDeleteClicked)="deleteApplicationType(item.applicationTypeId,item.applicationTypeName)"></list-actions>
       </td>
       <td>

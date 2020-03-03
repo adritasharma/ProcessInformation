@@ -81,7 +81,7 @@ namespace ProcessInfo.Service.Implementations
 
 
                 applicationTypeFromDB.ApplicationTypeName = applicationType.ApplicationTypeName.TrimSpace();
-            //    applicationTypeFromDB.ApplicationTypeDescription = applicationType.ApplicationTypeDescription.TrimSpace();
+                applicationTypeFromDB.ApplicationTypeDescription = applicationType.ApplicationTypeDescription.TrimSpace();
 
                 _applicationTypeRepository.Edit(applicationTypeFromDB);
 
