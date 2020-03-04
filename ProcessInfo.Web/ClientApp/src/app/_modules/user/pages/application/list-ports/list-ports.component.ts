@@ -52,6 +52,7 @@ export class ListPortsComponent implements OnInit {
           });
         });
       },
+      "order": [],
       columns: [{ "orderable": false, "searchable": false }, { data: 'Application.applicationName' }, { data: 'Environment.environmentName' },{ "orderable": false, "searchable": false }]
     };
   }

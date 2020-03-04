@@ -5,6 +5,7 @@
 .bold {
     font-weight: bold;
 }
+
 .border-left-success {
     border-left: .25rem solid #1cc88a!important;
 }
@@ -25,7 +26,7 @@
     border-left: .25rem solid #e74a3b!important;
 }
 
-.btn-primary, .btn-warning{
+.btn-primary, .btn-warning {
     color: #fff !important;
 }
 
@@ -44,10 +45,12 @@
     font-size: 42px;
     color: #381653;
 }
+
 .invalid-message {
-    color:#c22929;
+    color: #c22929;
     font-weight: normal;
 }
+
 .card-header-action {
     margin-left: 15px;
     cursor: pointer;
@@ -76,9 +79,15 @@
 .loader-icon {
     font-size: 50px;
 }
+
 .nav-link.active {
     background-color: #060062 !important;
     color: #fff !important;
+}
+
+.page-item.active .page-link {
+    background-color: #060062;
+    border-color: #07024b;
 }
 
 .pointer {
@@ -88,22 +97,27 @@
 .container {
     max-width: 100% !important;
 }
-.required-star{
+
+.required-star {
     color: #c70000
 }
+
 .sidebar {
     height: 100%;
 }
 
-.tdOption{
+.tdOption {
     text-align: center;
 }
+
 .toast {
     max-width: 100%;
 }
+
 .text-gray-300 {
     color: #dddfeb!important;
 }
+
 .toast-container {
     width: 100% !important;
 }
@@ -119,12 +133,15 @@
 .theme-color {
     color: #060062 !important;
 }
-.uppy-Dashboard-dropFilesHereHint{
+
+.uppy-Dashboard-dropFilesHereHint {
     display: none;
 }
-.uppy-Dashboard-poweredBy{
+
+.uppy-Dashboard-poweredBy {
     display: none;
 }
+
 .btn-default {
     color: #fff !important;
     background-color: #060062 !important;

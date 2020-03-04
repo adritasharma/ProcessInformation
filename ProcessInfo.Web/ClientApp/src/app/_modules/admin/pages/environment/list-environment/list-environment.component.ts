@@ -13,7 +13,7 @@ import { NotificationService } from 'src/app/_common/shared/services/notificatio
 })
 export class ListEnvironmentComponent implements OnInit {
 
-  constructor(private _environmentService: EnvironmentService, private _notification: NotificationService,private router: Router) { }
+  constructor(private _environmentService: EnvironmentService, private _notification: NotificationService, private router: Router) { }
 
   dtOptions: DataTables.Settings = {};
   @ViewChild(DataTableDirective)
@@ -45,12 +45,13 @@ export class ListEnvironmentComponent implements OnInit {
           });
         });
       },
+      "order": [],
       columns: [{ "orderable": false, "searchable": false }, { data: 'environmentName' }, { data: 'environmentDescription' }]
     };
   }
 
 
-  deleteEnvironment(id,name) {
+  deleteEnvironment(id, name) {
     this._notification.confirm(`Delete Environment ${name}?`)
       .then((confirmed) => {
         if (confirmed) {
