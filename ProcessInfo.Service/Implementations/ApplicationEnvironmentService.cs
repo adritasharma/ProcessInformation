@@ -139,17 +139,18 @@ namespace ProcessInfo.Service.Implementations
         {
             List<PortListResultModel> portList = new List<PortListResultModel>();
             Expression<Func<ApplicationEnvironment, bool>> deleg = null;
-            if (!string.IsNullOrEmpty(searchText))
-            {
-                searchText = searchText.ToLower();
-                //  deleg = x => x.EnvironmentId.ToLower().Contains(searchText);
+            //if (!string.IsNullOrEmpty(searchText))
+            //{
+            //    searchText = searchText.ToLower();
+            //    //  deleg = x => x.EnvironmentId.ToLower().Contains(searchText);
 
-                deleg = x => x.Application.ApplicationName.Contains(searchText);
-                deleg = x => x.Environment.EnvironmentName.Contains(searchText);
-                deleg = x => x.Port.Contains(searchText);
-                deleg = x => x.SiteUrl.Contains(searchText);
+            //    deleg = x => x.Application.ApplicationName.Contains(searchText);
+            //    deleg = x => x.Environment.EnvironmentName.Contains(searchText);
+            //    deleg = x => x.Port.Contains(searchText);
+            //    deleg = x => x.SiteUrl.Contains(searchText);
+            //    deleg = x => x.In
 
-            }
+            //}
 
             if (!string.IsNullOrEmpty(filterType))
             {
@@ -183,6 +184,10 @@ namespace ProcessInfo.Service.Implementations
                     EnvironmentName = item.Environment.EnvironmentName,
                     EnvironmentId = item.EnvironmentId
                 });
+            }
+           if (!string.IsNullOrEmpty(searchText))
+            {
+                portList = portList.Where(x => x.ApplicationName.Contains(searchText, StringComparison.InvariantCultureIgnoreCase) || x.SiteUrl.Contains(searchText, StringComparison.InvariantCultureIgnoreCase) || x.Port.Contains(searchText, StringComparison.InvariantCultureIgnoreCase) || x.EnvironmentName.Contains(searchText, StringComparison.InvariantCultureIgnoreCase)).ToList();
             }
 
             return new FilteredResultModel<List<PortListResultModel>>
