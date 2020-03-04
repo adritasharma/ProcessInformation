@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.1",
-    "signature": "d30017e5556ebefb5219e60264f45a96df93160d"
+    "signature": "019b7ae4cab2556fac624a0de5a645d5e1019d3e"
   },
   "compilationOptions": {},
   "targets": {
@@ -13,7 +13,8 @@
           "Microsoft.EntityFrameworkCore": "2.1.8",
           "Microsoft.EntityFrameworkCore.SqlServer": "2.1.8",
           "Pomelo.EntityFrameworkCore.MySql": "2.1.4",
-          "ProcessInfo.Utility": "1.0.0"
+          "ProcessInfo.Utility": "1.0.0",
+          "System.Linq.Dynamic.Core": "1.0.21"
         },
         "runtime": {
           "ProcessInfo.DB.dll": {}
@@ -407,6 +408,14 @@
           "System.Runtime.Extensions": "4.1.0"
         }
       },
+      "System.Linq.Dynamic.Core/1.0.21": {
+        "runtime": {
+          "lib/netcoreapp2.1/System.Linq.Dynamic.Core.dll": {
+            "assemblyVersion": "1.0.21.0",
+            "fileVersion": "1.0.21.0"
+          }
+        }
+      },
       "System.Linq.Expressions/4.1.0": {
         "dependencies": {
           "System.Collections": "4.0.11",
@@ -578,6 +587,9 @@
         }
       },
       "ProcessInfo.Utility/1.0.0": {
+        "dependencies": {
+          "System.Linq.Dynamic.Core": "1.0.21"
+        },
         "runtime": {
           "ProcessInfo.Utility.dll": {}
         }
@@ -862,6 +874,13 @@
       "sha512": "sha512-bQ0iYFOQI0nuTnt+NQADns6ucV4DUvMdwN6CbkB1yj8i7arTGiTN5eok1kQwdnnNWSDZfIUySQY+J3d5KjWn0g==",
       "path": "system.linq/4.1.0",
       "hashPath": "system.linq.4.1.0.nupkg.sha512"
+    },
+    "System.Linq.Dynamic.Core/1.0.21": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Wdqu/OWrd9iAHZh3myPbpNHC9Pi4EqcMdSXUiVbYWmH6kKzQGEfXb2SbmaRYBqKahL3wJd7oNSWi6SNt476guA==",
+      "path": "system.linq.dynamic.core/1.0.21",
+      "hashPath": "system.linq.dynamic.core.1.0.21.nupkg.sha512"
     },
     "System.Linq.Expressions/4.1.0": {
       "type": "package",

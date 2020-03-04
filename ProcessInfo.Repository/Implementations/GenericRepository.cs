@@ -7,6 +7,7 @@ using ProcessInfo.Repository.Interfaces;
 using ProcessInfo.DB.Models;
 using Microsoft.EntityFrameworkCore.Query;
 using ProcessInfo.Utility;
+using System.Linq.Dynamic.Core;
 
 namespace ProcessInfo.Repository.Implementations
 {
@@ -88,17 +89,18 @@ namespace ProcessInfo.Repository.Implementations
             if (include != null)
                 query = include(query);
 
-            //if (orderBy != null)
-            //{
-            //    if (sortDirection == FCSortDirection.Descending)
-            //    {
-            //        query = query.OrderByDescending(x => x.GetProperty(orderBy));
-            //    }
-            //    else
-            //    {
-            //        query = query.OrderBy(x => x.GetProperty(orderBy));
-            //    }
-            //}
+            if (orderBy != null)
+            {
+                if (sortDirection == FCSortDirection.Descending)
+                {
+                    query = query.OrderBy(orderBy + " descending");
+                }
+                else
+                {
+                    query = query.OrderBy(orderBy);
+                }
+            }
+
 
             if (start.HasValue)
             {

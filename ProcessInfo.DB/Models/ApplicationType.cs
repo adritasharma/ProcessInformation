@@ -15,7 +15,7 @@ namespace ProcessInfo.DB.Models
         public string ApplicationTypeName { get; set; }
         public string ApplicationTypeDescription { get; set; }
 
-        public virtual Application Application { get; set; }
+        public virtual ICollection<Application> Application { get; set; }
 
     }
 }

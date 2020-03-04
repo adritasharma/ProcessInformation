@@ -46,7 +46,7 @@ export class ListApplicationComponent implements OnInit {
           });
         });
       },
-      columns: [{ data: 'action' }, { data: 'ApplicationName' }, { data: 'applicationType' }, { data: 'projectName' }, { data: 'teamMemberNames' }]
+      columns: [{ "orderable": false, "searchable": false }, { data: 'ApplicationName' }, { data: 'applicationType' }, { data: 'projectName' }, { data: 'teamMemberNames', "orderable": false, "searchable": false }]
     };
   }
 

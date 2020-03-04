@@ -135,6 +135,7 @@ namespace ProcessInfo.Service.Implementations
 
                 query = _applicationRepository.FindWithInclude(deleg, sortColumn, sortDirection, x => x.Include(y => y.ApplicationDevelopers).ThenInclude(y => y.User).Include(s => s.ApplicationType), start, length);
             }
+            else
             {
                 query =  _applicationRepository.FindWithInclude(deleg, defaultOrderBy, null, x => x.Include(y => y.ApplicationDevelopers).ThenInclude(y => y.User).Include(s => s.ApplicationType), start, length);
             }
