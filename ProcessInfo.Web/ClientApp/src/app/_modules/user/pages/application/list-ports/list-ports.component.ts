@@ -29,7 +29,7 @@ export class ListPortsComponent implements OnInit {
     AddRouterLink: null
   }
 
-  environmentId= null
+  environmentId = null
 
   ngOnInit() {
     this.getEnvironments();
@@ -40,7 +40,7 @@ export class ListPortsComponent implements OnInit {
       serverSide: true,
       processing: false,
       ajax: (dataTablesParameters: any, callback) => {
-       dataTablesParameters.FilterType = this.environmentId;
+        dataTablesParameters.FilterType = this.environmentId;
 
         that._applicationService.getAllPorts(dataTablesParameters).subscribe((resp: DataTableResponse) => {
           console.log("Result - ", resp);
@@ -52,7 +52,7 @@ export class ListPortsComponent implements OnInit {
           });
         });
       },
-      // columns: [{ data: 'applicationName'}]
+      columns: [{ "orderable": false, "searchable": false }, { data: 'Application.applicationName' }, { data: 'Environment.environmentName' },{ "orderable": false, "searchable": false }]
     };
   }
 

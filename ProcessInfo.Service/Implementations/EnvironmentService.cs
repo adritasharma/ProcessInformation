@@ -122,12 +122,12 @@ namespace ProcessInfo.Service.Implementations
             }
 
             IEnumerable<Environment> query;
-            //Implement OrderBy or OrderByDesc
             string defaultOrderBy = "EnvironmentName";
             if (!string.IsNullOrEmpty(sortColumn) && sortColumn.ToLower() != "EnvironmentId")
             {
                 query = _environmentRepository.FindWithInclude(deleg, sortColumn, sortDirection, null, start, length);
             }
+            else
             {
                 query =  _environmentRepository.FindWithInclude(deleg, defaultOrderBy, null, null, start, length);
             }

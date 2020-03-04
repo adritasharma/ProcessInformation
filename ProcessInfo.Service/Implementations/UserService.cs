@@ -147,6 +147,7 @@ namespace ProcessInfo.Service.Implementations
             {
                 query = _userRepository.FindWithInclude(deleg, sortColumn, sortDirection, null, start, length);
             }
+            else
             {
                 query =  _userRepository.FindWithInclude(deleg, defaultOrderBy, null, null, start, length);
             }

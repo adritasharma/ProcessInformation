@@ -45,7 +45,7 @@ export class ListUserComponent implements OnInit {
           });
         });
       },
-      // columns: [{ data: 'userName'}]
+      columns: [{ "orderable": false, "searchable": false }, { data: 'firstName' }, { data: 'emailAddress' }, { data: 'username' }, { "orderable": false, "searchable": false }]
     };
   }
 

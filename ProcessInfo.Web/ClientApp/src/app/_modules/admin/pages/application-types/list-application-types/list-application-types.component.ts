@@ -45,7 +45,7 @@ export class ListApplicationTypeComponent implements OnInit {
           });
         });
       },
-      // columns: [{ data: 'applicationTypeName'}]
+      columns: [{ "orderable": false, "searchable": false }, { data: 'applicationTypeName' }, { data: 'applicationTypeDescription' }]
     };
   }
 

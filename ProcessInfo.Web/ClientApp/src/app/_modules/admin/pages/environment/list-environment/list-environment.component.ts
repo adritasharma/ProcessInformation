@@ -45,7 +45,7 @@ export class ListEnvironmentComponent implements OnInit {
           });
         });
       },
-      // columns: [{ data: 'environmentName'}]
+      columns: [{ "orderable": false, "searchable": false }, { data: 'environmentName' }, { data: 'environmentDescription' }]
     };
   }
 

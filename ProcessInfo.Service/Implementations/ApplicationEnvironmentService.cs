@@ -158,11 +158,12 @@ namespace ProcessInfo.Service.Implementations
 
             IEnumerable<ApplicationEnvironment> query;
             //Implement OrderBy or OrderByDesc
-            string defaultOrderBy = "ApplicationEnvironmentName";
+            string defaultOrderBy = "Application.ApplicationName";
             if (!string.IsNullOrEmpty(sortColumn) && sortColumn.ToLower() != "ApplicationEnvironmentId")
             {
                 query = _applicationEnvironmentRepository.FindWithInclude(deleg, sortColumn, sortDirection, null, start, length);
             }
+            else
             {
                 query =  _applicationEnvironmentRepository.FindWithInclude(deleg, defaultOrderBy, null, null, start, length);
             }
