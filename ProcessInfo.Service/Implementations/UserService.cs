@@ -32,7 +32,7 @@ namespace ProcessInfo.Service.Implementations
 
             if (!IsUserNameAvailable(user.Username))
             {
-                res.Errors.Add("The User Name is already taken");
+                res.Errors.Add("The Username is already taken");
                 return res;
             }
             if (!IsEmailAddressAvailable(user.Username))
@@ -186,6 +186,11 @@ namespace ProcessInfo.Service.Implementations
         public IEnumerable<User> SearchUserByKeyword(string keyword)
         {
             return _userRepository.FindWithInclude(x => x.FirstName.Contains(keyword) || x.LastName.Contains(keyword) || x.Username.Contains(keyword) || x.EmailAddress.Contains(keyword));
+        }
+
+        public User GetUserByUsername(string username)
+        {
+            return _userRepository.FirstOrDefault(x => x.Username == username);
         }
     }
 }

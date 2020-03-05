@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Security.Cryptography;
 using System.Text;
 
 namespace ProcessInfo.Utility
@@ -35,5 +36,7 @@ namespace ProcessInfo.Utility
             var attributes = memberInfo[0].GetCustomAttributes(typeof(T), false);
             return attributes.Length > 0 ? (T)attributes[0] : null;
         }
+
+       
     }
 }

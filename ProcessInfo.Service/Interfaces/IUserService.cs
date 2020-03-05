@@ -16,6 +16,8 @@ namespace ProcessInfo.Service.Interfaces
         IEnumerable<User> GetAll();
         ServiceResultModel<bool> Delete(Guid id);
         IEnumerable<User> SearchUserByKeyword(string keyword);
+        User GetUserByUsername(string username);
+
         FilteredResultModel<List<User>> GetFilteredUsers(string searchText, string filterType, string sortColumn, FCSortDirection sortDirection, int? start = null, int? length = null);
 
     }

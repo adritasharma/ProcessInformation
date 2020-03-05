@@ -16,6 +16,8 @@ using System.IO;
 using OfficeOpenXml;
 using ProcessInfo.Web.Helper;
 using System.ComponentModel.DataAnnotations;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace ProcessInfo.Web.Controllers
 {
@@ -36,12 +38,36 @@ namespace ProcessInfo.Web.Controllers
         {
             User user = _mapper.Map<User>(userDTO);
 
-            var res =  _service.Add(user);
+            var res = _service.Add(user);
 
             if (res.IsSuccess)
                 return Ok(res.IsSuccess);
             else
                 return BadRequest(res.Errors);
+        }
+
+        [HttpPost]
+        [Route("login")]
+        public IActionResult Login(LoginRequestDTO loginDTO)
+        {
+            User user = _service.GetUserByUsername(loginDTO.Username);
+
+            if (user == null)
+            {
+                return BadRequest("Invalid username/password combination");
+            }
+            else
+            {
+                if(!IsPasswordValid(loginDTO.Password, user.PasswordHash,user.PasswordSalt))
+                {
+                    return BadRequest("Invalid username/password combination");
+                } else
+                {
+                    return Ok(_mapper.Map<LoginResponseDTO>(user));
+                }
+
+            }
+
         }
 
         [DisableRequestSizeLimit]
@@ -75,7 +101,7 @@ namespace ProcessInfo.Web.Controllers
         [Route("{id}")]
         public IActionResult Delete(Guid id)
         {
-           return Ok(_service.Delete(id));
+            return Ok(_service.Delete(id));
         }
 
         [HttpPut]
@@ -97,7 +123,6 @@ namespace ProcessInfo.Web.Controllers
         {
             var res = _service.SearchUserByKeyword(keyword);
             return Ok(_mapper.Map<List<UserResponseDTO>>(res));
-            return Ok(res);
         }
         [HttpPost]
         [Route("bulk-upload-users")]
@@ -105,7 +130,7 @@ namespace ProcessInfo.Web.Controllers
         {
             var errors = new List<string>();
             var file = Request.Form.Files[0];
-           
+
             var users = new List<SaveUserRequestDTO>();
 
             using (var memoryStream = new MemoryStream())
@@ -132,7 +157,7 @@ namespace ProcessInfo.Web.Controllers
             //var bulkUploadId = Guid.NewGuid();
             foreach (var user in users)
             {
-                var result = _service.Add( _mapper.Map<User>(user));
+                var result = _service.Add(_mapper.Map<User>(user));
 
                 if (result.IsSuccess)
                     //   addedUsers.Add(_mapper.Map<UserResponseDTO>(result.Data));
@@ -194,6 +219,16 @@ namespace ProcessInfo.Web.Controllers
                             "StaticDocuments", "Sheets", "ExcelSheetForBulkUpload.xlsx");
 
             return PhysicalFile(file, "application/vnd.ms-excel", "SampleSheetForUpload.xlsx");
+        }
+
+        private bool IsPasswordValid(string password, string passwordHash, string passwordSalt)
+        {
+            using (var hash = SHA512.Create())
+            {
+                var saltedPlainTextBytes = Encoding.UTF8.GetBytes(password).Concat(Convert.FromBase64String(passwordSalt)).ToArray();
+                var hashedBytes = hash.ComputeHash(saltedPlainTextBytes);
+                return hashedBytes.SequenceEqual(Convert.FromBase64String(passwordHash));
+            }
         }
     }
 }
