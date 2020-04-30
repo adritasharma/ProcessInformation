@@ -29,7 +29,7 @@
     "datatables.net-bs4": "^1.10.19",
     "datatables.net-dt": "^1.10.20",
     "file-saver": "^2.0.2",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "ngx-chips": "^2.1.0",
     "redux": "^4.0.5",
     "rxjs": "~6.3.3",
